@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+html {
+    font-family: 'Quicksand', sans-serif, Arial;
+    height: 100%;
+}
+
+header, footer {
+    background-color: #b2db94;
+    width: 100%;
+    padding: none;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-weight: bold;
+    color: white;
+    font-size: 100px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#outerStats {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#outer > img {
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#outer {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: rgb(121, 204, 231);
+    color: white;
+    height: 100px;
+    width: 600px;
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    display: inline-block;
+
+}
+
+#outer:hover {
+    /* background-color: #32add6; */
+    cursor: initial;
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#plants {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color:rgb(255, 178, 106);
+    color: white;
+    height: 100px;
+    width: 600px;
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+#plants > img {
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: space-evenly;
+ }
+ 
+ #grid-container > div {
+    text-align: center;
+    padding: 20px;
+ }
+ 
+ div > #plants:hover {
+    cursor: initial;
+ }
+
+footer {
+    font-family: 'Quicksand', sans-serif, Arial;
+    color: white;
+    margin-bottom: 0px;
+}
+
+canvas {
+    max-width: 600px;
+}
+
+#graph3 {
+    justify-content: center;
+}
+
+#title {
+    margin-top: 0;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-size: 25px;
+    font-weight: bolder;
+    color: black;
+}
+
+#gear {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+#exit {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.container#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup, #savePopup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .3);
+    background: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#savePopup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#waterSchedule {
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: rgba(121, 204, 231, 0.79);
+    color: white;
+    height: 350px;
+    width: 800px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+/* #changeNames {
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: rgba(255, 178, 106, 0.79);
+    color: white;
+    height: 300px;
+    width: 99%;
+    margin-top: 20px;
+    border: none;
+    border-radius: 15px;
+} */
+
+#water {
+    width: 70px;
+    justify-content: center;
+    background-color: #b2db94;
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-weight: bolder;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#back {
+    width: 400px;
+    justify-content: center;
+    background-color: rgba(255, 178, 106, 0.79);
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-weight: bolder;
+    border-radius: 8px;
+    margin-top: 10px;
+}
