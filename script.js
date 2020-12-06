@@ -384,7 +384,7 @@ Date.prototype.toMysqlFormat = function() {
 
 function inArray(arr, elem)
 {
-  for (var i; i < arr.length; i++)
+  for (var i = 0; i < arr.length; i++)
   {
     if (arr[i].equalsD(elem)) return true;
   }
