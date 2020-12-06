@@ -1,5 +1,6 @@
 var lastUpdate = "";
 var ajaxTimer;
+ajaxTimer = this.setInterval(retrieve, null, null, null, true, 5000);
 
 var d = new Date();
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -29,7 +30,7 @@ window.onload = function(){
   dropGraph3();
   dropGraph4();
   //updateData();
-  this.ajaxTimer = this.setInterval(retrieve, null, null, null, true, 5000)
+  
 }
 
 function updateData() 
@@ -353,7 +354,7 @@ function retrieve(table,starttime,endtime,auto = false) {
   else
   {
     var ds = moment(new Date(lastUpdate)).add(5, 's').toDate();
-    var de = Date.now();
+    var de = new Date(Date.now());
     var dss = ds.toISOString().slice(0, 19).replace('T', ' ');
     var des = de.toISOString().slice(0, 19).replace('T', ' ');
     console.log("retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des);
