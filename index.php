@@ -24,11 +24,13 @@
             $conn->query("use garden_info");
             echo "Connected successfully";
 
-            $today_date = getdate();
-            $today = $today_date["year"] . "-" .  $today_date["mon"] . "-" .  $today_date["mday"] . " " . $today_date["hours"] . ":" . $today_date["minutes"] . ":" . $today_date["seconds"]; 
+            $today = date("Y-m-d H:i:s");
+            //$today_date = getdate();
+            //$today = $today_date["year"] . "-" .  $today_date["mon"] . "-" .  $today_date["mday"] . " " . $today_date["hours"] . ":" . $today_date["minutes"] . ":" . $today_date["seconds"]; 
             echo $today;
-
-            $sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $today . "' AND '" .  $today . "'";
+            $start_date = date("Y-m-d H:i:s", strtotime("-1 days"));
+            echo $start_date;
+            $sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
