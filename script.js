@@ -358,7 +358,7 @@ function retrieve(table,starttime,endtime,auto = false) {
     var des = de.toMysqlFormat();
     console.log("retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des);
     xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des, true);
-    lastUpdate = des;
+    //lastUpdate = des;
   }
   xmlhttp.send();
 }
