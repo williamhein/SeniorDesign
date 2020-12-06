@@ -139,7 +139,37 @@ var config1 =
   }
 };
 
-var config2 = {...config1};
+var config2 = {
+  type: 'line',
+  data: {
+    datasets: [{
+      label: 'Greenhouse Temperature (F)',
+      backgroundColor: "rgba(255, 99, 132, 0.6)",
+      borderColor: "rgba(255, 99, 132, 0.8)",
+      fill: false,
+      lineTension: 0.1,
+      data: [],
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      xAxes: [{
+        type: 'time',
+        display: true,
+        ticks: {
+          major: {
+            fontStyle: 'bold',
+            fontColor: '#FF0000'
+          }
+        }
+      }],
+      yAxes: [{
+        display: true,
+      }]
+    }
+  }
+};
 
 function dropGraph1() {
   var ctx1 = document.getElementById('myChart1').getContext("2d");
