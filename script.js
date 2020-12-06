@@ -30,7 +30,7 @@ window.onload = function(){
 
 function updateData() 
 {
-
+  tempArray.sort((a,b)=>a.time-b.time);
   for(var i = 0; i < tempArray.length; i++)
   {
     var t = tempArray[i].time.split(/[- :]/);
