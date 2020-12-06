@@ -298,8 +298,8 @@ function retrieve(table,starttime,endtime,auto = false) {
         if (auto || table == "all")
         {
           var info = this.responseText.split("&");
-          var hinfo = info.split(";")[0];
-          var tinfo = info.split(";")[1];
+          var hinfo = info[0].split(";");
+          var tinfo = info[1].split(";");
 
           humidityArray = [];
           for (var i = 0; i < hinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
