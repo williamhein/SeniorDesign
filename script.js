@@ -68,13 +68,14 @@ function getToday()
 
 function dropGraph1() {
   var ctx1 = document.getElementById('myChart1');
+  var temps3 = [60, 55, 66, 77, 56, 57, 78];
   myChart1 = new Chart(ctx1, {
     type: 'bar',
     data: {
         labels: [...days],
         datasets: [{
             label: 'Greenhouse Temperature (F)',
-            data: [-99,-99,-99,-99,-99,-99,-99],
+            data: temps3,
             backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
