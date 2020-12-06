@@ -210,3 +210,7 @@ function toggle1() {
   var popup = document.getElementById('savePopup');
   popup.classList.toggle('active');
 }
+
+function updateCurrentTempLabel(temp) {
+  document.getElementById("temp_current_label").innerHTML = temp;
+}
