@@ -354,7 +354,8 @@ function retrieve(table,starttime,endtime,auto = false) {
   {
     var ds = moment(new Date(lastUpdate)).add(5, 's').toDate();
     var de = Date.now();
-    xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + starttime + "&et=" + endtime, true);
+    console.log("retrieve.php?table=" + "all" + "&st=" + ds.toString() + "&et=" + de.toString());
+    xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + ds.toString() + "&et=" + de.toString(), true);
   }
   xmlhttp.send();
 }
