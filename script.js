@@ -349,9 +349,9 @@ function retrieve(table,starttime,endtime,auto = false) {
   }
   else
   {
-    var ds = moment(new Date(lastUpdate)).add(5, 's').toDate();
+    var ds = new Date(lastUpdate);
     var de = new Date(Date.now());
-    var dss = ds.toISOString().slice(0, 19).replace('T', ' ');
+    var dss = ds.toMysqlFormat();
     var des = de.toISOString().slice(0, 19).replace('T', ' ');
     console.log("retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des);
     xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des, true);
@@ -359,6 +359,16 @@ function retrieve(table,starttime,endtime,auto = false) {
   }
   xmlhttp.send();
 }
+
+function twoDigits(d) {
+  if(0 <= d && d < 10) return "0" + d.toString();
+  if(-10 < d && d < 0) return "-0" + (-1*d).toString();
+  return d.toString();
+}
+
+Date.prototype.toMysqlFormat = function() {
+  return this.getUTCFullYear() + "-" + twoDigits(1 + this.getUTCMonth()) + "-" + twoDigits(this.getUTCDate()) + " " + twoDigits(this.getUTCHours()) + ":" + twoDigits(this.getUTCMinutes()) + ":" + twoDigits(this.getUTCSeconds());
+};
 
 function arrayRotate(arr, reverse) {
   if (reverse) arr.unshift(arr.pop());
