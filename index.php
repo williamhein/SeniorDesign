@@ -138,7 +138,8 @@
             {
                 //echo "0 results";
             }
-            echo '<script type="text/JavaScript">retrieve("records_temp","' . $start_date .'","'. $today .'");\nupdateData();</script>';
+            echo '<script type="text/JavaScript">retrieve("records_temp","' . $start_date .'","'. $today .'");</script>';
+            echo '<script type="text/JavaScript">updateData();</script>';
         ?>
 
         </body>
