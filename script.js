@@ -294,6 +294,8 @@ function retrieve(table,starttime,endtime) {
         }
         else if (table == "")
         {}
+
+        updateData();
       }
   };
   xmlhttp.open("GET", "retrieve.php?table=" + table + "&st=" + starttime + "&et=" + endtime, true);
