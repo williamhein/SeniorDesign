@@ -84,7 +84,7 @@
 
             $today = date("Y-m-d H:i:s");
             $start_date = date("Y-m-d H:i:s", strtotime("-4 hours"));
-            $start_date2 = date("Y-m-d H:i:s", strtotime("-12 hours"));
+            $start_date2 = date("Y-m-d H:i:s", strtotime("-2 days"));
             
             //temp
 
@@ -140,7 +140,7 @@
                 //echo "0 results";
             }
             echo '<script type="text/JavaScript">retrieve("records_temp","' . $start_date .'","'. $today .'");</script>';
-            echo '<script type="text/JavaScript">retrieve("records_humidity","' . $start_date .'","'. $today .'");</script>';
+            echo '<script type="text/JavaScript">retrieve("records_humidity","' . $start_date2 .'","'. $today .'");</script>';
             //echo '<script type="text/JavaScript">updateData();</script>';
         ?>
 
