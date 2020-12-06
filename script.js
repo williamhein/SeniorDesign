@@ -75,7 +75,7 @@ var config =
   type: 'line',
   data: {
     datasets: [{
-      label: 'Dataset with string point data',
+      label: 'Greenhouse Temperature (F)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
       fill: false,
@@ -100,10 +100,6 @@ var config =
       }],
       yAxes: [{
         display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'value'
-        }
       }]
     }
   }
