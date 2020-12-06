@@ -60,6 +60,15 @@ function getToday()
   return days[d.getDay()];  
 }
 
+
+
+function newDate(days) {
+  return moment().add(days, 'd').toDate();
+}
+
+function newDateString(days) {
+  return moment().add(days, 'd').format();
+}
 var color = Chart.helpers.color;
 var config = 
 {
