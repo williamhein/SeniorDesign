@@ -30,19 +30,17 @@ window.onload = function(){
 
 function updateData() 
 {
-  while (myChart1.data.labels[0] != getToday())
-  {
-    arrayRotate(myChart1.data.labels, false);
-  }
 
   for(var i = 0; i < tempArray.length; i++)
   {
-    addData(myChart1,tempArray[i].time,tempArray[i].data);
+    var t = tempArray[i].time.split(/[- :]/);
+    var d = new Date(Date.UTC(t[0], t[1]-1, t[2], t[3], t[4], t[5]));
+    addData(myChart1,null, {x:new Date(t),y:tempArray[i].data});
   }
 }
 
 function addData(chart, label, data) {
-  chart.data.labels.push(label);
+  //chart.data.labels.push(label);
   chart.data.datasets.forEach((dataset) => {
       dataset.data.push(data);
   });
@@ -50,7 +48,7 @@ function addData(chart, label, data) {
 }
 
 function removeData(chart) {
-  chart.data.labels.pop();
+  //chart.data.labels.pop();
   chart.data.datasets.forEach((dataset) => {
       dataset.data.pop();
   });
@@ -68,41 +66,20 @@ function getToday()
 
 function dropGraph1() {
   var ctx1 = document.getElementById('myChart1');
-  var temps3 = [60, 55, 66, 77, 56, 57, 78];
   myChart1 = new Chart(ctx1, {
-    type: 'bar',
-    data: {
-        labels: [...days],
-        datasets: [{
-            label: 'Greenhouse Temperature (F)',
-            data: temps3,
-            backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-                "rgba(153, 102, 255, 0.2)",
-                "rgba(239, 149, 107, 0.2)",
-                "rgba(235, 107, 239, 0.2)"
-              ],
-            borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-                "rgba(75, 192, 192, 1)",
-                "rgba(153, 102, 255, 1)",
-                "rgba(239, 149, 107, 1)",
-                "rgba(235, 107, 239, 1)"
-            ],
-            borderWidth: 1
-        }]
-    },
+    type: 'line',
+    data: [],
     options: {
-      legend: {
-        onClick: null
-      }
+        scales: {
+            xAxes: [{
+                type: 'time',
+                time: {
+                    unit: 'month'
+                }
+            }]
+        }
     }
-    })
+});
 }
 
 function dropGraph2() {
