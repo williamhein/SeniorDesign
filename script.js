@@ -82,34 +82,7 @@ var config =
       data: [{
         x: newDateString(0),
         y: 10
-      }, {
-        x: newDateString(2),
-        y: 10
-      }, {
-        x: newDateString(4),
-        y: 10
-      }, {
-        x: newDateString(5),
-        y: 10
       }],
-    }, {
-      label: 'Dataset with date object point data',
-      backgroundColor: "rgba(255, 99, 132, 0.2)",
-      borderColor: "rgba(255, 99, 132, 0.2)",
-      fill: false,
-      data: [{
-        x: newDate(0),
-        y: 10
-      }, {
-        x: newDate(2),
-        y: 10
-      }, {
-        x: newDate(4),
-        y: 21
-      }, {
-        x: newDate(5),
-        y: 12
-      }]
     }]
   },
   options: {
