@@ -355,6 +355,7 @@ function retrieve(table,starttime,endtime,auto = false) {
     var des = de.toISOString().slice(0, 19).replace('T', ' ');
     console.log("retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des);
     xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des, true);
+    lastUpdate = des;
   }
   xmlhttp.send();
 }
