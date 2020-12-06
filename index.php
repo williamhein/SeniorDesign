@@ -83,7 +83,7 @@
             echo "Connected successfully";
 
             $today = date("Y-m-d H:i:s");
-            $start_date = date("Y-m-d H:i:s", strtotime("-1 days"));
+            $start_date = date("Y-m-d H:i:s", strtotime("-4 hours"));
             
             //temp
 
