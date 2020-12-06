@@ -87,18 +87,10 @@ var config =
   },
   options: {
     responsive: true,
-    title: {
-      display: true,
-      text: 'Chart.js Time Point Data'
-    },
     scales: {
       xAxes: [{
         type: 'time',
         display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'Date'
-        },
         ticks: {
           major: {
             fontStyle: 'bold',
