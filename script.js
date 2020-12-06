@@ -76,7 +76,7 @@ humidityArray.sort( function(a,b) {
     addData(myChart1,d.toString(), {x:d,y:tempArray[shownTempArray].data});
   }
 
-  for(var i = shownHumidityArray; i < humidityArray.length; i++)
+  for(;shownHumidityArray < humidityArray.length; shownHumidityArray++)
   {
     var t = humidityArray[i].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
@@ -152,7 +152,7 @@ var config2 = {
   type: 'line',
   data: {
     datasets: [{
-      label: 'Greenhouse Temperature (F)',
+      label: 'Greenhouse Humidity (%)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
       fill: false,
