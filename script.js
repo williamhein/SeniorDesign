@@ -68,9 +68,6 @@ function newDate(days) {
 function newDateString(days) {
   return moment().add(days, 'd').format();
 }
-function randomScalingFactor() {
-  return Math.round(Samples.utils.rand(-100, 100));
-}
 
 var color = Chart.helpers.color;
 var config = 
@@ -84,16 +81,16 @@ var config =
       fill: false,
       data: [{
         x: newDateString(0),
-        y: randomScalingFactor()
+        y: 10
       }, {
         x: newDateString(2),
-        y: randomScalingFactor()
+        y: 10
       }, {
         x: newDateString(4),
-        y: randomScalingFactor()
+        y: 10
       }, {
         x: newDateString(5),
-        y: randomScalingFactor()
+        y: 10
       }],
     }, {
       label: 'Dataset with date object point data',
@@ -102,16 +99,16 @@ var config =
       fill: false,
       data: [{
         x: newDate(0),
-        y: randomScalingFactor()
+        y: 10
       }, {
         x: newDate(2),
-        y: randomScalingFactor()
+        y: 10
       }, {
         x: newDate(4),
-        y: randomScalingFactor()
+        y: 21
       }, {
         x: newDate(5),
-        y: randomScalingFactor()
+        y: 12
       }]
     }]
   },
