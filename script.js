@@ -17,6 +17,11 @@ function DataPoint(time,data)
 {
   this.time = time;
   this.data = data;
+
+  this.equals = function (d)
+  {
+    return this.data == d.data && this.time == d.time;
+  }
 }
 
 var tempArray = [];
@@ -308,15 +313,17 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < hinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = hinfo[i].split("!");
-            humidityArray.push(new DataPoint(rec[0],rec[1]));
-            //console.log(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1]);
+            if (!inArray(humidityArray,d))
+              humidityArray.push(d);
           }
           
           for (var i = 0; i < tinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = tinfo[i].split("!");
-            tempArray.push(new DataPoint(rec[0],rec[1]));
-            //console.log(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1]);
+            if (!inArray(tempArray,d))
+              tempArray.push(d);
           }
         }
         else if (table == "records_humidity")
@@ -325,8 +332,9 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
-            humidityArray.push(new DataPoint(rec[0],rec[1]));
-            //console.log(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1]);
+            if (!inArray(humidityArray,d))
+              humidityArray.push(d);
           }
         }
         else if (table == "records_temp")
@@ -335,8 +343,9 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
-            tempArray.push(new DataPoint(rec[0],rec[1]));
-            //console.log(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1]);
+            if (!inArray(tempArray,d))
+              tempArray.push(d);
           }
         }
         else if (table == "")
@@ -372,6 +381,15 @@ function twoDigits(d) {
 Date.prototype.toMysqlFormat = function() {
   return this.getFullYear() + "-" + twoDigits(1 + this.getMonth()) + "-" + twoDigits(this.getDate()) + " " + twoDigits(this.getHours()) + ":" + twoDigits(this.getMinutes()) + ":" + twoDigits(this.getSeconds());
 };
+
+function inArray(arr, elem)
+{
+  for (var i; i < arr.length; i++)
+  {
+    if (arr[i].equals(elem)) return true;
+  }
+  return false;
+}
 
 function arrayRotate(arr, reverse) {
   if (reverse) arr.unshift(arr.pop());
