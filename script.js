@@ -46,7 +46,7 @@ function updateData()
   {
     var t = tempArray[i].time.split(/[- :]/);
     var d = new Date(Date.UTC(t[0], t[1]-1, t[2], t[3], t[4], t[5]));
-    addData(myChart1,d.toLocaleDateString(), {x:d,y:tempArray[i].data});
+    addData(myChart1,d.toString(), {x:d,y:tempArray[i].data});
   }
 }
 
