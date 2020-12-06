@@ -10,7 +10,7 @@
             if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
             }
-            $conn->query("use garden_info");\
+            $conn->query("use garden_info");
 
             $end_date = $_GET["et"];
             $start_date = $_GET["st"];
