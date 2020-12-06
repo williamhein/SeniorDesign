@@ -83,8 +83,8 @@ humidityArray.sort( function(a,b) {
     addData(myChart2,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
   }
 
-  updateCurrentTempLabel(tempArray[shownTempArray-1]);
-  updateCurrentHumidityLabel(humidityArray[shownHumidityArray-1]);
+  updateCurrentTempLabel(tempArray[shownTempArray-1].data);
+  updateCurrentHumidityLabel(humidityArray[shownHumidityArray-1].data);
 }
 
 function addData(chart, label, data) {
