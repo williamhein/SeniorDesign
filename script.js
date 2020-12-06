@@ -80,7 +80,7 @@ var config =
       borderColor: "rgba(255, 99, 132, 0.2)",
       fill: false,
       data: [{
-        x: newDateString(0),
+        x: newDate(0),
         y: 10
       }],
     }]
