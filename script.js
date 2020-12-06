@@ -25,7 +25,7 @@ window.onload = function(){
   dropGraph2();
   dropGraph3();
   dropGraph4();
-  updateData();
+  //updateData();
 }
 
 function updateData() 
