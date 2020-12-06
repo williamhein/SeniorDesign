@@ -16,7 +16,6 @@ function DataPoint(time,data)
 var tempArray = [];
 var humidityArray = [];
 var moistureArray = [];
-var mosisdjfdiklArray = [];
 
 
 window.onload = function(){
@@ -29,6 +28,14 @@ window.onload = function(){
 
 function updateData() {
 
+}
+
+function removeData(chart) {
+  chart.data.labels.pop();
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.pop();
+  });
+  chart.update();
 }
 
 function dropGraph1() {
@@ -237,21 +244,21 @@ function retrieve(table,starttime,endtime) {
         if (table == "records_humidity")
         {
           humidityArray = [];
-          for (var i = 0; i < info.length; i++)
+          for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
             humidityArray.push(new DataPoint(rec[0],rec[1]));
-            console.log(rec[0],rec[1]);
+            //console.log(rec[0],rec[1]);
           }
         }
         else if (table == "records_temp")
         {
           tempArray = [];
-          for (var i = 0; i < info.length; i++)
+          for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
             tempArray.push(new DataPoint(rec[0],rec[1]));
-            console.log(rec[0],rec[1]);
+            //console.log(rec[0],rec[1]);
           }
         }
         else if (table == "")
