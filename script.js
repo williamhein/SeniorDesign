@@ -18,7 +18,7 @@ function DataPoint(time,data)
   this.time = time;
   this.data = data;
 
-  this.equals = function (d)
+  this.equalsD = function (d)
   {
     return this.data == d.data && this.time == d.time;
   }
@@ -386,7 +386,7 @@ function inArray(arr, elem)
 {
   for (var i; i < arr.length; i++)
   {
-    if (arr[i].equals(elem)) return true;
+    if (arr[i].equalsD(elem)) return true;
   }
   return false;
 }
