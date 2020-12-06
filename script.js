@@ -1,6 +1,6 @@
 var lastUpdate = "";
 var ajaxTimer;
-ajaxTimer = this.setInterval(retrieve, null, null, null, true, 5000);
+ajaxTimer = this.setInterval(retrieve, null, null, null, true, 1);
 
 var d = new Date();
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
