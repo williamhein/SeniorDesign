@@ -79,10 +79,7 @@ var config =
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
       fill: false,
-      data: [{
-        x: newDate(0),
-        y: 10
-      }],
+      data: [],
     }]
   },
   options: {
