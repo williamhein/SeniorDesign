@@ -1,4 +1,5 @@
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 Chart.defaults.global.defaultFontColor = 'black';
 Chart.defaults.global.defaultFontSize = 20;
 
@@ -26,8 +27,20 @@ window.onload = function(){
   updateData();
 }
 
-function updateData() {
+function updateData() 
+{
+  for(var i = 0; i < tempArray.length; i++)
+  {
+    addData(myChart1,null,{x:tempArray[i].time,y:tempArray[i].data});
+  }
+}
 
+function addData(chart, label, data) {
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.push(data);
+  });
+  chart.update();
 }
 
 function removeData(chart) {
@@ -40,35 +53,9 @@ function removeData(chart) {
 
 function dropGraph1() {
   var ctx1 = document.getElementById('myChart1');
-  var temps1 = [88, 78, 98, 100, 99, 88, 102];
   myChart1 = new Chart(ctx1, {
-  type: 'bar',
-  data: {
-      labels: days,
-      datasets: [{
-          label: 'Greenhouse Temperature (Fahrenheit)',
-          data: temps1,
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
-            ],
-            borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-            ],
-            borderWidth: 1
-      }]
-  },
+  type: 'line',
+  data: [],
   options: {
     legend: {
       onClick: null
