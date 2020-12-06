@@ -30,7 +30,18 @@ window.onload = function(){
 
 function updateData() 
 {
-  tempArray.sort((a,b)=>a.time-b.time);
+  tempArray.sort( function(a,b) {
+    var nameA = a.time.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.time.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) 
+    {
+      return -1;
+    }
+    if (nameA > nameB) 
+    {
+      return 1;
+    }
+  });
   for(var i = 0; i < tempArray.length; i++)
   {
     var t = tempArray[i].time.split(/[- :]/);
