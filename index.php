@@ -84,7 +84,7 @@
 
             $today = date("Y-m-d H:i:s");
             $start_date = date("Y-m-d H:i:s", strtotime("-4 hours"));
-            $start_date2 = date("Y-m-d H:i:s", strtotime("-2 days"));
+            $start_date2 = date("Y-m-d H:i:s", strtotime("-4 hours"));
             
             //temp
 
