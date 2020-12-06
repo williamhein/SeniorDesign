@@ -1,3 +1,4 @@
+var d = new Date();
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 Chart.defaults.global.defaultFontColor = 'black';
@@ -29,6 +30,11 @@ window.onload = function(){
 
 function updateData() 
 {
+  while (myChart1.data.labels[0] != getToday())
+  {
+    arrayRotate(myChart1.data.labels, false);
+  }
+
   for(var i = 0; i < tempArray.length; i++)
   {
     addData(myChart1,tempArray[i].time,tempArray[i].data);
@@ -51,18 +57,51 @@ function removeData(chart) {
   chart.update();
 }
 
+function getToday()
+{
+  return days[d.getDay()];  
+}
+
+
+
+
+
 function dropGraph1() {
   var ctx1 = document.getElementById('myChart1');
   myChart1 = new Chart(ctx1, {
-  type: 'line',
-  labels: [],
-  data: [],
-  options: {
-    legend: {
-      onClick: null
+    type: 'bar',
+    data: {
+        labels: [...days],
+        datasets: [{
+            label: 'Greenhouse Temperature (F)',
+            data: [-99,-99,-99,-99,-99,-99,-99],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function dropGraph2() {
@@ -72,7 +111,7 @@ function dropGraph2() {
   myChart2 = new Chart(ctx2, {
   type: 'bar',
   data: {
-      labels: days,
+      labels: [...days],
       datasets: [{
           label: 'Greenhouse Humidity (%)',
           data: temps2,
@@ -125,7 +164,7 @@ function dropGraph3() {
   myChart3 = new Chart(ctx3, {
   type: 'bar',
   data: {
-      labels: days,
+      labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
           data: temps3,
@@ -165,7 +204,7 @@ function dropGraph4() {
   myChart3 = new Chart(ctx3, {
   type: 'bar',
   data: {
-      labels: days,
+      labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
           data: temps3,
@@ -255,4 +294,10 @@ function retrieve(table,starttime,endtime) {
   };
   xmlhttp.open("GET", "retrieve.php?table=" + table + "&st=" + starttime + "&et=" + endtime, true);
   xmlhttp.send();
+}
+
+function arrayRotate(arr, reverse) {
+  if (reverse) arr.unshift(arr.pop());
+  else arr.push(arr.shift());
+  return arr;
 }

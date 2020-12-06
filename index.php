@@ -101,14 +101,14 @@
                         $max = strtotime($row["time"]);
                         $max_key = $row["data"];
                     }
-                    echo $row["time"] . $row["data"] . "<br>";
+                    //echo $row["time"] . $row["data"] . "<br>";
                 }
                 echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
                 
             } 
             else 
             {
-                echo "0 results";
+                //echo "0 results";
             }
 
             //humidity
@@ -128,14 +128,14 @@
                         $max = strtotime($row["time"]);
                         $max_key = $row["data"];
                     }
-                    echo $row["time"] . $row["data"] . "<br>";
+                    //echo $row["time"] . $row["data"] . "<br>";
                 }
                 echo '<script type="text/JavaScript">updateCurrentHumidityLabel("' . $max_key .'");</script>';
                 
             } 
             else 
             {
-                echo "0 results";
+                //echo "0 results";
             }
         ?>
 
