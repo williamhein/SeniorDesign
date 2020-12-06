@@ -21,9 +21,14 @@
             if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
             }
-            echo "Connected successfully";
             $conn->query("use garden_info");
-            $sql = "SELECT * FROM records_humidity";
+            echo "Connected successfully";
+
+            $today_date = getdate();
+            $today = $today_date["year"] . "-" .  $today_date["mon"] . "-" .  $today_date["mday"] . " " . $today_date["hours"] . ":" . $today_date["minutes"] . ":" . $today_date["seconds"]; 
+            echo $today;
+
+            $sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $today . "' AND '" .  $today . "'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
