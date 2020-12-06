@@ -354,8 +354,10 @@ function retrieve(table,starttime,endtime,auto = false) {
   {
     var ds = moment(new Date(lastUpdate)).add(5, 's').toDate();
     var de = Date.now();
-    console.log("retrieve.php?table=" + "all" + "&st=" + ds.toString() + "&et=" + de.toString());
-    xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + ds.toString() + "&et=" + de.toString(), true);
+    var dss = ds.toISOString().slice(0, 19).replace('T', ' ');
+    var des = de.toISOString().slice(0, 19).replace('T', ' ');
+    console.log("retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des);
+    xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des, true);
   }
   xmlhttp.send();
 }
