@@ -349,10 +349,10 @@ function retrieve(table,starttime,endtime,auto = false) {
   }
   else
   {
-    var ds = new Date(lastUpdate);
+    var ds = new Date((new Date(lastUpdate)).getTime() + 1000);
     var de = new Date(Date.now());
     var dss = ds.toMysqlFormat();
-    var des = de.toISOString().slice(0, 19).replace('T', ' ');
+    var des = de.toMysqlFormat();
     console.log("retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des);
     xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + dss + "&et=" + des, true);
     lastUpdate = des;
@@ -367,7 +367,7 @@ function twoDigits(d) {
 }
 
 Date.prototype.toMysqlFormat = function() {
-  return this.getUTCFullYear() + "-" + twoDigits(1 + this.getUTCMonth()) + "-" + twoDigits(this.getUTCDate()) + " " + twoDigits(this.getHours()) + ":" + twoDigits(this.getUTCMinutes()) + ":" + twoDigits(this.getUTCSeconds());
+  return this.getTime() + "-" + twoDigits(1 + this.getMonth()) + "-" + twoDigits(this.getDate()) + " " + twoDigits(this.getHours()) + ":" + twoDigits(this.getMinutes()) + ":" + twoDigits(this.getSeconds());
 };
 
 function arrayRotate(arr, reverse) {
