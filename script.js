@@ -76,8 +76,8 @@ var config =
   data: {
     datasets: [{
       label: 'Dataset with string point data',
-      backgroundColor: "rgba(255, 99, 132, 0.2)",
-      borderColor: "rgba(255, 99, 132, 0.2)",
+      backgroundColor: "rgba(255, 99, 132, 0.6)",
+      borderColor: "rgba(255, 99, 132, 0.8)",
       fill: false,
       data: [{
         x: newDate(0),
