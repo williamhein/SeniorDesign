@@ -67,7 +67,7 @@ var config =
   data: {
     datasets: [{
       label: 'Dataset with string point data',
-      backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
       borderColor: window.chartColors.red,
       fill: false,
       data: [{
@@ -85,7 +85,7 @@ var config =
       }],
     }, {
       label: 'Dataset with date object point data',
-      backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
       borderColor: window.chartColors.blue,
       fill: false,
       data: [{
