@@ -2,6 +2,13 @@ var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'S
 Chart.defaults.global.defaultFontColor = 'black';
 Chart.defaults.global.defaultFontSize = 20;
 
+var myChart1;
+var myChart2;
+var myChart3;
+var myChart4;
+
+
+
 window.onload = function(){
   dropGraph1();
   dropGraph2();
@@ -17,7 +24,7 @@ function updateData() {
 function dropGraph1() {
   var ctx1 = document.getElementById('myChart1');
   var temps1 = [88, 78, 98, 100, 99, 88, 102];
-  var myChart1 = new Chart(ctx1, {
+  myChart1 = new Chart(ctx1, {
   type: 'bar',
   data: {
       labels: days,
@@ -55,10 +62,9 @@ function dropGraph1() {
 
 function dropGraph2() {
 
-
   var ctx2 = document.getElementById('myChart2');
   var temps2 = [60, 55, 66, 77, 56, 57, 78];
-  var myChart2 = new Chart(ctx2, {
+  myChart2 = new Chart(ctx2, {
   type: 'bar',
   data: {
       labels: days,
@@ -111,7 +117,7 @@ function dropGraph3() {
 
   var ctx3 = document.getElementById('myChart3');
   var temps3 = [60, 55, 66, 77, 56, 57, 78];
-  var myChart3 = new Chart(ctx3, {
+  myChart3 = new Chart(ctx3, {
   type: 'bar',
   data: {
       labels: days,
@@ -151,7 +157,7 @@ function dropGraph4() {
 
   var ctx3 = document.getElementById('myChart4');
   var temps3 = [65, 50, 62, 73, 52, 50, 71];
-  var myChart3 = new Chart(ctx3, {
+  myChart3 = new Chart(ctx3, {
   type: 'bar',
   data: {
       labels: days,
