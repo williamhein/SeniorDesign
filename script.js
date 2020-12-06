@@ -20,7 +20,9 @@ function DataPoint(time,data)
 }
 
 var tempArray = [];
+var shownTempArray = 0;
 var humidityArray = [];
+var shownHumidityArray = 0;
 var moistureArray = [];
 
 
@@ -61,17 +63,15 @@ humidityArray.sort( function(a,b) {
     }
   });
 
-  myChart1.data.dataset[0].data = [];
-  myChart2.data.dataset[0].data = [];
 
-  for(var i = 0; i < tempArray.length; i++)
+  for(; shownTempArray < tempArray.length; shownTempArray++)
   {
-    var t = tempArray[i].time.split(/[- :]/);
+    var t = tempArray[shownTempArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-    addData(myChart1,d.toString(), {x:d,y:tempArray[i].data});
+    addData(myChart1,d.toString(), {x:d,y:tempArray[shownTempArray].data});
   }
 
-  for(var i = 0; i < humidityArray.length; i++)
+  for(var i = shownHumidityArray; i < humidityArray.length; i++)
   {
     var t = humidityArray[i].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
