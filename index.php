@@ -22,6 +22,17 @@
             die("Connection failed: " . $conn->connect_error);
             }
             echo "Connected successfully";
+            $sql = "SELECT time, data FROM records_humidity";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo $row["time"] . $row["data"] . "<br>";
+            }
+            } else {
+            echo "0 results";
+            }
         ?>
 
             <center>
