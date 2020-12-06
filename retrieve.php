@@ -15,27 +15,83 @@
             $end_date = $_GET["et"];
             $start_date = $_GET["st"];
 
-            $sql = "SELECT * FROM " . $_GET["table"] ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
-            $result = $conn->query($sql);
+            if ($_GET["table"] == "all")
+            {
+                $sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
+                $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) 
-            {
-                // output data of each row
-                $max = strtotime("1900-1-1 12:00:00");
-                $max_key = "";
-                while($row = $result->fetch_assoc()) 
+                if ($result->num_rows > 0) 
                 {
-                    if (strtotime($row["time"])>$max)
+                    // output data of each row
+                    $max = strtotime("1900-1-1 12:00:00");
+                    $max_key = "";
+                    while($row = $result->fetch_assoc()) 
                     {
-                        $max = strtotime($row["time"]);
-                        $max_key = $row["data"];
+                        if (strtotime($row["time"])>$max)
+                        {
+                            $max = strtotime($row["time"]);
+                            $max_key = $row["data"];
+                        }
+                        echo $row["time"] ."!". $row["data"] . ";";
                     }
-                    echo $row["time"] ."!". $row["data"] . ";";
+                    
+                } 
+                else 
+                {
+                    echo "0 results";
                 }
-                
-            } 
-            else 
+
+                echo "&";
+
+                $sql = "SELECT * FROM records_temp WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) 
+                {
+                    // output data of each row
+                    $max = strtotime("1900-1-1 12:00:00");
+                    $max_key = "";
+                    while($row = $result->fetch_assoc()) 
+                    {
+                        if (strtotime($row["time"])>$max)
+                        {
+                            $max = strtotime($row["time"]);
+                            $max_key = $row["data"];
+                        }
+                        echo $row["time"] ."!". $row["data"] . ";";
+                    }
+                    
+                } 
+                else 
+                {
+                    echo "0 results";
+                }
+            }
+            else
             {
-                echo "0 results";
+
+                $sql = "SELECT * FROM " . $_GET["table"] ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) 
+                {
+                    // output data of each row
+                    $max = strtotime("1900-1-1 12:00:00");
+                    $max_key = "";
+                    while($row = $result->fetch_assoc()) 
+                    {
+                        if (strtotime($row["time"])>$max)
+                        {
+                            $max = strtotime($row["time"]);
+                            $max_key = $row["data"];
+                        }
+                        echo $row["time"] ."!". $row["data"] . ";";
+                    }
+                    
+                } 
+                else 
+                {
+                    echo "0 results";
+                }
             }
 ?>

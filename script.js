@@ -1,3 +1,6 @@
+var lastUpdate = "";
+var ajaxTimer;
+
 var d = new Date();
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -26,6 +29,7 @@ window.onload = function(){
   dropGraph3();
   dropGraph4();
   //updateData();
+  this.ajaxTimer = this.setInterval(retrieve, null, null, null, true, 5000)
 }
 
 function updateData() 
@@ -42,11 +46,32 @@ function updateData()
       return 1;
     }
   });
+
+humidityArray.sort( function(a,b) {
+    var nameA = a.time.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.time.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) 
+    {
+      return -1;
+    }
+    if (nameA > nameB) 
+    {
+      return 1;
+    }
+  });
+
   for(var i = 0; i < tempArray.length; i++)
   {
     var t = tempArray[i].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
     addData(myChart1,d.toString(), {x:d,y:tempArray[i].data});
+  }
+
+  for(var i = 0; i < humidityArray.length; i++)
+  {
+    var t = humidityArray[i].time.split(/[- :]/);
+    var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+    addData(myChart1,d.toString(), {x:d,y:humidityArray[i].data});
   }
 }
 
@@ -81,7 +106,7 @@ function newDateString(days) {
 }
 
 var color = Chart.helpers.color;
-var config = 
+var config1 = 
 {
   type: 'line',
   data: {
@@ -114,64 +139,20 @@ var config =
   }
 };
 
+var config2 = {...config1};
 
 function dropGraph1() {
   var ctx1 = document.getElementById('myChart1').getContext("2d");
-  myChart1 = new Chart(ctx1, config);
+  myChart1 = new Chart(ctx1, config1);
 }
 
 function dropGraph2() {
-
   var ctx2 = document.getElementById('myChart2');
-  var temps2 = [60, 55, 66, 77, 56, 57, 78];
-  myChart2 = new Chart(ctx2, {
-  type: 'bar',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Greenhouse Humidity (%)',
-          data: temps2,
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
-            ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
-    }
-  }
-  })
+  myChart2 = new Chart(ctx2, config2);
 }
 
 var temp = document.getElementById('myChart1').value;
 var humidity = document.getElementById('myChart1').value;
-
-var t = 85;
-var h = 50;
-
-object.onload = function(){
-    temp.innerHTML += t + "&#730;";
-    humidity.innerHTML += h + "%";
-};
-
-
 
 function dropGraph3() {
 
@@ -279,13 +260,36 @@ function updateCurrentHumidityLabel(humidity) {
   document.getElementById("humidity_current_label").innerHTML = humidity;
 }
 
-function retrieve(table,starttime,endtime) {
+function retrieve(table,starttime,endtime,auto = false) {
+  
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        var info = this.responseText.split(";"); //put info into variables
-        if (table == "records_humidity")
+        if (auto || table == "all")
         {
+          var info = this.responseText.split("&");
+          var hinfo = info.split(";")[0];
+          var tinfo = info.split(";")[1];
+
+          humidityArray = [];
+          for (var i = 0; i < hinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          {
+            var rec = hinfo[i].split("!");
+            humidityArray.push(new DataPoint(rec[0],rec[1]));
+            //console.log(rec[0],rec[1]);
+          }
+          
+          tempArray = [];
+          for (var i = 0; i < tinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          {
+            var rec = tinfo[i].split("!");
+            tempArray.push(new DataPoint(rec[0],rec[1]));
+            //console.log(rec[0],rec[1]);
+          }
+        }
+        else if (table == "records_humidity")
+        {
+          var info = this.responseText.split(";");
           humidityArray = [];
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
@@ -296,6 +300,7 @@ function retrieve(table,starttime,endtime) {
         }
         else if (table == "records_temp")
         {
+          var info = this.responseText.split(";");
           tempArray = [];
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
@@ -310,7 +315,17 @@ function retrieve(table,starttime,endtime) {
         updateData();
       }
   };
-  xmlhttp.open("GET", "retrieve.php?table=" + table + "&st=" + starttime + "&et=" + endtime, true);
+  if (!auto)
+  { 
+    lastUpdate = endtime;
+    xmlhttp.open("GET", "retrieve.php?table=" + table + "&st=" + starttime + "&et=" + endtime, true);
+  }
+  else
+  {
+    var ds = moment(new Date(lastUpdate)).add(5, 's').toDate();
+    var de = Date.now();
+    xmlhttp.open("GET", "retrieve.php?table=" + "all" + "&st=" + starttime + "&et=" + endtime, true);
+  }
   xmlhttp.send();
 }
 
