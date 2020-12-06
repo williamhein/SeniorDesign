@@ -65,10 +65,13 @@ function getToday()
 function newDate(days) {
   return moment().add(days, 'd').toDate();
 }
-
 function newDateString(days) {
   return moment().add(days, 'd').format();
 }
+function randomScalingFactor() {
+  return Math.round(Samples.utils.rand(-100, 100));
+}
+
 var color = Chart.helpers.color;
 var config = 
 {
