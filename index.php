@@ -22,6 +22,7 @@
             die("Connection failed: " . $conn->connect_error);
             }
             echo "Connected successfully";
+            $conn->query("use garden_info");
             $sql = "SELECT * FROM records_humidity";
             $result = $conn->query($sql);
 
