@@ -78,9 +78,9 @@ humidityArray.sort( function(a,b) {
 
   for(;shownHumidityArray < humidityArray.length; shownHumidityArray++)
   {
-    var t = humidityArray[i].time.split(/[- :]/);
+    var t = humidityArray[shownHumidityArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-    addData(myChart2,d.toString(), {x:d,y:humidityArray[i].data});
+    addData(myChart2,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
   }
 }
 
