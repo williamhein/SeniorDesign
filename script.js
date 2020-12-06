@@ -7,6 +7,16 @@ var myChart2;
 var myChart3;
 var myChart4;
 
+function DataPoint(time,data)
+{
+  this.time = time;
+  this.data = data;
+}
+
+var tempArray = [];
+var humidityArray = [];
+var moistureArray = [];
+var mosisdjfdiklArray = [];
 
 
 window.onload = function(){
@@ -217,4 +227,37 @@ function updateCurrentTempLabel(temp) {
 
 function updateCurrentHumidityLabel(humidity) {
   document.getElementById("humidity_current_label").innerHTML = humidity;
+}
+
+function retrieve(table,starttime,endtime) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var info = this.responseText.split(";"); //put info into variables
+        if (table == "records_humidity")
+        {
+          humidityArray = [];
+          for (var i = 0; i < info.length; i++)
+          {
+            var rec = info[i].split("!");
+            humidityArray.push(new DataPoint(rec[0],rec[1]));
+            console.log(rec[0],rec[1]);
+          }
+        }
+        else if (table == "records_temp")
+        {
+          tempArray = [];
+          for (var i = 0; i < info.length; i++)
+          {
+            var rec = info[i].split("!");
+            tempArray.push(new DataPoint(rec[0],rec[1]));
+            console.log(rec[0],rec[1]);
+          }
+        }
+        else if (table == "")
+        {}
+      }
+  };
+  xmlhttp.open("GET", "retrieve.php?table=" + table + "&st=" + starttime + "&et=" + endtime, true);
+  xmlhttp.send();
 }
