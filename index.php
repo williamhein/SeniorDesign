@@ -100,7 +100,7 @@
                     if (strtotime($row["time"])>$max)
                     {
                         $max = strtotime($row["time"]);
-                        $max_key = $row["data"]
+                        $max_key = $row["data"];
                     }
                     echo $row["time"] . $row["data"] . "<br>";
                 }
