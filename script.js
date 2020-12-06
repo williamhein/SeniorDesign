@@ -1,6 +1,6 @@
 var lastUpdate = "";
 var ajaxTimer;
-ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 1000);
+ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
 
 var d = new Date();
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -302,7 +302,6 @@ function retrieve(table,starttime,endtime,auto = false) {
           var hinfo = info[0].split(";");
           var tinfo = info[1].split(";");
 
-          humidityArray = [];
           for (var i = 0; i < hinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = hinfo[i].split("!");
@@ -310,7 +309,6 @@ function retrieve(table,starttime,endtime,auto = false) {
             //console.log(rec[0],rec[1]);
           }
           
-          tempArray = [];
           for (var i = 0; i < tinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = tinfo[i].split("!");
@@ -321,7 +319,6 @@ function retrieve(table,starttime,endtime,auto = false) {
         else if (table == "records_humidity")
         {
           var info = this.responseText.split(";");
-          humidityArray = [];
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
@@ -332,7 +329,6 @@ function retrieve(table,starttime,endtime,auto = false) {
         else if (table == "records_temp")
         {
           var info = this.responseText.split(";");
-          tempArray = [];
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
