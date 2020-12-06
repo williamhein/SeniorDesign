@@ -31,7 +31,7 @@ function updateData()
 {
   for(var i = 0; i < tempArray.length; i++)
   {
-    addData(myChart1,null,{x:tempArray[i].time,y:tempArray[i].data});
+    addData(myChart1,tempArray[i].time,tempArray[i].data);
   }
 }
 
@@ -55,6 +55,7 @@ function dropGraph1() {
   var ctx1 = document.getElementById('myChart1');
   myChart1 = new Chart(ctx1, {
   type: 'line',
+  labels: [],
   data: [],
   options: {
     legend: {
