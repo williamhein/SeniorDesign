@@ -214,3 +214,7 @@ function toggle1() {
 function updateCurrentTempLabel(temp) {
   document.getElementById("temp_current_label").innerHTML = temp;
 }
+
+function updateCurrentHumidityLabel(humidity) {
+  document.getElementById("humidity_current_label").innerHTML = humidity;
+}

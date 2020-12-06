@@ -21,7 +21,7 @@
             <div>
                 <button onclick="dropGraph2()" id="outer">
                     <img alt="water droplet graphic to represent humidity" id="hum" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSItODggMCA1MTIgNTEyIiB3aWR0aD0iNTEycHQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJtMTY3LjU0Njg3NSA1MDJjODcuMDExNzE5IDAgMTU3LjU0Njg3NS03MC41MzUxNTYgMTU3LjU0Njg3NS0xNTcuNTQ2ODc1IDAtMjYuNzk2ODc1LTYuNjk5MjE5LTUyLjAyNzM0NC0xOC41LTc0LjEyMTA5NGguMDA3ODEybC0xMzkuMDU0Njg3LTI2MC4zMzIwMzEtMTM5LjA1ODU5NCAyNjAuMzMyMDMxaC4wMTU2MjVjLTExLjgwNDY4NyAyMi4wOTM3NS0xOC41MDM5MDYgNDcuMzI0MjE5LTE4LjUwMzkwNiA3NC4xMjEwOTQgMCA4Ny4wMTE3MTkgNzAuNTM1MTU2IDE1Ny41NDY4NzUgMTU3LjU0Njg3NSAxNTcuNTQ2ODc1em0wIDAiIGZpbGw9IiM2N2U0ZGMiLz48cGF0aCBkPSJtMTE0LjEyMTA5NCAyNjAuMjMwNDY5YzE3LjAyMzQzNyAwIDMwLjgyMDMxMiAxMy43OTY4NzUgMzAuODIwMzEyIDMwLjgyMDMxMiAwIDE3LjAyMzQzOC0xMy43OTY4NzUgMzAuODI0MjE5LTMwLjgyMDMxMiAzMC44MjQyMTktMTcuMDIzNDM4IDAtMzAuODIwMzEzLTEzLjgwMDc4MS0zMC44MjAzMTMtMzAuODI0MjE5IDAtMTcuMDIzNDM3IDEzLjc5Njg3NS0zMC44MjAzMTIgMzAuODIwMzEzLTMwLjgyMDMxMnptMTA2Ljg1MTU2MiAxMDIuNDg0Mzc1YzE3LjAyMzQzOCAwIDMwLjgyMDMxMyAxMy44MDA3ODEgMzAuODIwMzEzIDMwLjgyMDMxMiAwIDE3LjAyMzQzOC0xMy43OTY4NzUgMzAuODI0MjE5LTMwLjgyMDMxMyAzMC44MjQyMTktMTcuMDIzNDM3IDAtMzAuODI0MjE4LTEzLjgwMDc4MS0zMC44MjQyMTgtMzAuODI0MjE5IDAtMTcuMDE5NTMxIDEzLjgwMDc4MS0zMC44MjAzMTIgMzAuODI0MjE4LTMwLjgyMDMxMnptMCAwIiBmaWxsPSIjZDlmOWY2Ii8+PHBhdGggZD0ibTMxNS42MjUgMjY2LjAyMzQzOGMtLjA2MjUtLjEzNjcxOS0uMTMyODEyLS4yNjk1MzItLjIwMzEyNS0uNDAyMzQ0bC0xMzkuMDU0Njg3LTI2MC4zMzIwMzJjLTEuNzM4MjgyLTMuMjU3ODEyLTUuMTMyODEzLTUuMjg5MDYyLTguODIwMzEzLTUuMjg5MDYyLTMuNjkxNDA2IDAtNy4wODIwMzEgMi4wMzEyNS04LjgyMDMxMyA1LjI4OTA2MmwtNjguNzMwNDY4IDEyOC42Njc5NjljLTIuNjAxNTYzIDQuODcxMDk0LS43NjE3MTkgMTAuOTMzNTk0IDQuMTA5Mzc1IDEzLjUzMTI1IDQuODc1IDIuNjA1NDY5IDEwLjkyOTY4Ny43NjU2MjUgMTMuNTMxMjUtNC4xMDU0NjlsNTkuOTEwMTU2LTExMi4xNTYyNSAxMzAuMDI3MzQ0IDI0My40Mjk2ODhjLjA2NjQwNi4xMjg5MDYuMTI4OTA2LjI1NzgxMi4xOTkyMTkuMzg2NzE5IDExLjMzMjAzMSAyMS4yMTQ4NDMgMTcuMzIwMzEyIDQ1LjIxNDg0MyAxNy4zMjAzMTIgNjkuNDEwMTU2IDAgODEuMzU5Mzc1LTY2LjE5MTQwNiAxNDcuNTQ2ODc1LTE0Ny41NDY4NzUgMTQ3LjU0Njg3NS04MS4zNTkzNzUgMC0xNDcuNTQ2ODc1LTY2LjE4NzUtMTQ3LjU0Njg3NS0xNDcuNTQ2ODc1IDAtMjQuMTk1MzEzIDUuOTg4MjgxLTQ4LjE5OTIxOSAxNy4zMjAzMTItNjkuNDEwMTU2LjA3NDIxOS0uMTMyODEzLjE0MDYyNi0uMjY5NTMxLjIwNzAzMi0uNDAyMzQ0bDMyLjQxNDA2Mi02MC42ODM1OTRjMi42MDE1NjMtNC44NzEwOTMuNzYxNzE5LTEwLjkyOTY4Ny00LjEwOTM3NS0xMy41MzEyNS00Ljg3MTA5My0yLjYwMTU2Mi0xMC45Mjk2ODctLjc2MTcxOS0xMy41MzEyNSA0LjEwOTM3NWwtMzIuNjI4OTA2IDYxLjA4NTkzOGMtLjA3NDIxOS4xMzY3MTgtLjE0ODQzNy4yNzczNDQtLjIxMDkzNy40MTc5NjgtMTIuNzM0Mzc2IDIzLjk5NjA5NC0xOS40NjA5MzggNTEuMTAxNTYzLTE5LjQ2MDkzOCA3OC40MTQwNjMgMCA5Mi4zODY3MTkgNzUuMTYwMTU2IDE2Ny41NDY4NzUgMTY3LjU0Njg3NSAxNjcuNTQ2ODc1czE2Ny41NDY4NzUtNzUuMTYwMTU2IDE2Ny41NDY4NzUtMTY3LjU0Njg3NWMwLTI3LjMyMDMxMy02LjczMDQ2OS01NC40Mjk2ODctMTkuNDY4NzUtNzguNDI5Njg3em0wIDAiLz48cGF0aCBkPSJtMjEzLjM3ODkwNiAyNjIuOTEwMTU2Yy00Ljc4NTE1Ni0yLjc2MTcxOC0xMC44OTg0MzctMS4xMjEwOTQtMTMuNjYwMTU2IDMuNjYwMTU2bC04MS42NjQwNjIgMTQxLjQ0NTMxM2MtMi43NjE3MTkgNC43ODUxNTYtMS4xMjEwOTQgMTAuODk4NDM3IDMuNjYwMTU2IDEzLjY2MDE1NiAxLjU3NDIxOC45MTAxNTcgMy4yOTI5NjggMS4zNDM3NSA0Ljk5MjE4NyAxLjM0Mzc1IDMuNDUzMTI1IDAgNi44MTY0MDctMS43OTI5NjkgOC42Njc5NjktNS4wMDM5MDZsODEuNjY0MDYyLTE0MS40NDUzMTNjMi43NjE3MTktNC43ODEyNSAxLjEyMTA5NC0xMC44OTg0MzctMy42NjAxNTYtMTMuNjYwMTU2em0wIDAiLz48cGF0aCBkPSJtMTE0LjEyMTA5NCAyNTAuMjMwNDY5Yy0yMi41MDc4MTMgMC00MC44MjAzMTMgMTguMzEyNS00MC44MjAzMTMgNDAuODIwMzEyIDAgMjIuNTExNzE5IDE4LjMxMjUgNDAuODI0MjE5IDQwLjgyMDMxMyA0MC44MjQyMTkgMjIuNTA3ODEyIDAgNDAuODIwMzEyLTE4LjMxMjUgNDAuODIwMzEyLTQwLjgyNDIxOSAwLTIyLjUwNzgxMi0xOC4zMTI1LTQwLjgyMDMxMi00MC44MjAzMTItNDAuODIwMzEyem0wIDYxLjY0NDUzMWMtMTEuNDgwNDY5IDAtMjAuODIwMzEzLTkuMzM5ODQ0LTIwLjgyMDMxMy0yMC44MjAzMTIgMC0xMS40ODQzNzYgOS4zMzk4NDQtMjAuODI0MjE5IDIwLjgyMDMxMy0yMC44MjQyMTkgMTEuNDgwNDY4IDAgMjAuODIwMzEyIDkuMzM5ODQzIDIwLjgyMDMxMiAyMC44MjQyMTkgMCAxMS40ODA0NjgtOS4zMzk4NDQgMjAuODIwMzEyLTIwLjgyMDMxMiAyMC44MjAzMTJ6bTAgMCIvPjxwYXRoIGQ9Im0xODAuMTQ4NDM4IDM5My41MzUxNTZjMCAyMi41MTE3MTkgMTguMzE2NDA2IDQwLjgyNDIxOSA0MC44MjQyMTggNDAuODI0MjE5IDIyLjUwNzgxMyAwIDQwLjgyMDMxMy0xOC4zMTI1IDQwLjgyMDMxMy00MC44MjQyMTkgMC0yMi41MDc4MTItMTguMzEyNS00MC44MjAzMTItNDAuODIwMzEzLTQwLjgyMDMxMi0yMi41MDc4MTIgMC00MC44MjQyMTggMTguMzEyNS00MC44MjQyMTggNDAuODIwMzEyem00MC44MjQyMTgtMjAuODIwMzEyYzExLjQ4MDQ2OSAwIDIwLjgyMDMxMyA5LjMzOTg0NCAyMC44MjAzMTMgMjAuODIwMzEyIDAgMTEuNDg0Mzc1LTkuMzM5ODQ0IDIwLjgyNDIxOS0yMC44MjAzMTMgMjAuODI0MjE5LTExLjQ4MDQ2OCAwLTIwLjgyNDIxOC05LjMzOTg0NC0yMC44MjQyMTgtMjAuODI0MjE5IDAtMTEuNDgwNDY4IDkuMzM5ODQzLTIwLjgyMDMxMiAyMC44MjQyMTgtMjAuODIwMzEyem0wIDAiLz48cGF0aCBkPSJtNzkuOTY4NzUgMTgzLjk1NzAzMWM1LjUwNzgxMiAwIDEwLTQuNDkyMTg3IDEwLTEwIDAtNS41MDc4MTItNC40OTIxODgtMTAtMTAtMTBzLTEwIDQuNDkyMTg4LTEwIDEwYzAgNS41MDc4MTMgNC40OTIxODggMTAgMTAgMTB6bTAgMCIvPjwvZz48L3N2Zz4=" />
-                    Humidity: 34%
+                    Humidity: <span id = "temp_current_label">84</span>%
                 </button>
                 <div id="graph2"><canvas id="myChart2" width="800" height="400" role="img" aria-label="Bar Chart showing temperature for each day of the current week"></canvas></div>
             </div>
@@ -83,11 +83,10 @@
 
             $today = date("Y-m-d H:i:s");
             $start_date = date("Y-m-d H:i:s", strtotime("-7 days"));
-            //$today_date = getdate();
-            //$today = $today_date["year"] . "-" .  $today_date["mon"] . "-" .  $today_date["mday"] . " " . $today_date["hours"] . ":" . $today_date["minutes"] . ":" . $today_date["seconds"]; 
-            //echo $today;
-            //echo $start_date;
-            $sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
+            
+            //temp
+
+            $sql = "SELECT * FROM records_temp WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) 
@@ -105,6 +104,33 @@
                     echo $row["time"] . $row["data"] . "<br>";
                 }
                 echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
+                
+            } 
+            else 
+            {
+                echo "0 results";
+            }
+
+            //humidity
+
+            $sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) 
+            {
+                // output data of each row
+                $max = strtotime("1900-1-1 12:00:00");
+                $max_key = "";
+                while($row = $result->fetch_assoc()) 
+                {
+                    if (strtotime($row["time"])>$max)
+                    {
+                        $max = strtotime($row["time"]);
+                        $max_key = $row["data"];
+                    }
+                    echo $row["time"] . $row["data"] . "<br>";
+                }
+                echo '<script type="text/JavaScript">updateCurrentHumidityLabel("' . $max_key .'");</script>';
                 
             } 
             else 
