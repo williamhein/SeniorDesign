@@ -90,6 +90,7 @@ var config =
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
       fill: false,
+      lineTension: 0.1,
       data: [],
     }]
   },
