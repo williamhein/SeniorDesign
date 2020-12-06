@@ -70,7 +70,7 @@
                     Row 1's Moisture: 77%
                 </button>
                 <p id="title">Average Moisture: 65%</p>
-                <div id="graph3"><canvas id="myChart3" width="800" height="400"></canvas></div>
+                <div id="graph3" style="display: inline"><canvas id="myChart3" width="800" height="400"></canvas></div>
             </div>
             <div>
                 <button onclick="dropGraph3()" id="plants">
