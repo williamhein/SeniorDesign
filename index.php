@@ -22,7 +22,7 @@
             die("Connection failed: " . $conn->connect_error);
             }
             echo "Connected successfully";
-            $sql = "SELECT time, data FROM records_humidity";
+            $sql = "SELECT * FROM records_humidity";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
