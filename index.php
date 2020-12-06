@@ -2,6 +2,7 @@
 <html lang="en">
    <meta charset="UTF-8">
    <title>Smart Garden</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
    <link rel="stylesheet" href="styles.css">
    <div class="container" id="blur">
         <div class="content">
