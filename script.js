@@ -1,3 +1,4 @@
+//handles the 4 second pulls from database
 var lastUpdate = "";
 var ajaxTimer;
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
@@ -12,7 +13,7 @@ var myChart1;
 var myChart2;
 var myChart3;
 var myChart4;
-
+//file structure for data retrieved from database to make it easier to sort
 function DataPoint(time,data)
 {
   this.time = time;
@@ -23,7 +24,7 @@ function DataPoint(time,data)
     return this.data == d.data && this.time == d.time;
   }
 }
-
+//holds data points retrieved
 var tempArray = [];
 var shownTempArray = 0;
 var humidityArray = [];
@@ -42,6 +43,7 @@ window.onload = function(){
 
 function updateData() 
 {
+  //sort arrays by time (based on strings)
   tempArray.sort( function(a,b) {
     var nameA = a.time.toUpperCase(); // ignore upper and lowercase
     var nameB = b.time.toUpperCase(); // ignore upper and lowercase
@@ -55,7 +57,7 @@ function updateData()
     }
   });
 
-humidityArray.sort( function(a,b) {
+  humidityArray.sort( function(a,b) {
     var nameA = a.time.toUpperCase(); // ignore upper and lowercase
     var nameB = b.time.toUpperCase(); // ignore upper and lowercase
     if (nameA < nameB) 
@@ -68,7 +70,7 @@ humidityArray.sort( function(a,b) {
     }
   });
 
-
+  //for each type of data, cycle through their array for all data points that have not be shown yet and add them to the respective chart
   for(; shownTempArray < tempArray.length; shownTempArray++)
   {
     var t = tempArray[shownTempArray].time.split(/[- :]/);
@@ -88,7 +90,7 @@ humidityArray.sort( function(a,b) {
     updateCurrentHumidityLabel(humidityArray[shownHumidityArray-1].data);
   }
 }
-
+//easily pushes data point onto a chart and forces an update
 function addData(chart, label, data) {
   //chart.data.labels.push(label);
   chart.data.datasets.forEach((dataset) => {
@@ -96,7 +98,7 @@ function addData(chart, label, data) {
   });
   chart.update();
 }
-
+//removes data from chart
 function removeData(chart) {
   //chart.data.labels.pop();
   chart.data.datasets.forEach((dataset) => {
@@ -104,21 +106,21 @@ function removeData(chart) {
   });
   chart.update();
 }
-
+//helper function to return string day of week
 function getToday()
 {
   return days[d.getDay()];  
 }
-
-
-
-function newDate(days) {
+//various functions to help with dates
+function newDate(days) 
+{
   return moment().add(days, 'd').toDate();
 }
-function newDateString(days) {
+function newDateString(days) 
+{
   return moment().add(days, 'd').format();
 }
-
+//setup a default config temperature
 var color = Chart.helpers.color;
 var config1 = 
 {
@@ -152,7 +154,7 @@ var config1 =
     }
   }
 };
-
+//setup a default config for humidity
 var config2 = {
   type: 'line',
   data: {
@@ -295,7 +297,7 @@ function toggle1() {
   var popup = document.getElementById('savePopup');
   popup.classList.toggle('active');
 }
-
+//function to update label for temp and humidity
 function updateCurrentTempLabel(temp) {
   document.getElementById("temp_current_label").innerHTML = temp;
 }
@@ -303,12 +305,16 @@ function updateCurrentTempLabel(temp) {
 function updateCurrentHumidityLabel(humidity) {
   document.getElementById("humidity_current_label").innerHTML = humidity;
 }
-
+//AJAX function call for retrieve info based on the given table and time, selecting all we retrieve all table information
 function retrieve(table,starttime,endtime,auto = false) {
   
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
+    //this portion contains all of the various splitting and storing of retrieved response text 
       if (this.readyState == 4 && this.status == 200) {
+        //this condition is different from the others, since it retrieves all table information, an initial split must take place
+        //to separate tables
+        //tables are delimited by "&", data points are delmited by ";", and temp/humidity are delimited by "!"
         if (auto || table == "all")
         {
           var info = this.responseText.split("&");
@@ -330,6 +336,11 @@ function retrieve(table,starttime,endtime,auto = false) {
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
+
+          /*
+            I will have to add loops for other data points when we get them set up
+          */
+
         }
         else if (table == "records_humidity")
         {
@@ -359,6 +370,7 @@ function retrieve(table,starttime,endtime,auto = false) {
         updateData();
       }
   };
+  //updates the last time info was retrieved, so duplicates aren't created
   if (!auto)
   { 
     lastUpdate = endtime;
