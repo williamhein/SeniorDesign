@@ -131,7 +131,8 @@ var config1 =
       fill: false,
       lineTension: 0.1,
       data: [],
-    }]
+      fontSize: 17
+    }],
   },
   options: {
     responsive: true,
@@ -140,14 +141,18 @@ var config1 =
         type: 'time',
         display: true,
         ticks: {
+          fontSize: 17,
           major: {
             fontStyle: 'bold',
-            fontColor: '#FF0000'
+            fontColor: '#FF0000',
           }
         }
       }],
       yAxes: [{
         display: true,
+        ticks: {
+          fontSize: 17
+        }
       }]
     }
   }
@@ -172,14 +177,18 @@ var config2 = {
         type: 'time',
         display: true,
         ticks: {
+          fontSize: 17,
           major: {
             fontStyle: 'bold',
-            fontColor: '#FF0000'
+            fontColor: '#FF0000',
           }
         }
       }],
       yAxes: [{
         display: true,
+        ticks: {
+          fontSize: 17
+        }
       }]
     }
   }

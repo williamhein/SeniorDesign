@@ -16,7 +16,7 @@ h1 {
     font-family: 'Quicksand', sans-serif, Arial;
     font-weight: bold;
     color: white;
-    font-size: 100px;
+    font-size: 60px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
@@ -48,7 +48,7 @@ a {
     background-color: rgb(121, 204, 231);
     color: white;
     height: 100px;
-    width: 600px;
+    width: 400px;
     margin: 20px;
     border: none;
     border-radius: 15px;
@@ -64,6 +64,7 @@ a {
 #container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #plants {
