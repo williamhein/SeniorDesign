@@ -101,9 +101,8 @@
                     if (strtotime($row["time"])>$max)
                     {
                         $max = strtotime($row["time"]);
-                        $max_key = $row["data"];
+                        $max_key = $row["temp"];
                     }
-                    //echo $row["time"] . $row["data"] . "<br>";
                 }
                 echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
                 
@@ -128,9 +127,8 @@
                     if (strtotime($row["time"])>$max)
                     {
                         $max = strtotime($row["time"]);
-                        $max_key = $row["data"];
+                        $max_key = $row["humidity"];
                     }
-                    //echo $row["time"] . $row["data"] . "<br>";
                 }
                 echo '<script type="text/JavaScript">updateCurrentHumidityLabel("' . $max_key .'");</script>';
                 
