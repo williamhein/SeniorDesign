@@ -2,6 +2,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "Br@mbl3"; //ignore the fact that this is plain text
+                                    //when we make users, we need to make a read only users for explicity this code
 
             // Create connection
             $conn = new mysqli($servername, $username, $password);
@@ -30,9 +31,9 @@
                         if (strtotime($row["time"])>$max)
                         {
                             $max = strtotime($row["time"]);
-                            $max_key = $row["data"];
+                            $max_key = $row["humidity"];
                         }
-                        echo $row["time"] ."!". $row["data"] . ";";
+                        echo $row["time"] ."!". $row["humidity"] ."!". $row["row_id"] . ";";
                     }
                     
                 } 
@@ -56,9 +57,9 @@
                         if (strtotime($row["time"])>$max)
                         {
                             $max = strtotime($row["time"]);
-                            $max_key = $row["data"];
+                            $max_key = $row["temp"];
                         }
-                        echo $row["time"] ."!". $row["data"] . ";";
+                        echo $row["time"] ."!". $row["temp"] ."!". $row["row_id"] . ";";
                     }
                     
                 } 
@@ -83,9 +84,11 @@
                         if (strtotime($row["time"])>$max)
                         {
                             $max = strtotime($row["time"]);
-                            $max_key = $row["data"];
+                            $max_key = $row["data"]; //<--
                         }
-                        echo $row["time"] ."!". $row["data"] . ";";
+
+                        // the way Mireya set this row name, I can't use it generally anymore, so I will have to ask her about that
+                        echo $row["time"] ."!". $row["data"] ."!". $row["row_id"] . ";"; //<--
                     }
                     
                 } 

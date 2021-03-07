@@ -119,6 +119,26 @@
 	            {
 	                //echo "0 results";
 	            }
+            if ($result->num_rows > 0) 
+            {
+                // output data of each row
+                $max = strtotime("1900-1-1 12:00:00");
+                $max_key = "";
+                while($row = $result->fetch_assoc()) 
+                {
+                    if (strtotime($row["time"])>$max)
+                    {
+                        $max = strtotime($row["time"]);
+                        $max_key = $row["temp"];
+                    }
+                }
+                echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
+                
+            } 
+            else 
+            {
+                //echo "0 results";
+            }
 
 	            //humidity
 
@@ -150,6 +170,31 @@
 	            echo '<script type="text/JavaScript">retrieve("records_humidity","' . $start_date2 .'","'. $today .'");</script>';
 	            //echo '<script type="text/JavaScript">updateData();</script>';
 	        ?>
+
+            if ($result->num_rows > 0) 
+            {
+                // output data of each row
+                $max = strtotime("1900-1-1 12:00:00");
+                $max_key = "";
+                while($row = $result->fetch_assoc()) 
+                {
+                    if (strtotime($row["time"])>$max)
+                    {
+                        $max = strtotime($row["time"]);
+                        $max_key = $row["humidity"];
+                    }
+                }
+                echo '<script type="text/JavaScript">updateCurrentHumidityLabel("' . $max_key .'");</script>';
+                
+            } 
+            else 
+            {
+                //echo "0 results";
+            }
+            echo '<script type="text/JavaScript">retrieve("records_temp","' . $start_date .'","'. $today .'");</script>';
+            echo '<script type="text/JavaScript">retrieve("records_humidity","' . $start_date2 .'","'. $today .'");</script>';
+            //echo '<script type="text/JavaScript">updateData();</script>';
+        ?>
 
         </body>
 </html>
