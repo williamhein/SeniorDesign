@@ -122,8 +122,7 @@ function newDateString(days)
 }
 //setup a default config temperature
 var color = Chart.helpers.color;
-var config1 = 
-{
+var config1 = {
   type: 'line',
   data: {
     datasets: [{
@@ -156,6 +155,9 @@ var config1 =
           fontSize: 17
         }
       }]
+    },
+    legend: {
+      onClick: null
     }
   }
 };
@@ -192,16 +194,19 @@ var config2 = {
           fontSize: 17
         }
       }]
+    },
+    legend: {
+      onClick: null
     }
   }
 };
 
-function dropGraph1() {
+function Graph1() {
   var ctx1 = document.getElementById('myChart1').getContext("2d");
   myChart1 = new Chart(ctx1, config1);
 }
 
-function dropGraph2() {
+function Graph2() {
   var ctx2 = document.getElementById('myChart2');
   myChart2 = new Chart(ctx2, config2);
 }
@@ -209,8 +214,7 @@ function dropGraph2() {
 var temp = document.getElementById('myChart1').value;
 var humidity = document.getElementById('myChart1').value;
 
-function dropGraph3() {
-
+function Graph3() {
   var ctx3 = document.getElementById('myChart3');
   var temps3 = [60, 55, 66, 77, 56, 57, 78];
   myChart3 = new Chart(ctx3, {
@@ -249,8 +253,7 @@ function dropGraph3() {
   })
 }
 
-function dropGraph4() {
-
+function Graph4() {
   var ctx3 = document.getElementById('myChart4');
   var temps3 = [65, 50, 62, 73, 52, 50, 71];
   myChart3 = new Chart(ctx3, {
