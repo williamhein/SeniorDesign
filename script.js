@@ -4,8 +4,10 @@ var ajaxTimer;
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
 
 var d = new Date();
+//settings the weekdays for the y axis of the moisture graphs
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+//setting default chart characteristics
 Chart.defaults.global.defaultFontColor = 'black';
 Chart.defaults.global.defaultFontSize = 20;
 
@@ -33,10 +35,10 @@ var moistureArray = [];
 
 
 window.onload = function(){
-  dropGraph1();
-  dropGraph2();
-  dropGraph3();
-  dropGraph4();
+  graph1();
+  graph2();
+  graph3();
+  graph4();
   //updateData();
   
 }
@@ -157,7 +159,7 @@ var config1 = {
       }]
     },
     legend: {
-      onClick: null
+      onClick: null  //prevents the crossing out of the legend upon click
     }
   }
 };
@@ -201,12 +203,13 @@ var config2 = {
   }
 };
 
-function Graph1() {
+function graph1() { //gets the previously entered chart info as well as the 
+                    //corresponding canvas area in the index file
   var ctx1 = document.getElementById('myChart1').getContext("2d");
-  myChart1 = new Chart(ctx1, config1);
+  myChart1 = new Chart(ctx1, config1); //populates the canvas area with the chart formed by the data
 }
 
-function Graph2() {
+function graph2() {
   var ctx2 = document.getElementById('myChart2');
   myChart2 = new Chart(ctx2, config2);
 }
@@ -214,7 +217,7 @@ function Graph2() {
 var temp = document.getElementById('myChart1').value;
 var humidity = document.getElementById('myChart1').value;
 
-function Graph3() {
+function graph3() {
   var ctx3 = document.getElementById('myChart3');
   var temps3 = [60, 55, 66, 77, 56, 57, 78];
   myChart3 = new Chart(ctx3, {
@@ -253,7 +256,7 @@ function Graph3() {
   })
 }
 
-function Graph4() {
+function graph4() {
   var ctx3 = document.getElementById('myChart4');
   var temps3 = [65, 50, 62, 73, 52, 50, 71];
   myChart3 = new Chart(ctx3, {
@@ -296,9 +299,9 @@ function water() {
 
 }
 
-function toggle() {
+function toggle() { //toggle for the admin mode
   var blur = document.getElementById('blur');
-  blur.classList.toggle('active');  
+  blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
   var popup = document.getElementById('popup');
   popup.classList.toggle('active');
 }
@@ -309,6 +312,7 @@ function toggle1() {
   var popup = document.getElementById('savePopup');
   popup.classList.toggle('active');
 }
+
 //function to update label for temp and humidity
 function updateCurrentTempLabel(temp) {
   document.getElementById("temp_current_label").innerHTML = temp;

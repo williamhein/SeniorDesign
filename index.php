@@ -11,9 +11,9 @@
         </header>   
         <body>
             <center>
-                <div id="container">
+                <div id="container"> <!-- using a container to allow the charts to display differently depending on screen size -->
                     <div>
-	                	<div onload="Graph1()" id="outer">  <!-- loads the humidity function from the js file -->
+	                	<div onload="graph1()" id="outer">  <!-- loads the humidity function from the js file -->
 		                    <img alt="temperature graphic to represent temperature" id="temp" src="temperature.png" />
 		                    Temperature: <span id = "temp_current_label">84</span>&#730F
 	                	</div>
@@ -23,7 +23,7 @@
 		                </div>
 	            	</div>
 		            <div>
-		                <a onload="Graph2()" id="outer"> <!-- loads the temperature function from the js file -->
+		                <a onload="graph2()" id="outer"> <!-- loads the temperature function from the js file -->
 		                <img alt="water droplet graphic to represent humidity" id="hum" src="humidity.png" />
 		                    Humidity: <span id = "humidity_current_label">84</span>%
 		                </a>
@@ -35,7 +35,7 @@
 	            
 
 	                <div>
-	                	<a onload="Graph3()" id="plants"> <!-- loads the first moisture function from the js file -->
+	                	<a onload="graph3()" id="plants"> <!-- loads the first moisture function from the js file -->
 	                    <img alt="plant graphic" src="plant.png" />
 	                    Row 1's Moisture: 77%
 	                	</a>
@@ -46,7 +46,7 @@
 	                	</div>
 	            	</div>
 		            <div>
-		                <a onload="Graph4()" id="plants"> <!-- loads the second moisture function from the js file -->
+		                <a onload="graph4()" id="plants"> <!-- loads the second moisture function from the js file -->
 		                <img alt="plant graphic" src="plant.png" />
 		                    Row 2's Moisture: 88%
 		                </a>
@@ -58,22 +58,24 @@
 		            </div>
 		        </div>
         	</center>
-
+      </div>
+    </div>
             <input onclick="toggle()" type="image" id="gear" src="gear.png"/> <!-- when clicked, the popup to enter admin mode pops up -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script> <!-- code for using chart. -->
             <script src="script.js"></script>
             <div> <!-- crediting the icon creator -->
             	Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
             </div>
-
+  
             <div id="popup">
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
                 <center><p style="font-size:20px">You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST" action="admin.php"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-                    <input type="password"><input type="submit" id="go" value="Go"/></center>
+                    <input type="password"><input type="submit" id="go" value="Go"/>
                 </form>
+            	</center>
             </div>
-
+  
 	        <?php
 	            $servername = "localhost";
 	            $username = "root";
