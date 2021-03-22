@@ -13,13 +13,13 @@
             <center>
                 <div id="container"> <!-- using a container to allow the charts to display differently depending on screen size -->
                     <div>
-	                	<div onload="graph1()" id="outer">  <!-- loads the humidity function from the js file -->
+	                	<a onload="graph1()" id="outer">  <!-- loads the humidity function from the js file -->
 		                    <img alt="temperature graphic to represent temperature" id="temp" src="temperature.png" />
 		                    Temperature: <span id = "temp_current_label">84</span>&#730F
-	                	</div>
+	                	</a>
 		                <div id="graph1">
 		                	<!-- displays the humidity graph -->
-		                	<canvas id="myChart1" width="350" height="175" role="img" font-size="10px" aria-label="Bar Chart showing temperature for the day"></canvas>
+		                	<canvas id="myChart1" role="img" font-size="10px" aria-label="Bar Chart showing temperature for the day"></canvas>
 		                </div>
 	            	</div>
 		            <div>
@@ -29,11 +29,10 @@
 		                </a>
 		                <div id="graph2">
 		                	<!-- displays the temperature graph -->
-		                	<canvas id="myChart2" width="350" height="175" role="img" aria-label="Bar Chart showing humidity for the day"></canvas>
+		                	<canvas id="myChart2" role="img" aria-label="Bar Chart showing humidity for the day"></canvas>
 		                </div>
 		            </div>
 	            
-
 	                <div>
 	                	<a onload="graph3()" id="plants"> <!-- loads the first moisture function from the js file -->
 	                    <img alt="plant graphic" src="plant.png" />
@@ -42,7 +41,7 @@
 	                	<p id="title">Average Moisture: 65%</p>
 	                	<div id="graph3">
 	                		<!-- displays the first moisture graph -->
-	                		<canvas id="myChart3" width="800" height="400"></canvas>
+	                		<canvas id="myChart3"></canvas>
 	                	</div>
 	            	</div>
 		            <div>
@@ -53,7 +52,7 @@
 		                <p id="title">Average Moisture: 80%</p>
 		                <div id="graph4">
 		                	<!-- displays the second moisture graph -->
-		                	<canvas id="myChart4" width="800" height="400"></canvas>
+		                	<canvas id="myChart4"></canvas>
 		                </div>
 		            </div>
 		        </div>
@@ -69,7 +68,7 @@
   
             <div id="popup">
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
-                <center><p style="font-size:20px">You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
+                <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST" action="admin.php"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
                     <input type="password"><input type="submit" id="go" value="Go"/>
                 </form>

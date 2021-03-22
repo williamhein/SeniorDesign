@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 html {
-    font-family: 'Quicksand', sans-serif, Arial;
     height: 100%;
 }
 
@@ -11,94 +10,65 @@ header, footer {
     padding: none;
 }
 
+#container {
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-around;
+}
+
 h1 {
     text-align: center;
     font-family: 'Quicksand', sans-serif, Arial;
     font-weight: bold;
     color: white;
-    font-size: 60px;
+    font-size: 70px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
-#outerStats {
+p {
     text-align: center;
     font-family: 'Quicksand', sans-serif, Arial;
-    font-size: 30px;
-    font-weight: bolder;
-}
-
-#outer > img {
-    width: 50px;
-    height: 50px;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-#title {
-    text-align: center;
+    color: black;
+    font-size: 20px;
 }
 
 #outer {
-    text-align: center;
     font-family: 'Quicksand', sans-serif, Arial;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bolder;
     background-color: rgb(121, 204, 231);
     color: white;
-    height: 100px;
-    width: 400px;
+    height: 75px;
+    width: 80%;
     margin: 20px;
     border: none;
     border-radius: 15px;
     display: inline-block;
-    vertical-align: middle;
-}
-
-#container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
 }
 
 #plants {
-    text-align: center;
     font-family: 'Quicksand', sans-serif, Arial;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bolder;
     background-color:rgb(255, 178, 106);
     color: white;
-    height: 100px;
-    width: 600px;
-    margin: 20px;
+    height: 75px;
+    width: 80%;
+    margin: 35px;
     border: none;
     border-radius: 15px;
     display: inline-block;
 }
 
-#plants > img {
+#plants > img, #outer > img {
     width: 50px;
     height: 50px;
-    align-items: center;
 }
 
-#grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    justify-content: space-evenly;
- }
- 
- #grid-container > div {
-    text-align: center;
-    padding: 20px;
- }
- 
- div > #plants:hover {
+div > #plants:hover {
     cursor: initial;
- }
+}
 
 footer {
     font-family: 'Quicksand', sans-serif, Arial;
@@ -107,11 +77,9 @@ footer {
 }
 
 canvas {
-    max-width: 600px;
-}
-
-#graph3 {
-    justify-content: center;
+    max-width: 80%;
+    position: relative;
+	margin: auto;
 }
 
 #title {
