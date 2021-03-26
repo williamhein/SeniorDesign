@@ -147,7 +147,7 @@ canvas {
     background-color: rgba(121, 204, 231, 0.79);
     color: white;
     height: 350px;
-    width: 800px;
+    width: 90%;
     margin-top: 20px;
     border: none;
     border-radius: 15px;
@@ -179,6 +179,10 @@ canvas {
     margin-top: 10px;
 }
 
+#water:hover, #go:hover, #back:hover {
+	cursor: pointer;
+}
+
 #back {
     width: 400px;
     justify-content: center;
@@ -189,4 +193,10 @@ canvas {
     font-weight: bolder;
     border-radius: 8px;
     margin-top: 10px;
+}
+
+#number {
+	cursor: default;
+	color: transparent;
+	text-shadow: 0 0 0 black;
 }

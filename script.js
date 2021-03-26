@@ -306,12 +306,8 @@ function toggle() { //toggle for the admin mode
   popup.classList.toggle('active');
 }
 
-function toggle1() {
-  var blur = document.getElementById('blur1');
-  blur.classList.toggle('active');  
-  var popup = document.getElementById('savePopup');
-  popup.classList.toggle('active');
-}
+
+
 
 //function to update label for temp and humidity
 function updateCurrentTempLabel(temp) {
