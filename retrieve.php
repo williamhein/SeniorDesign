@@ -36,10 +36,10 @@
                 echoInfo($_GET["table"]);
             }
 
-            function echoInfo(table)
+            function echoInfo($table)
             {
 
-                $sql = "SELECT * FROM " . table ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
+                $sql = "SELECT * FROM " . $table ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) 
@@ -52,10 +52,10 @@
                         if (strtotime($row["time"])>$max)
                         {
                             $max = strtotime($row["time"]);
-                            $max_key = $row[tableInfo[table]]; //<--
+                            $max_key = $row[$tableInfo[table]]; 
                         }
 
-                        echo $row["time"] ."!". $row[tableInfo[table]] ."!". $row["row_id"] . ";"; //<--
+                        echo $row["time"] ."!". $row[$tableInfo[table]] ."!". $row["row_id"] . ";"; 
                     }
                 } 
             }
