@@ -6,7 +6,7 @@
                             //when we make users, we need to make a read only users for explicity this code
 
     // Create connection
-    global $conn = new mysqli($servername, $username, $password);
+    $conn = new mysqli($servername, $username, $password);
 
     // Check connection
     if ($conn->connect_error) 
@@ -19,7 +19,7 @@
     $start_date = $_GET["st"];
 
     
-    global $tableInfo = [
+    $tableInfo = [
         "records_temp" => "temp",
         "records_humidity" => "humidity",
         "records_moisture" => "moisture",
@@ -28,6 +28,7 @@
 
     function echoInfo($table)
     {
+        global $conn, $tableInfo;
 
         $sql = "SELECT * FROM " . $table ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
         $result = $conn->query($sql);
