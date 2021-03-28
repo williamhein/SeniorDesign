@@ -306,9 +306,6 @@ function toggle() { //toggle for the admin mode
   popup.classList.toggle('active');
 }
 
-
-
-
 //function to update label for temp and humidity
 function updateCurrentTempLabel(temp) {
   document.getElementById("temp_current_label").innerHTML = temp;

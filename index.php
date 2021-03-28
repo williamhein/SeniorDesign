@@ -75,51 +75,47 @@
             	</center>
             </div>
   
-	        <?php
-	            $servername = "localhost";
-	            $username = "root";
-	            $password = "Br@mbl3"; //ignore the fact that this is plain text
+	     <?php
+			$servername = "localhost";
+			$username = "root";
+			$password = "Br@mbl3"; //ignore the fact that this is plain text
 
-	            // Create connection
-	            $conn = new mysqli($servername, $username, $password);
+			// Create connection
+			$conn = new mysqli($servername, $username, $password);
 
-	            // Check connection
-	            if ($conn->connect_error) {
-	            die("Connection failed: " . $conn->connect_error);
-	            }
-	            $conn->query("use garden_info");
-	            echo "Connected successfully";
+			// Check connection
+			if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+			}
+			$conn->query("use garden_info");
+			echo "Connected successfully";
 
-	            $today = date("Y-m-d H:i:s");
-	            $start_date = date("Y-m-d H:i:s", strtotime("-4 hours"));
-	            $start_date2 = date("Y-m-d H:i:s", strtotime("-4 hours"));
-	            
-	            //temp
+			$today = date("Y-m-d H:i:s");
+			$start_date = date("Y-m-d H:i:s", strtotime("-40000 hours"));
+			$start_date2 = date("Y-m-d H:i:s", strtotime("-40000 hours"));
+			
+			//temp
 
-	            $sql = "SELECT * FROM records_temp WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
-	            $result = $conn->query($sql);
+			$sql = "SELECT * FROM records_temp WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
+			$result = $conn->query($sql);
 
-	            if ($result->num_rows > 0) 
-	            {
-	                // output data of each row
-	                $max = strtotime("1900-1-1 12:00:00");
-	                $max_key = "";
-	                while($row = $result->fetch_assoc()) 
-	                {
-	                    if (strtotime($row["time"])>$max)
-	                    {
-	                        $max = strtotime($row["time"]);
-	                        $max_key = $row["data"];
-	                    }
-	                    //echo $row["time"] . $row["data"] . "<br>";
-	                }
-	                echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
-	                
-	            } 
-	            else 
-	            {
-	                //echo "0 results";
-	            }
+			if ($result->num_rows > 0) 
+			{
+				// output data of each row
+				$max = strtotime("1900-1-1 12:00:00");
+				$max_key = "";
+				while($row = $result->fetch_assoc()) 
+				{
+					if (strtotime($row["time"])>$max)
+					{
+						$max = strtotime($row["time"]);
+						$max_key = $row["temp"];
+					}
+				}
+				echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
+				
+			} 
+			/*
             if ($result->num_rows > 0) 
             {
                 // output data of each row
@@ -134,44 +130,39 @@
                     }
                 }
                 echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
-                
-            } 
-            else 
-            {
-                //echo "0 results";
-            }
+			}
+			*/
 
-	            //humidity
+			//humidity
 
-	            $sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
-	            $result = $conn->query($sql);
+			$sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
+			$result = $conn->query($sql);
 
-	            if ($result->num_rows > 0) 
-	            {
-	                // output data of each row
-	                $max = strtotime("1900-1-1 12:00:00");
-	                $max_key = "";
-	                while($row = $result->fetch_assoc()) 
-	                {
-	                    if (strtotime($row["time"])>$max)
-	                    {
-	                        $max = strtotime($row["time"]);
-	                        $max_key = $row["data"];
-	                    }
-	                    //echo $row["time"] . $row["data"] . "<br>";
-	                }
-	                echo '<script type="text/JavaScript">updateCurrentHumidityLabel("' . $max_key .'");</script>';
-	                
-	            } 
-	            else 
-	            {
-	                //echo "0 results";
-	            }
-	            echo '<script type="text/JavaScript">retrieve("records_temp","' . $start_date .'","'. $today .'");</script>';
-	            echo '<script type="text/JavaScript">retrieve("records_humidity","' . $start_date2 .'","'. $today .'");</script>';
-	            //echo '<script type="text/JavaScript">updateData();</script>';
-	        ?>
-
+			if ($result->num_rows > 0) 
+			{
+				// output data of each row
+				$max = strtotime("1900-1-1 12:00:00");
+				$max_key = "";
+				while($row = $result->fetch_assoc()) 
+				{
+					if (strtotime($row["time"])>$max)
+					{
+						$max = strtotime($row["time"]);
+						$max_key = $row["humidity"];
+					}
+				}
+				echo '<script type="text/JavaScript">updateCurrentHumidityLabel("' . $max_key .'");</script>';
+				
+			} 
+			else 
+			{
+				//echo "0 results";
+			}
+			echo '<script type="text/JavaScript">retrieve("records_temp","' . $start_date .'","'. $today .'");</script>';
+			echo '<script type="text/JavaScript">retrieve("records_humidity","' . $start_date2 .'","'. $today .'");</script>';
+			//echo '<script type="text/JavaScript">updateData();</script>';
+		
+			/*
             if ($result->num_rows > 0) 
             {
                 // output data of each row
@@ -194,7 +185,8 @@
             }
             echo '<script type="text/JavaScript">retrieve("records_temp","' . $start_date .'","'. $today .'");</script>';
             echo '<script type="text/JavaScript">retrieve("records_humidity","' . $start_date2 .'","'. $today .'");</script>';
-            //echo '<script type="text/JavaScript">updateData();</script>';
+			//echo '<script type="text/JavaScript">updateData();</script>';
+			*/
         ?>
 
         </body>
