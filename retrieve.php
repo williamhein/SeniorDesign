@@ -6,7 +6,7 @@
                             //when we make users, we need to make a read only users for explicity this code
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password);
+    global $conn = new mysqli($servername, $username, $password);
 
     // Check connection
     if ($conn->connect_error) 
@@ -19,7 +19,7 @@
     $start_date = $_GET["st"];
 
     
-    $tableInfo = [
+    global $tableInfo = [
         "records_temp" => "temp",
         "records_humidity" => "humidity",
         "records_moisture" => "moisture",
@@ -49,7 +49,7 @@
             }
         } 
     }
-    
+
     if ($_GET["table"] == "all")
     {
         foreach ($tableInfo as $key => $value) 
