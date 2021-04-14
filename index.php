@@ -12,66 +12,90 @@
         <body>
             <center>
                 <div id="container"> <!-- using a container to allow the charts to display differently depending on screen size -->
-                    <div>
-	                	<a onload="graph1()" id="outer">  <!-- loads the humidity function from the js file -->
-		                    <img alt="temperature graphic to represent temperature" id="temp" src="temperature.png" />
-		                    Temperature: <span id = "temp_current_label">84</span>&#730F
-	                	</a>
-		                <div id="graph1">
-		                	<!-- displays the humidity graph -->
-		                	<canvas id="myChart1" role="img" font-size="10px" aria-label="Bar Chart showing temperature for the day"></canvas>
-		                </div>
-	            	</div>
-		            <div>
-		                <a onload="graph2()" id="outer"> <!-- loads the temperature function from the js file -->
-		                <img alt="water droplet graphic to represent humidity" id="hum" src="humidity.png" />
-		                    Humidity: <span id = "humidity_current_label">84</span>%
-		                </a>
-		                <div id="graph2">
-		                	<!-- displays the temperature graph -->
-		                	<canvas id="myChart2" role="img" aria-label="Bar Chart showing humidity for the day"></canvas>
-		                </div>
-		            </div>
+                    <div id="container1">
+	                    <div id="item">
+		                	<a onload="graph1()" id="outer">  <!-- loads the humidity function from the js file -->
+			                    <img alt="temperature graphic to represent temperature" id="temp" src="temperature.png" />
+			                    <span id = "outer_text">Top Temperature: <span id = "top_temp_current_label">84</span>&#730F</span>
+		                	</a>
+			                <div id="graph1">
+			                	<!-- displays the humidity graph -->
+			                	<canvas id="myChart1" role="img" font-size="10px" aria-label="Bar Chart showing temperature for the day"></canvas>
+			                </div>
+			            </div>
+	                    <div id="item">
+			                <a onload="graph2()" id="outer"> <!-- loads the temperature function from the js file -->
+			                <img alt="temperature graphic to represent temperature" id="temp" src="temperature.png" />
+			                    <span id = "outer_text">Bottom Temperature: <span id = "bot_temp_current_label">84</span>&#730F</span>
+			                </a>
+			                <div id="graph2">
+			                	<!-- displays the temperature graph -->
+			                	<canvas id="myChart2" role="img" aria-label="Bar Chart showing humidity for the day"></canvas>
+			                </div>
+			            </div>
+			            <div id="item">
+			                <a onload="graph3()" id="outer"> <!-- loads the temperature function from the js file -->
+			                <img alt="water droplet graphic to represent humidity" id="hum" src="humidity.png" />
+			                    <span id = "outer_text">Top Humidity: <span id = top_humidity_current_label">84</span>%</span>
+			                </a>
+			                <div id="graph3">
+			                	<!-- displays the temperature graph -->
+			                	<canvas id="myChart3" role="img" aria-label="Bar Chart showing top humidity for the day"></canvas>
+			                </div>
+			            </div>
+	                    <div id="item">
+			                <a onload="graph4()" id="outer"> <!-- loads the temperature function from the js file -->
+			                <img alt="water droplet graphic to represent humidity" id="hum" src="humidity.png" />
+			                    <span id = "outer_text">Bottom Humidity: <span id = "bot_humidity_current_label">84</span>%</span>
+			                </a>
+			                <div id="graph4">
+			                	<!-- displays the temperature graph -->
+			                	<canvas id="myChart4" role="img" aria-label="Bar Chart showing humidity for the day"></canvas>
+			                </div>
+	                    </div>
+			        </div>
 	            
 	                <div>
-	                	<a onload="graph3()" id="plants"> <!-- loads the first moisture function from the js file -->
+	                	<a onload="graph5()" id="plants"> <!-- loads the first moisture function from the js file -->
 	                    <img alt="plant graphic" src="plant.png" />
-	                    Row 1's Moisture: 77%
+	                    <span id = "plants_text">Row 1's Moisture: <span id = "1moisture_current_label">77</span>%</span>
 	                	</a>
-	                	<p id="title">Average Moisture: 65%</p>
-	                	<div id="graph3">
+	                	<p id="title">Average Moisture: <span id = "1avg_current_label">65</span>%</p>
+	                	<div id="graph5">
 	                		<!-- displays the first moisture graph -->
-	                		<canvas id="myChart3"></canvas>
+	                		<canvas id="myChart5"></canvas>
 	                	</div>
 	            	</div>
 		            <div>
-		                <a onload="graph4()" id="plants"> <!-- loads the second moisture function from the js file -->
+		                <a onload="graph6()" id="plants"> <!-- loads the second moisture function from the js file -->
 		                <img alt="plant graphic" src="plant.png" />
-		                    Row 2's Moisture: 88%
+		                <span id = "plants_text">Row 2's Moisture: <span id = "2moisture_current_label">88</span>%</span>
 		                </a>
-		                <p id="title">Average Moisture: 80%</p>
-		                <div id="graph4">
+		                <p id="title">Average Moisture: <span id = "2avg_current_label">80</span>%</p>
+		                <div id="graph6">
 		                	<!-- displays the second moisture graph -->
-		                	<canvas id="myChart4"></canvas>
+		                	<canvas id="myChart6"></canvas>
 		                </div>
 		            </div>
 		        </div>
         	</center>
       </div>
+      <div style="font-family: 'Quicksand', sans-serif, Arial;"> <!-- crediting the icon creator -->
+      	Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
     </div>
             <input onclick="toggle()" type="image" id="gear" src="gear.png"/> <!-- when clicked, the popup to enter admin mode pops up -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script> <!-- code for using chart. -->
             <script src="script.js"></script>
-            <div> <!-- crediting the icon creator -->
-            	Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-            </div>
+
   
             <div id="popup">
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
                 <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST" action="admin.php"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-                    <input type="password"><input type="submit" id="go" value="Go"/>
-                </form>
+                    <input type="password" data-role="keypad" placeholder="Enter pin" data-length="3" data-position="bottom">
+<!--                     <input type="submit" id="go" value="Go"/>
+ -->                </form>
             	</center>
             </div>
   

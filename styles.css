@@ -35,12 +35,12 @@ p {
 
 #outer {
     font-family: 'Quicksand', sans-serif, Arial;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bolder;
     background-color: rgb(121, 204, 231);
     color: white;
-    height: 75px;
-    width: 80%;
+    height: 60px;
+    width: 90%;
     margin: 20px;
     border: none;
     border-radius: 15px;
@@ -61,9 +61,26 @@ p {
     display: inline-block;
 }
 
-#plants > img, #outer > img {
-    width: 50px;
-    height: 50px;
+#outer > img {
+    width: 30px;
+    height: 30px;
+    padding-top: 16px;
+}
+
+#outer_text {
+    bottom: 6px;
+    position: relative;
+}
+
+#plants > img {
+    width: 40px;
+    height: 40px;
+    padding-top: 16px;
+}
+
+#plants_text {
+    bottom: 6px;
+    position: relative;
 }
 
 div > #plants:hover {
@@ -199,4 +216,15 @@ canvas {
 	cursor: default;
 	color: transparent;
 	text-shadow: 0 0 0 black;
+}
+
+#container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#item {
+    width: 45%; 
 }

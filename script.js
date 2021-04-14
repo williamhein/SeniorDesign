@@ -15,6 +15,9 @@ var myChart1;
 var myChart2;
 var myChart3;
 var myChart4;
+var myChart5;
+var myChart6;
+
 //file structure for data retrieved from database to make it easier to sort
 function DataPoint(time,data)
 {
@@ -39,6 +42,8 @@ window.onload = function(){
   graph2();
   graph3();
   graph4();
+  graph5();
+  graph6();
   //updateData();
   
 }
@@ -92,6 +97,7 @@ function updateData()
     updateCurrentHumidityLabel(humidityArray[shownHumidityArray-1].data);
   }
 }
+
 //easily pushes data point onto a chart and forces an update
 function addData(chart, label, data) {
   //chart.data.labels.push(label);
@@ -100,6 +106,7 @@ function addData(chart, label, data) {
   });
   chart.update();
 }
+
 //removes data from chart
 function removeData(chart) {
   //chart.data.labels.pop();
@@ -108,27 +115,31 @@ function removeData(chart) {
   });
   chart.update();
 }
+
 //helper function to return string day of week
 function getToday()
 {
   return days[d.getDay()];  
 }
+
 //various functions to help with dates
 function newDate(days) 
 {
   return moment().add(days, 'd').toDate();
 }
+
 function newDateString(days) 
 {
   return moment().add(days, 'd').format();
 }
-//setup a default config temperature
+
+//setup a default config top temp
 var color = Chart.helpers.color;
 var config1 = {
   type: 'line',
   data: {
     datasets: [{
-      label: 'Greenhouse Temperature (F)',
+      label: 'Top Temperature (F)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
       fill: false,
@@ -163,12 +174,13 @@ var config1 = {
     }
   }
 };
-//setup a default config for humidity
+
+//setup a default config for bottom temp
 var config2 = {
   type: 'line',
   data: {
     datasets: [{
-      label: 'Greenhouse Humidity (%)',
+      label: 'Bottom Temperature (F)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
       fill: false,
@@ -203,6 +215,85 @@ var config2 = {
   }
 };
 
+//setup a default config for top humidity
+var config3 = {
+  type: 'line',
+  data: {
+    datasets: [{
+      label: 'Top Humidity (%)',
+      backgroundColor: "rgba(255, 99, 132, 0.6)",
+      borderColor: "rgba(255, 99, 132, 0.8)",
+      fill: false,
+      lineTension: 0.1,
+      data: [],
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      xAxes: [{
+        type: 'time',
+        display: true,
+        ticks: {
+          fontSize: 17,
+          major: {
+            fontStyle: 'bold',
+            fontColor: '#FF0000',
+          }
+        }
+      }],
+      yAxes: [{
+        display: true,
+        ticks: {
+          fontSize: 17
+        }
+      }]
+    },
+    legend: {
+      onClick: null
+    }
+  }
+};
+
+//setup a default config for bottom humidity
+var config4 = {
+  type: 'line',
+  data: {
+    datasets: [{
+      label: 'Bottom Humidity (%)',
+      backgroundColor: "rgba(255, 99, 132, 0.6)",
+      borderColor: "rgba(255, 99, 132, 0.8)",
+      fill: false,
+      lineTension: 0.1,
+      data: [],
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      xAxes: [{
+        type: 'time',
+        display: true,
+        ticks: {
+          fontSize: 17,
+          major: {
+            fontStyle: 'bold',
+            fontColor: '#FF0000',
+          }
+        }
+      }],
+      yAxes: [{
+        display: true,
+        ticks: {
+          fontSize: 17
+        }
+      }]
+    },
+    legend: {
+      onClick: null
+    }
+  }
+};
 function graph1() { //gets the previously entered chart info as well as the 
                     //corresponding canvas area in the index file
   var ctx1 = document.getElementById('myChart1').getContext("2d");
@@ -214,19 +305,29 @@ function graph2() {
   myChart2 = new Chart(ctx2, config2);
 }
 
+function graph3() {
+  var ctx3 = document.getElementById('myChart3');
+  myChart3 = new Chart(ctx3, config3);
+}
+
+function graph4() {
+  var ctx4 = document.getElementById('myChart4');
+  myChart4 = new Chart(ctx4, config4);
+}
+
 var temp = document.getElementById('myChart1').value;
 var humidity = document.getElementById('myChart1').value;
 
-function graph3() {
-  var ctx3 = document.getElementById('myChart3');
-  var temps3 = [60, 55, 66, 77, 56, 57, 78];
-  myChart3 = new Chart(ctx3, {
+function graph5() {
+  var ctx5 = document.getElementById('myChart5');
+  var temps5 = [60, 55, 66, 77, 56, 57, 78];
+  myChart5 = new Chart(ctx5, {
   type: 'bar',
   data: {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps3,
+          data: temps5,
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -256,16 +357,16 @@ function graph3() {
   })
 }
 
-function graph4() {
-  var ctx3 = document.getElementById('myChart4');
-  var temps3 = [65, 50, 62, 73, 52, 50, 71];
-  myChart3 = new Chart(ctx3, {
+function graph6() {
+  var ctx6 = document.getElementById('myChart6');
+  var temps6 = [65, 50, 62, 73, 52, 50, 71];
+  myChart6 = new Chart(ctx6, {
   type: 'bar',
   data: {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps3,
+          data: temps6,
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -306,14 +407,21 @@ function toggle() { //toggle for the admin mode
   popup.classList.toggle('active');
 }
 
-//function to update label for temp and humidity
+//function to update label for temps and humidities
 function updateCurrentTempLabel(temp) {
-  document.getElementById("temp_current_label").innerHTML = temp;
+  document.getElementById("top_temp_current_label").innerHTML = temp;
+}
+function updateCurrentTempLabel(temp) {
+  document.getElementById("bot_temp_current_label").innerHTML = temp;
 }
 
 function updateCurrentHumidityLabel(humidity) {
-  document.getElementById("humidity_current_label").innerHTML = humidity;
+  document.getElementById("top_humidity_current_label").innerHTML = humidity;
 }
+function updateCurrentHumidityLabel(humidity) {
+  document.getElementById("bot_humidity_current_label").innerHTML = humidity;
+}
+
 //AJAX function call for retrieve info based on the given table and time, selecting all we retrieve all table information
 function retrieve(table,starttime,endtime,auto = false) {
   
