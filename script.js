@@ -526,6 +526,7 @@ function retrieve(table,starttime,endtime,auto = false) {
   { 
     lastUpdate = endtime;
     xmlhttp.open("GET", "retrieve.php?table=" + table + "&st=" + starttime + "&et=" + endtime, true);
+    console.log("retrieve.php?table=" + table + "&st=" + starttime + "&et=" + endtime);
   }
   else
   {
