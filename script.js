@@ -107,7 +107,6 @@ function updateData()
     addData(myChart2,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
   }
 
-
   if (typeof tempArray[shownTempArray-1].data !== 'undefined' && typeof humidityArray[shownHumidityArray-1].data !== 'undefined')
   {
     updateCurrentTempLabel(tempArray[shownTempArray-1].data);

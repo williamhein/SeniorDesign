@@ -36,6 +36,7 @@
         global $conn, $tableInfo, $tableLocInfo;
 
         $sql = "SELECT * FROM " . $table ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
+        echo $sql;
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) 
