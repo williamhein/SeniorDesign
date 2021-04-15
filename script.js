@@ -101,11 +101,11 @@ function updateData()
       addData(myChart4,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
   }
 
-  for(;shownHumidityArray < humidityArray.length; shownHumidityArray++)
+  for(;shownMoistureArray < moistureArray.length; shownMoistureArray++)
   {
-    var t = humidityArray[shownHumidityArray].time.split(/[- :]/);
+    var t = moistureArray[shownMoistureArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-    addData(myChart2,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
+    addData(myChart5,d.toString(), {x:d,y:moistureArray[shownMoistureArray].data});
   }
 
   if (typeof tempArray[shownTempArray-1].data !== 'undefined' && typeof humidityArray[shownHumidityArray-1].data !== 'undefined')
@@ -489,7 +489,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = info[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
-            console.log(rec[2]);
+            //console.log(rec[2]);
             if (!inArray(humidityArray,d))
               humidityArray.push(d);
           }
@@ -501,7 +501,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = info[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
-            console.log(rec[2]);
+            //console.log(rec[2]);
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
