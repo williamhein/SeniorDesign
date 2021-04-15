@@ -44,11 +44,6 @@ window.onload = function(){
   graph5();
   graph6();
   //updateData();
-
-  //handles the 4 second pulls from database
-  var lastUpdate = "";
-  var ajaxTimer;
-  ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
   
 }
 
@@ -567,3 +562,11 @@ function arrayRotate(arr, reverse) {
   else arr.push(arr.shift());
   return arr;
 }
+
+
+//code that needs to be run as late as possible
+
+//handles the 4 second pulls from database
+var lastUpdate = "";
+var ajaxTimer;
+ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
