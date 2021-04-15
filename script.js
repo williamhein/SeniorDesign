@@ -84,7 +84,7 @@ function updateData()
   {
     var t = tempArray[shownTempArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-    console.log(tempArray[shownTempArray].location);
+    //console.log(tempArray[shownTempArray].location);
     if (tempArray[shownTempArray].location == "top")
       addData(myChart1,d.toString(), {x:d,y:tempArray[shownTempArray].data});
     else
@@ -468,7 +468,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = tinfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
-            console.log(rec[0]+rec[1]+rec[2]);
+            console.log(rec[0]);
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
