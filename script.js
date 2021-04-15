@@ -84,6 +84,7 @@ function updateData()
   {
     var t = tempArray[shownTempArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+    console.log(tempArray[shownTempArray].location);
     if (tempArray[shownTempArray].location == "top")
       addData(myChart1,d.toString(), {x:d,y:tempArray[shownTempArray].data});
     else
@@ -438,7 +439,7 @@ function updateCurrentHumidityLabel(humidity) {
   document.getElementById("bot_humidity_current_label").innerHTML = humidity;
 }
 
-//AJAX function call for retrieve info based on the given table and time, selecting all we retrieve all table information
+//AJAX function call for retrieve info based on the given table and time, selecting "all" will retrieve all table information
 function retrieve(table,starttime,endtime,auto = false) {
   
   var xmlhttp = new XMLHttpRequest();
