@@ -33,7 +33,7 @@
 
     function echoInfo($table)
     {
-        global $conn, $tableInfo, $tableLocInfo;
+        global $conn, $tableInfo, $tableLocInfo,$start_date,$end_date;
 
         $sql = "SELECT * FROM " . $table ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
         echo $sql;
