@@ -24,11 +24,16 @@
         "records_humidity" => "humidity",
         "records_moisture" => "moisture",
     ];
+    $tableLocInfo = [
+        "records_temp" => "temp_loc",
+        "records_humidity" => "humidity_loc",
+        "records_moisture" => "row_id",
+    ];
 
 
     function echoInfo($table)
     {
-        global $conn, $tableInfo;
+        global $conn, $tableInfo, $tableLocInfo;
 
         $sql = "SELECT * FROM " . $table ." WHERE time BETWEEN '" . $start_date . "' AND '" .  $end_date . "'";
         $result = $conn->query($sql);
@@ -46,7 +51,7 @@
                     $max_key = $row[$tableInfo[table]]; 
                 }
 
-                echo $row["time"] ."!". $row[$tableInfo[table]] ."!". $row["row_id"] . ";"; 
+                echo $row["time"] ."!". $row[$tableInfo[$table]] ."!". $row[$tableLocInfo[$table]] . ";"; 
             }
         } 
     }

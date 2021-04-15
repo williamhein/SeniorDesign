@@ -19,14 +19,15 @@ var myChart5;
 var myChart6;
 
 //file structure for data retrieved from database to make it easier to sort
-function DataPoint(time,data)
+function DataPoint(time,data,location)
 {
   this.time = time;
   this.data = data;
+  this.location = location;
 
   this.equalsD = function (d)
   {
-    return this.data == d.data && this.time == d.time;
+    return this.data == d.data && this.time == d.time && this.location == d.location;
   }
 }
 //holds data points retrieved
@@ -35,6 +36,7 @@ var shownTempArray = 0;
 var humidityArray = [];
 var shownHumidityArray = 0;
 var moistureArray = [];
+var shownMoistureArray = 0;
 
 
 window.onload = function(){
@@ -82,7 +84,20 @@ function updateData()
   {
     var t = tempArray[shownTempArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-    addData(myChart1,d.toString(), {x:d,y:tempArray[shownTempArray].data});
+    if (tempArray[shownTempArray].location == "top")
+      addData(myChart1,d.toString(), {x:d,y:tempArray[shownTempArray].data});
+    else
+      addData(myChart2,d.toString(), {x:d,y:tempArray[shownTempArray].data});
+  }
+
+  for(;shownHumidityArray < humidityArray.length; shownHumidityArray++)
+  {
+    var t = humidityArray[shownHumidityArray].time.split(/[- :]/);
+    var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+    if (humidityArray[shownHumidityArray].location == "top")
+      addData(myChart3,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
+    else
+      addData(myChart4,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
   }
 
   for(;shownHumidityArray < humidityArray.length; shownHumidityArray++)
@@ -91,6 +106,8 @@ function updateData()
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
     addData(myChart2,d.toString(), {x:d,y:humidityArray[shownHumidityArray].data});
   }
+
+
   if (typeof tempArray[shownTempArray-1].data !== 'undefined' && typeof humidityArray[shownHumidityArray-1].data !== 'undefined')
   {
     updateCurrentTempLabel(tempArray[shownTempArray-1].data);
@@ -437,11 +454,12 @@ function retrieve(table,starttime,endtime,auto = false) {
           var info = this.responseText.split("&");
           var hinfo = info[0].split(";");
           var tinfo = info[1].split(";");
+          var minfo = info[2].split(";");
 
           for (var i = 0; i < hinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = hinfo[i].split("!");
-            var d = new DataPoint(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1],rec[2]);
             if (!inArray(humidityArray,d))
               humidityArray.push(d);
           }
@@ -449,14 +467,18 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < tinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = tinfo[i].split("!");
-            var d = new DataPoint(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1],rec[2]);
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
 
-          /*
-            I will have to add loops for other data points when we get them set up
-          */
+          for (var i = 0; i < tinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          {
+            var rec = minfo[i].split("!");
+            var d = new DataPoint(rec[0],rec[1],rec[2]);
+            if (!inArray(tempArray,d))
+              moistureArray.push(d);
+          }
 
         }
         else if (table == "records_humidity")
@@ -465,7 +487,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
-            var d = new DataPoint(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1],rec[2]);
             if (!inArray(humidityArray,d))
               humidityArray.push(d);
           }
@@ -476,13 +498,22 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
-            var d = new DataPoint(rec[0],rec[1]);
+            var d = new DataPoint(rec[0],rec[1],[2]);
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
         }
-        else if (table == "")
-        {}
+        else if (table == "records_moisture")
+        {
+          var info = this.responseText.split(";");
+          for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          {
+            var rec = info[i].split("!");
+            var d = new DataPoint(rec[0],rec[1],[2]);
+            if (!inArray(tempArray,d))
+              moistureArray.push(d);
+          }
+        }
 
         updateData();
       }

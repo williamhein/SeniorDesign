@@ -115,8 +115,8 @@
 			echo "Connected successfully";
 
 			$today = date("Y-m-d H:i:s");
-			$start_date = date("Y-m-d H:i:s", strtotime("-5 months"));
-			$start_date2 = date("Y-m-d H:i:s", strtotime("-5 months"));
+			$start_date = date("Y-m-d H:i:s", strtotime("-1 month"));
+			$start_date2 = date("Y-m-d H:i:s", strtotime("-1 month"));
 			
 			//temp
 
