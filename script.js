@@ -1,7 +1,4 @@
-//handles the 4 second pulls from database
-var lastUpdate = "";
-var ajaxTimer;
-ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
+
 
 var d = new Date();
 //settings the weekdays for the y axis of the moisture graphs
@@ -47,6 +44,11 @@ window.onload = function(){
   graph5();
   graph6();
   //updateData();
+
+  //handles the 4 second pulls from database
+  var lastUpdate = "";
+  var ajaxTimer;
+  ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
   
 }
 
