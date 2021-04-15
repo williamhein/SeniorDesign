@@ -517,7 +517,7 @@ function retrieve(table,starttime,endtime,auto = false) {
               moistureArray.push(d);
           }
         }
-
+        console.log("got here!");
         updateData();
       }
   };
