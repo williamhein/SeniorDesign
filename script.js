@@ -569,4 +569,5 @@ function arrayRotate(arr, reverse) {
 //handles the 4 second pulls from database
 var lastUpdate = "";
 var ajaxTimer;
+retrieve(null, null, null, true);
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
