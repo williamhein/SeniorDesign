@@ -460,7 +460,6 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = hinfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
-            console.log(rec[0],rec[1],rec[2]);
             if (!inArray(humidityArray,d))
               humidityArray.push(d);
           }
@@ -469,6 +468,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = tinfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
+            console.log(rec[0]+rec[1]+rec[2]);
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
