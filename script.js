@@ -473,7 +473,7 @@ function retrieve(table,starttime,endtime,auto = false) {
               tempArray.push(d);
           }
 
-          for (var i = 0; i < tinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          for (var i = 0; i < minfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = minfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
@@ -489,6 +489,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = info[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
+            console.log(rec[0]);
             if (!inArray(humidityArray,d))
               humidityArray.push(d);
           }
@@ -499,7 +500,8 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
-            var d = new DataPoint(rec[0],rec[1],[2]);
+            var d = new DataPoint(rec[0],rec[1],rec[2]);
+            console.log(rec[0]);
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
@@ -510,8 +512,8 @@ function retrieve(table,starttime,endtime,auto = false) {
           for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
           {
             var rec = info[i].split("!");
-            var d = new DataPoint(rec[0],rec[1],[2]);
-            if (!inArray(tempArray,d))
+            var d = new DataPoint(rec[0],rec[1],rec[2]);
+            if (!inArray(moistureArray,d))
               moistureArray.push(d);
           }
         }
