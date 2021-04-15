@@ -20,13 +20,13 @@
 
     
     $tableInfo = [
-        "records_temp" => "temp",
         "records_humidity" => "humidity",
+        "records_temp" => "temp",
         "records_moisture" => "moisture",
     ];
     $tableLocInfo = [
-        "records_temp" => "temp_loc",
         "records_humidity" => "humidity_loc",
+        "records_temp" => "temp_loc",
         "records_moisture" => "row_id",
     ];
 
