@@ -113,8 +113,55 @@ function updateData()
 
   if (typeof tempArray[shownTempArray-1].data !== 'undefined' && typeof humidityArray[shownHumidityArray-1].data !== 'undefined')
   {
-    updateCurrentTempLabel(tempArray[shownTempArray-1].data);
-    updateCurrentHumidityLabel(humidityArray[shownHumidityArray-1].data);
+    var gotT = false;
+    var gotB = false;
+    var ctt = 60;
+    var ctb = 60;
+
+    var cht = 60;
+    var chb = 60;
+
+    for (var k = shownTempArray - 1; k >= 0; k--)
+    {
+      if (tempArray[k].location == "top" && !gotT)
+      {
+        ctt = tempArray[k].data;
+        gotT = true;
+      }
+      if (tempArray[k].location != "top" && !gotB)
+      {
+        ctb = tempArray[k].data;
+        gotB = true;
+      }
+      if (gotT && gotB)
+      {
+        break;
+      }
+    }
+
+    gotT = false;
+    gotB = false;
+
+    for (var k = shownHumidityArray - 1; k >= 0; k--)
+    {
+      if (humidityArray[k].location == "top" && !gotT)
+      {
+        cht = humidityArray[k].data;
+        gotT = true;
+      }
+      if (humidityArray[k].location != "top" && !gotB)
+      {
+        chb = humidityArray[k].data;
+        gotB = true;
+      }
+      if (gotT && gotB)
+      {
+        break;
+      }
+    }
+
+    updateCurrentTempLabel(ctt,ctb);
+    updateCurrentHumidityLabel(cht,chb);
   }
 }
 
@@ -428,18 +475,14 @@ function toggle() { //toggle for the admin mode
 }
 
 //function to update label for temps and humidities
-function updateCurrentTempLabel(temp) {
-  document.getElementById("top_temp_current_label").innerHTML = temp;
-}
-function updateCurrentTempLabel(temp) {
-  document.getElementById("bot_temp_current_label").innerHTML = temp;
+function updateCurrentTempLabel(tempT,tempB) {
+  document.getElementById("top_temp_current_label").innerHTML = tempT;
+  document.getElementById("bot_temp_current_label").innerHTML = tempB;
 }
 
-function updateCurrentHumidityLabel(humidity) {
-  document.getElementById("top_humidity_current_label").innerHTML = humidity;
-}
-function updateCurrentHumidityLabel(humidity) {
-  document.getElementById("bot_humidity_current_label").innerHTML = humidity;
+function updateCurrentHumidityLabel(humidityT,humidityB) {
+  document.getElementById("top_humidity_current_label").innerHTML = humidityT;
+  document.getElementById("bot_humidity_current_label").innerHTML = humidityB;
 }
 
 //AJAX function call for retrieve info based on the given table and time, selecting "all" will retrieve all table information
