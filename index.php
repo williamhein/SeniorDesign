@@ -66,6 +66,7 @@
 	                		<canvas id="myChart5"></canvas>
 	                	</div>
 	            	</div>
+					
 		            <div>
 		                <a onload="graph6()" id="plants"> <!-- loads the second moisture function from the js file -->
 		                <img alt="plant graphic" src="plant.png" />
