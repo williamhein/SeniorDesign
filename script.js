@@ -1,6 +1,8 @@
 
 
+
 var d = new Date();
+var lastUpdate = d.setDate(d.getDate() - 7).toMysqlFormat();
 //settings the weekdays for the y axis of the moisture graphs
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -567,9 +569,6 @@ function arrayRotate(arr, reverse) {
 //code that needs to be run as late as possible
 
 //handles the 4 second pulls from database
-var today = new Date();
-
-var lastUpdate = today.setDate(today.getDate() - 7).toMysqlFormat();
 var ajaxTimer;
 retrieve(null, null, null, true);
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
