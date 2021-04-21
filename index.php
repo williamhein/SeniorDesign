@@ -36,7 +36,7 @@
 			            <div id="item">
 			                <a onload="graph3()" id="outer"> <!-- loads the temperature function from the js file -->
 			                <img alt="water droplet graphic to represent humidity" id="hum" src="humidity.png" />
-			                    <span id = "outer_text">Top Humidity: <span id = top_humidity_current_label">84</span>%</span>
+			                    <span id = "outer_text">Top Humidity: <span id = "top_humidity_current_label">84</span>%</span>
 			                </a>
 			                <div id="graph3">
 			                	<!-- displays the temperature graph -->
