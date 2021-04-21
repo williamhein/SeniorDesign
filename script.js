@@ -476,11 +476,13 @@ function toggle() { //toggle for the admin mode
 
 //function to update label for temps and humidities
 function updateCurrentTempLabel(tempT,tempB) {
+  console.log(tempT,tempB);
   document.getElementById("top_temp_current_label").innerHTML = tempT;
   document.getElementById("bot_temp_current_label").innerHTML = tempB;
 }
 
 function updateCurrentHumidityLabel(humidityT,humidityB) {
+  console.log(humidityT,humidityB);
   document.getElementById("top_humidity_current_label").innerHTML = humidityT;
   document.getElementById("bot_humidity_current_label").innerHTML = humidityB;
 }
@@ -514,7 +516,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = tinfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
-            console.log(rec[0]);
+            //console.log(rec[0]);
             if (!inArray(tempArray,d))
               tempArray.push(d);
           }
@@ -563,7 +565,7 @@ function retrieve(table,starttime,endtime,auto = false) {
               moistureArray.push(d);
           }
         }
-        console.log("got here!");
+        //console.log("got here!");
         updateData();
       }
   };
