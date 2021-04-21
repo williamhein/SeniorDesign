@@ -4,7 +4,9 @@ Date.prototype.toMysqlFormat = function() {
   return this.getFullYear() + "-" + twoDigits(1 + this.getMonth()) + "-" + twoDigits(this.getDate()) + " " + twoDigits(this.getHours()) + ":" + twoDigits(this.getMinutes()) + ":" + twoDigits(this.getSeconds());
 };
 
-var lastUpdate = d.setDate(d.getDate() - 7).toMysqlFormat();
+d.setDate(d.getDate() - 7);
+var lastUpdate = d.toMysqlFormat();
+
 //settings the weekdays for the y axis of the moisture graphs
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
