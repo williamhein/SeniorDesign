@@ -1,3 +1,6 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+
+
 var d = new Date();
 
 Date.prototype.toMysqlFormat = function() {
@@ -385,6 +388,33 @@ function graph4() {
 var temp = document.getElementById('myChart1').value;
 var humidity = document.getElementById('myChart1').value;
 
+$( ".dropdown" ).change(function() {
+  var e = document.getElementById("dd");
+  var selected = e.options[e.selectedIndex].value;
+  var element = document.getElementById('chartContainer');
+  element.innerHTML = ""
+  switch(selected){ 
+      case 'r1':
+          element.innerHTML += "<div onload='graph5()' id='graph5'><canvas id='myChart5'></canvas></div>";
+          break;
+      case 'r2':
+          element.innerHTML += "<div onload='graph6()' id='graph6'><canvas id='myChart6'></canvas></div>";
+          break;
+      default:
+  }
+});
+
+// select.addEventListener('change', function() {
+//   if (event.target.value == '0') {
+//     element.innerHTML += "<canvas id='myChart5'></canvas>";
+//   } else if (event.target.value == '1') {
+//     element.innerHTML += "<canvas id='myChart6'></canvas>";
+//   } else {
+//     alert('Please Select An Option');
+//   }
+// });
+// 
+
 function graph5() {
   var ctx5 = document.getElementById('myChart5');
   var temps5 = [60, 55, 66, 77, 56, 57, 78];
@@ -619,3 +649,5 @@ function arrayRotate(arr, reverse) {
 var ajaxTimer;
 retrieve(null, null, null, true);
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
+
+</script>

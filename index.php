@@ -55,29 +55,45 @@
 	                    </div>
 			        </div>
 	            
-	                <div>
-	                	<a onload="graph5()" id="plants"> <!-- loads the first moisture function from the js file -->
-	                    <img alt="plant graphic" src="plant.png" />
-	                    <span id = "plants_text">Row 1's Moisture: <span id = "1moisture_current_label">77</span>%</span>
-	                	</a>
-	                	<p id="title">Average Moisture: <span id = "1avg_current_label">65</span>%</p>
-	                	<div id="graph5">
+					<select class="dropdown" id="dd">
+					    <option value="" selected="selected">Select Row Number</option>
+					    <option value="r1">Row 1</option>
+					    <option value="r2">Row 2</option>
+					    <option value="r3">Row 3</option>
+					</select>
+					<div id="chartContainer"></div>
+
+					<!--<div id="myChart">-->
+					<!--  <select id="chart-selector" name="chart-selector">-->
+					<!--    <option value="">Please Select An Option</option>-->
+					<!--    <option value="0">0</option>-->
+					<!--    <option value="1">1</option>-->   
+					<!--  </select>-->				  
+					<!--</div>-->
+
+	             <!--   <div>-->
+	             <!--   	<a onload="graph5()" id="plants"> <!-- loads the first moisture function from the js file -->-->
+	             <!--       <img alt="plant graphic" src="plant.png" />-->
+	             <!--       <span id = "plants_text">Row 1's Moisture: <span id = "1moisture_current_label">77</span>%</span>-->
+	             <!--   	</a>-->
+	             <!--   	<p id="title">Average Moisture: <span id = "1avg_current_label">65</span>%</p>-->
+	             <!--   	<div id="graph5">-->
 	                		<!-- displays the first moisture graph -->
-	                		<canvas id="myChart5"></canvas>
-	                	</div>
-	            	</div>
+	             <!--   		<canvas id="myChart5"></canvas>-->
+	             <!--   	</div>-->
+	            	<!--</div>-->
 					
-		            <div>
-		                <a onload="graph6()" id="plants"> <!-- loads the second moisture function from the js file -->
-		                <img alt="plant graphic" src="plant.png" />
-		                <span id = "plants_text">Row 2's Moisture: <span id = "2moisture_current_label">88</span>%</span>
-		                </a>
-		                <p id="title">Average Moisture: <span id = "2avg_current_label">80</span>%</p>
-		                <div id="graph6">
+		            <!--<div>-->
+		            <!--    <a onload="graph6()" id="plants"> <!-- loads the second moisture function from the js file -->-->
+		            <!--    <img alt="plant graphic" src="plant.png" />-->
+		            <!--    <span id = "plants_text">Row 2's Moisture: <span id = "2moisture_current_label">88</span>%</span>-->
+		            <!--    </a>-->
+		            <!--    <p id="title">Average Moisture: <span id = "2avg_current_label">80</span>%</p>-->
+		            <!--    <div id="graph6">-->
 		                	<!-- displays the second moisture graph -->
-		                	<canvas id="myChart6"></canvas>
-		                </div>
-		            </div>
+		            <!--    	<canvas id="myChart6"></canvas>-->
+		            <!--    </div>-->
+		            <!--</div>-->
 		        </div>
         	</center>
       </div>
