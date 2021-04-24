@@ -385,6 +385,7 @@ function graph4() {
 var temp = document.getElementById('myChart1').value;
 var humidity = document.getElementById('myChart1').value;
 
+/*
 function changeRowGraph(graphNum) {
   var element = document.getElementById('chartContainer');
   element.innerHTML = "";
@@ -401,12 +402,26 @@ function changeRowGraph(graphNum) {
       default:
   }
 }
-
-/*
-$( ".dropdown" ).change(function() {
-  
-});
 */
+
+$( ".dropdown" ).change(function() {
+  var e = document.getElementById("dd");
+  var selected = e.options[e.selectedIndex].value;
+  var element = document.getElementById('chartContainer');
+  element.innerHTML = ""
+  switch(selected){ 
+      case 'r1':
+        element.innerHTML += "<div onload='graph5()' id='graph5'><canvas id='myChart5'></canvas></div>";
+        graph5();
+        break;
+      case 'r2':
+        element.innerHTML += "<div onload='graph6()' id='graph6'><canvas id='myChart6'></canvas></div>";
+        graph6();
+        break;
+      default:
+  }
+});
+
 
 // select.addEventListener('change', function() {
 //   if (event.target.value == '0') {
