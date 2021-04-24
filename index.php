@@ -117,7 +117,7 @@
             	</center>
             </div>
 
-<!-- 
+
 	     <?php		 	
 			$servername = "localhost";
 			$username = "root";
@@ -231,7 +231,7 @@
 			//echo '<script type="text/JavaScript">updateData();</script>';
 			*/
         ?>
-		-->
+
 
         </body>
 </html>
