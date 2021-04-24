@@ -75,7 +75,7 @@
 					<!--</div>-->
 
 	             <!--   <div>-->
-	             <!--   	<a onload="graph5()" id="plants"> <!-- loads the first moisture function from the js file -->-->
+	             <!--   	<a onload="graph5()" id="plants">loads the first moisture function from the js file -->
 	             <!--       <img alt="plant graphic" src="plant.png" />-->
 	             <!--       <span id = "plants_text">Row 1's Moisture: <span id = "1moisture_current_label">77</span>%</span>-->
 	             <!--   	</a>-->
@@ -87,7 +87,7 @@
 	            	<!--</div>-->
 					
 		            <!--<div>-->
-		            <!--    <a onload="graph6()" id="plants"> <!-- loads the second moisture function from the js file -->-->
+		            <!--    <a onload="graph6()" id="plants"> loads the second moisture function from the js file -->
 		            <!--    <img alt="plant graphic" src="plant.png" />-->
 		            <!--    <span id = "plants_text">Row 2's Moisture: <span id = "2moisture_current_label">88</span>%</span>-->
 		            <!--    </a>-->
