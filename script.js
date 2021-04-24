@@ -652,5 +652,3 @@ function arrayRotate(arr, reverse) {
 var ajaxTimer;
 retrieve(null, null, null, true);
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
-
-</script>
