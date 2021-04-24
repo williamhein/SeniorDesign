@@ -3,6 +3,7 @@
    <meta charset="UTF-8">
    <title>Smart Garden</title>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
    <link rel="stylesheet" href="styles.css">
    <div class="container" id="blur">
         <div class="content">
@@ -57,9 +58,9 @@
 	            
 					<select class="dropdown" id="dd">
 					    <option value="" selected="selected">Select Row Number</option>
-					    <option value="r1">Row 1</option>
-					    <option value="r2">Row 2</option>
-					    <option value="r3">Row 3</option>
+					    <option onclick="changeRowGraph(1)" value="r1">Row 1</option>
+					    <option onclick="changeRowGraph(2)" value="r2">Row 2</option>
+					    <option onclick="changeRowGraph(3)" value="r3">Row 3</option>
 					</select>
 					<div id="chartContainer"></div>
 
@@ -115,8 +116,9 @@
  -->                </form>
             	</center>
             </div>
-  
-	     <?php
+
+<!-- 
+	     <?php		 	
 			$servername = "localhost";
 			$username = "root";
 			$password = "Br@mbl3"; //ignore the fact that this is plain text
@@ -229,6 +231,7 @@
 			//echo '<script type="text/JavaScript">updateData();</script>';
 			*/
         ?>
+		-->
 
         </body>
 </html>
