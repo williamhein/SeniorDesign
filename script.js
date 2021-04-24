@@ -392,6 +392,7 @@ function changeRowGraph(graphNum) {
       case 1:
           element.innerHTML += "<div onload='graph5()' id='graph5'><canvas id='myChart5'></canvas></div>";
           graph5();
+          console.log("here");
           break;
       case 2:
           element.innerHTML += "<div onload='graph6()' id='graph6'><canvas id='myChart6'></canvas></div>";
