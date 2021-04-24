@@ -113,9 +113,10 @@
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
                 <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST" action="admin.php"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-                    <input type="password" data-role="keypad" placeholder="Enter pin" data-length="3" data-position="bottom">
-<!--                     <input type="submit" id="go" value="Go"/>
- -->                </form>
+                    <div data-role="keypad" class="input-control password" data-length="3" data-position="bottom">
+						<input type="password"  placeholder="Enter pin">
+					</div>
+				</form>
             	</center>
             </div>
 

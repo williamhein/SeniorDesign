@@ -574,7 +574,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           {
             var rec = minfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
-            if (!inArray(tempArray,d))
+            if (!inArray(moistureArray,d))
               moistureArray.push(d);
           }
 
