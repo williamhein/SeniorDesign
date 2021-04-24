@@ -164,7 +164,6 @@ canvas {
     font-weight: bolder;
     background-color: rgba(121, 204, 231, 0.79);
     color: white;
-    height: 350px;
     width: 90%;
     margin-top: 20px;
     border: none;
@@ -194,7 +193,7 @@ canvas {
     font-family: 'Quicksand', sans-serif, Arial;
     font-weight: bolder;
     border-radius: 8px;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #water:hover, #go:hover, #back:hover {
@@ -211,6 +210,7 @@ canvas {
     font-weight: bolder;
     border-radius: 8px;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #number {

@@ -20,6 +20,15 @@ var myChart3;
 var myChart4;
 var myChart5;
 var myChart6;
+var myChart7;
+var myChart8;
+var myChart9;
+var myChart10;
+var myChart11;
+var myChart12;
+var myChart13;
+var myChart14;
+
 
 //file structure for data retrieved from database to make it easier to sort
 function DataPoint(time,data,location)
@@ -47,8 +56,6 @@ window.onload = function(){
   graph2();
   graph3();
   graph4();
-  graph5();
-  graph6();
   //updateData();
   
 }
@@ -385,24 +392,6 @@ function graph4() {
 var temp = document.getElementById('myChart1').value;
 var humidity = document.getElementById('myChart1').value;
 
-/*
-function changeRowGraph(graphNum) {
-  var element = document.getElementById('chartContainer');
-  element.innerHTML = "";
-  switch(graphNum){ 
-      case 1:
-          element.innerHTML += "<div onload='graph5()' id='graph5'><canvas id='myChart5'></canvas></div>";
-          graph5();
-          console.log("here");
-          break;
-      case 2:
-          element.innerHTML += "<div onload='graph6()' id='graph6'><canvas id='myChart6'></canvas></div>";
-          graph6();
-          break;
-      default:
-  }
-}
-*/
 
 $( ".dropdown" ).change(function() {
   var e = document.getElementById("dd");
@@ -411,34 +400,55 @@ $( ".dropdown" ).change(function() {
   element.innerHTML = ""
   switch(selected){ 
       case 'r1':
-        element.innerHTML += "<div onload='graph5()' id='graph5'><canvas id='myChart5'></canvas></div>";
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 1's Moisture Graph</span></a><div id='graph5'><canvas id='myChart5'></canvas></div><br>";
         graph5();
         break;
       case 'r2':
-        element.innerHTML += "<div onload='graph6()' id='graph6'><canvas id='myChart6'></canvas></div>";
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 2's Moisture Graph</span></a><div id='graph6'><canvas id='myChart6'></canvas></div><br>";
         graph6();
+        break;
+      case 'r3':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 3's Moisture Graph</span></a><div id='graph7'><canvas id='myChart7'></canvas></div><br>";
+        graph7();
+        break;
+      case 'r4':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 4's Moisture Graph</span></a><div id='graph8'><canvas id='myChart8'></canvas></div><br>";
+        graph8();
+        break;
+      case 'r5':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 5's Moisture Graph</span></a><div id='graph9'><canvas id='myChart9'></canvas></div><br>";
+        graph9();
+        break;
+      case 'r6':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 6's Moisture Graph</span></a><div id='graph10'><canvas id='myChart10'></canvas></div><br>";
+        graph10();
+        break;
+      case 'r7':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 7's Moisture Graph</span></a><div id='graph11'><canvas id='myChart11'></canvas></div><br>";
+        graph11();
+        break;
+      case 'r8':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 8's Moisture Graph</span></a><div id='graph12'><canvas id='myChart12'></canvas></div><br>";
+        graph12();
+        break;
+      case 'r9':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 9's Moisture Graph</span></a><div id='graph13'><canvas id='myChart13'></canvas></div><br>";
+        graph13();
+        break;
+      case 'r10':
+        element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br>";
+        graph14();
         break;
       default:
   }
 });
 
 
-// select.addEventListener('change', function() {
-//   if (event.target.value == '0') {
-//     element.innerHTML += "<canvas id='myChart5'></canvas>";
-//   } else if (event.target.value == '1') {
-//     element.innerHTML += "<canvas id='myChart6'></canvas>";
-//   } else {
-//     alert('Please Select An Option');
-//   }
-// });
-// 
-
 function graph5() {
   var ctx5 = document.getElementById('myChart5');
   var temps5 = [60, 55, 66, 77, 56, 57, 78];
   myChart5 = new Chart(ctx5, {
-  type: 'bar',
+  type: 'line',
   data: {
       labels: [...days],
       datasets: [{
@@ -477,12 +487,324 @@ function graph6() {
   var ctx6 = document.getElementById('myChart6');
   var temps6 = [65, 50, 62, 73, 52, 50, 71];
   myChart6 = new Chart(ctx6, {
-  type: 'bar',
+  type: 'line',
   data: {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
           data: temps6,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph7() {
+  var ctx7 = document.getElementById('myChart7');
+  var temps7 = [65, 50, 62, 73, 52, 50, 71];
+  myChart7 = new Chart(ctx7, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps7,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph8() {
+  var ctx8 = document.getElementById('myChart8');
+  var temps8 = [65, 50, 62, 73, 52, 50, 71];
+  myChart8 = new Chart(ctx8, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps8,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph9() {
+  var ctx9 = document.getElementById('myChart9');
+  var temps9 = [65, 50, 62, 73, 52, 50, 71];
+  myChart9 = new Chart(ctx9, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps9,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph10() {
+  var ctx10 = document.getElementById('myChart10');
+  var temps10 = [65, 50, 62, 73, 52, 50, 71];
+  myChart10 = new Chart(ctx10, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps10,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph11() {
+  var ctx11 = document.getElementById('myChart11');
+  var temps11 = [65, 50, 62, 73, 52, 50, 71];
+  myChart11 = new Chart(ctx11, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps11,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph12() {
+  var ctx12 = document.getElementById('myChart12');
+  var temps12 = [65, 50, 62, 73, 52, 50, 71];
+  myChart12 = new Chart(ctx12, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps12,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph13() {
+  var ctx13 = document.getElementById('myChart13');
+  var temps13 = [65, 50, 62, 73, 52, 50, 71];
+  myChart13 = new Chart(ctx13, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps13,
+          backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(239, 149, 107, 0.2)",
+              "rgba(235, 107, 239, 0.2)"
+            ],
+          borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(239, 149, 107, 1)",
+              "rgba(235, 107, 239, 1)"
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+    legend: {
+      onClick: null
+    }
+  }
+  })
+}
+
+function graph14() {
+  var ctx14 = document.getElementById('myChart14');
+  var temps14 = [65, 50, 62, 73, 52, 50, 71];
+  myChart14 = new Chart(ctx14, {
+  type: 'line',
+  data: {
+      labels: [...days],
+      datasets: [{
+          label: 'Plant Moisture (%)',
+          data: temps14,
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",

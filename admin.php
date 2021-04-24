@@ -18,12 +18,51 @@
                     <input type="number" id="number" value="5" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"><span class="validity"></span> minutes every 
                     <input type="number" id="number" value="5" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
             </p>
-            <br>
             <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 2's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
                 <span style="font-weight: lighter;">
                     <input type="number" id="number" value="15" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> minutes every 
                     <input type="number" id="number" value="12" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
-            </p>  
+            </p> 
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 3's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="15" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> minutes every 
+                    <input type="number" id="number" value="12" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p> 
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 4's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="5" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"><span class="validity"></span> minutes every 
+                    <input type="number" id="number" value="5" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p>
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 5's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="15" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> minutes every 
+                    <input type="number" id="number" value="12" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p> 
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 6's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="15" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> minutes every 
+                    <input type="number" id="number" value="12" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p> 
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 7's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="15" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> minutes every 
+                    <input type="number" id="number" value="12" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p> 
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 8's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="5" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"><span class="validity"></span> minutes every 
+                    <input type="number" id="number" value="5" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p>
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 9's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="15" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> minutes every 
+                    <input type="number" id="number" value="12" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p> 
+            <p style="font-size: 22px; color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Row 10's Current Schedule:&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: lighter;">
+                    <input type="number" id="number" value="15" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> minutes every 
+                    <input type="number" id="number" value="12" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours</span>
+            </p>
             <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </div>
         </center>
