@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+ <head>
    <meta charset="UTF-8">
    <title>Smart Garden</title>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
    <link rel="stylesheet" href="styles.css">
    <div class="container" id="blur">
-        <div class="content">
+		<div class="content">
+ </head>
         <header>
             <h1>Medicine Lodge Greenhouse Plant Stats</h1>
         </header>   
