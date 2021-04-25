@@ -85,6 +85,8 @@
 						<div style = "display: none" id = "moistureChart9"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text9'>Row 9's Moisture Graph</span></a><div id='graph13'><canvas id='myChart13'></canvas></div><br></div>
 						<div style = "display: none" id = "moistureChart10"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text10'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br></div>										
 					</div>
+					<br>
+					<br>
 		        </div>
         	</center>
       </div>
