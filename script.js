@@ -476,7 +476,7 @@ $( ".dropdown" ).change(function() {
   }
   */
   for (var i = 1; i < 11; i++) {
-    console.log("r" + i);
+    console.log("moistureChart" + i);
     document.getElementById("r" + i).style.display = "none";
   }
   document.getElementById(divArray[selected]).style.display = "block";
