@@ -60,7 +60,7 @@
 			        </div>
 			        <br>
 			        <br>
-					<select class="dropdown" id="dd">
+					<select class="dropdown" id="dd" style = "font-family: 'Quicksand', sans-serif, Arial;">
 					    <option value="" selected="selected">Select Row Number</option>
 					    <option onclick="changeRowGraph(1)" value="r1">Row 1</option>
 					    <option onclick="changeRowGraph(2)" value="r2">Row 2</option>
