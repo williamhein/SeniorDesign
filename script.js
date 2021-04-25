@@ -29,6 +29,18 @@ var myChart12;
 var myChart13;
 var myChart14;
 
+var chartArray = [];
+chartArray["r1"] = myChart5;
+chartArray["r2"] = myChart6;
+chartArray["r3"] = myChart7;
+chartArray["r4"] = myChart8;
+chartArray["r5"] = myChart9;
+chartArray["r6"] = myChart10;
+chartArray["r7"] = myChart11;
+chartArray["r8"] = myChart12;
+chartArray["r9"] = myChart13;
+chartArray["r10"] = myChart14;
+
 
 //file structure for data retrieved from database to make it easier to sort
 function DataPoint(time,data,location)
@@ -115,7 +127,7 @@ function updateData()
   {
     var t = moistureArray[shownMoistureArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-    addData(myChart5,d.toString(), {x:d,y:moistureArray[shownMoistureArray].data});
+    addData(chartArray[moistureArray[shownMoistureArray].location],d.toString(), {x:d,y:moistureArray[shownMoistureArray].data});
   }
 
   if (typeof tempArray[shownTempArray-1].data !== 'undefined' && typeof humidityArray[shownHumidityArray-1].data !== 'undefined')
@@ -438,7 +450,6 @@ $( ".dropdown" ).change(function() {
       case 'r10':
         element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br>";
         graph14();
-        console.log("here");
         break;
       default:
   }
@@ -454,7 +465,7 @@ function graph5() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps5,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -477,6 +488,26 @@ function graph5() {
       }]
   },
   options: {
+    responsive: true,
+    scales: {
+      xAxes: [{
+        type: 'time',
+        display: true,
+        ticks: {
+          fontSize: 17,
+          major: {
+            fontStyle: 'bold',
+            fontColor: '#FF0000',
+          }
+        }
+      }],
+      yAxes: [{
+        display: true,
+        ticks: {
+          fontSize: 17
+        }
+      }]
+    },
     legend: {
       onClick: null
     }
@@ -493,7 +524,7 @@ function graph6() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps6,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -532,7 +563,7 @@ function graph7() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps7,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -571,7 +602,7 @@ function graph8() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps8,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -610,7 +641,7 @@ function graph9() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps9,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -649,7 +680,7 @@ function graph10() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps10,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -688,7 +719,7 @@ function graph11() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps11,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -727,7 +758,7 @@ function graph12() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps12,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -766,7 +797,7 @@ function graph13() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps13,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -805,7 +836,7 @@ function graph14() {
       labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
-          data: temps14,
+          data: [],
           backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
