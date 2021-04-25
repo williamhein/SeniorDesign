@@ -122,7 +122,8 @@
 			die("Connection failed: " . $conn->connect_error);
 			}
 			$conn->query("use garden_info");
-			echo 'console.log("Connected successfully");';
+			$connCheck = 'console.log("Connected successfully");';
+			echo $connCheck;
 
 			$today = date("Y-m-d H:i:s");
 			$start_date = date("Y-m-d H:i:s", strtotime("-1 month"));
