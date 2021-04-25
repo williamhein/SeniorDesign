@@ -30,16 +30,6 @@ var myChart13;
 var myChart14;
 
 var chartArray = [];
-chartArray["r1"] = myChart5;
-chartArray["r2"] = myChart6;
-chartArray["r3"] = myChart7;
-chartArray["r4"] = myChart8;
-chartArray["r5"] = myChart9;
-chartArray["r6"] = myChart10;
-chartArray["r7"] = myChart11;
-chartArray["r8"] = myChart12;
-chartArray["r9"] = myChart13;
-chartArray["r10"] = myChart14;
 
 
 //file structure for data retrieved from database to make it easier to sort
@@ -78,6 +68,18 @@ window.onload = function(){
   graph12();
   graph13();
   graph14();
+
+  
+  chartArray["r1"] = myChart5;
+  chartArray["r2"] = myChart6;
+  chartArray["r3"] = myChart7;
+  chartArray["r4"] = myChart8;
+  chartArray["r5"] = myChart9;
+  chartArray["r6"] = myChart10;
+  chartArray["r7"] = myChart11;
+  chartArray["r8"] = myChart12;
+  chartArray["r9"] = myChart13;
+  chartArray["r10"] = myChart14;
   //updateData();
   
 }
