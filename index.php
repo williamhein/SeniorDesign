@@ -88,8 +88,8 @@
 		        </div>
         	</center>
       </div>
-      <div class="footer" style="font-family: 'Quicksand', sans-serif, Arial;"> <!-- crediting the icon creator -->
-      	Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      <!-- crediting the icon creator -->
+      <div style="bottom: 0; position: fixed;">Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
       </div>
     </div>
             <input onclick="toggle()" type="image" id="gear" src="gear.png"/> <!-- when clicked, the popup to enter admin mode pops up -->
