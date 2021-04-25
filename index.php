@@ -6,10 +6,10 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-   <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro.min.css">
-	<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-colors.min.css">
-	<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-rtl.min.css">
-	<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-icons.min.css">
+  	<!-- <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro.min.css">-->
+	<!-- <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-colors.min.css">-->
+	<!-- <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-rtl.min.css">-->
+	<!-- <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-icons.min.css">-->
 
    <link rel="stylesheet" href="styles.css">
    <div class="container" id="blur">
