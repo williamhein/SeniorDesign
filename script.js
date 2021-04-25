@@ -438,6 +438,7 @@ $( ".dropdown" ).change(function() {
       case 'r10':
         element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br>";
         graph14();
+        console.log("here");
         break;
       default:
   }
