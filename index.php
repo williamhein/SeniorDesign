@@ -60,7 +60,7 @@
 			        </div>
 			        <br>
 			        <br>
-					<select class="dropdown" id="dd" style = "font-family: 'Quicksand', sans-serif, Arial;">
+					<select class="dropdown" id="dd" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 20px">
 					    <option value="" selected="selected">Select Row Number</option>
 					    <option onclick="changeRowGraph(1)" value="r1">Row 1</option>
 					    <option onclick="changeRowGraph(2)" value="r2">Row 2</option>
@@ -88,7 +88,7 @@
 		        </div>
         	</center>
       </div>
-      <div style="font-family: 'Quicksand', sans-serif, Arial;"> <!-- crediting the icon creator -->
+      <div class="footer" style="font-family: 'Quicksand', sans-serif, Arial;"> <!-- crediting the icon creator -->
       	Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
       </div>
     </div>
@@ -101,7 +101,7 @@
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
                 <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST" action="admin.php"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-                    <div data-role="keypad" class="input-control password" data-length="3" data-position="bottom">
+                    <div data-role="keypad" class="input-control password" data-length="3" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
 						<input type="password"  placeholder="Enter pin">
 					</div>
 				</form>
