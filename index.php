@@ -78,7 +78,18 @@
 					    <option onclick="changeRowGraph(9)" value="r9">Row 9</option>
 					    <option onclick="changeRowGraph(10)" value="r10">Row 10</option>
 					</select>
-					<div id="chartContainer"></div>
+					<div id="chartContainer">
+						<div id = "moistureChart1"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text1'>Row 1's Moisture Graph</span></a><div id='graph5'><canvas id='myChart5'></canvas></div><br></div>
+						<div id = "moistureChart2"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text2'>Row 2's Moisture Graph</span></a><div id='graph6'><canvas id='myChart6'></canvas></div><br></div>
+						<div id = "moistureChart3"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text3'>Row 3's Moisture Graph</span></a><div id='graph7'><canvas id='myChart7'></canvas></div><br></div>
+						<div id = "moistureChart4"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text4'>Row 4's Moisture Graph</span></a><div id='graph8'><canvas id='myChart8'></canvas></div><br></div>
+						<div id = "moistureChart5"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text5'>Row 5's Moisture Graph</span></a><div id='graph9'><canvas id='myChart9'></canvas></div><br></div>
+						<div id = "moistureChart6"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text6'>Row 6's Moisture Graph</span></a><div id='graph10'><canvas id='myChart10'></canvas></div><br></div>
+						<div id = "moistureChart7"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text7'>Row 7's Moisture Graph</span></a><div id='graph11'><canvas id='myChart11'></canvas></div><br></div>
+						<div id = "moistureChart8"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text8'>Row 8's Moisture Graph</span></a><div id='graph12'><canvas id='myChart12'></canvas></div><br></div>
+						<div id = "moistureChart9"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text9'>Row 9's Moisture Graph</span></a><div id='graph13'><canvas id='myChart13'></canvas></div><br></div>
+						<div id = "moistureChart10"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text10'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br></div>										
+					</div>
 		        </div>
         	</center>
       </div>
@@ -124,25 +135,9 @@
 			
 			//temp
 
-			$sql = "SELECT * FROM records_temp WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
-			$result = $conn->query($sql);
+			//$sql = "SELECT * FROM records_temp WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
+			//$result = $conn->query($sql);
 
-			if ($result->num_rows > 0) 
-			{
-				// output data of each row
-				$max = strtotime("1900-1-1 12:00:00");
-				$max_key = "";
-				while($row = $result->fetch_assoc()) 
-				{
-					if (strtotime($row["time"])>$max)
-					{
-						$max = strtotime($row["time"]);
-						$max_key = $row["temp"];
-					}
-				}
-				echo '<script type="text/JavaScript">updateCurrentTempLabel("' . $max_key .'");</script>';
-				
-			} 
 			/*
             if ($result->num_rows > 0) 
             {
@@ -163,26 +158,9 @@
 
 			//humidity
 
-			$sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
-			$result = $conn->query($sql);
-
-			if ($result->num_rows > 0) 
-			{
-				// output data of each row
-				$max = strtotime("1900-1-1 12:00:00");
-				$max_key = "";
-				while($row = $result->fetch_assoc()) 
-				{
-					if (strtotime($row["time"])>$max)
-					{
-						$max = strtotime($row["time"]);
-						$max_key = $row["humidity"];
-					}
-				}
-				echo '<script type="text/JavaScript">updateCurrentHumidityLabel("' . $max_key .'");</script>';
-				
-			} 
-			else 
+			//$sql = "SELECT * FROM records_humidity WHERE time BETWEEN '" . $start_date . "' AND '" .  $today . "'";
+			//$result = $conn->query($sql);
+	
 			{
 				//echo "0 results";
 			}
