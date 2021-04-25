@@ -79,16 +79,16 @@
 					    <option onclick="changeRowGraph(10)" value="r10">Row 10</option>
 					</select>
 					<div id="chartContainer">
-						<div id = "moistureChart1"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text1'>Row 1's Moisture Graph</span></a><div id='graph5'><canvas id='myChart5'></canvas></div><br></div>
-						<div id = "moistureChart2"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text2'>Row 2's Moisture Graph</span></a><div id='graph6'><canvas id='myChart6'></canvas></div><br></div>
-						<div id = "moistureChart3"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text3'>Row 3's Moisture Graph</span></a><div id='graph7'><canvas id='myChart7'></canvas></div><br></div>
-						<div id = "moistureChart4"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text4'>Row 4's Moisture Graph</span></a><div id='graph8'><canvas id='myChart8'></canvas></div><br></div>
-						<div id = "moistureChart5"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text5'>Row 5's Moisture Graph</span></a><div id='graph9'><canvas id='myChart9'></canvas></div><br></div>
-						<div id = "moistureChart6"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text6'>Row 6's Moisture Graph</span></a><div id='graph10'><canvas id='myChart10'></canvas></div><br></div>
-						<div id = "moistureChart7"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text7'>Row 7's Moisture Graph</span></a><div id='graph11'><canvas id='myChart11'></canvas></div><br></div>
-						<div id = "moistureChart8"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text8'>Row 8's Moisture Graph</span></a><div id='graph12'><canvas id='myChart12'></canvas></div><br></div>
-						<div id = "moistureChart9"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text9'>Row 9's Moisture Graph</span></a><div id='graph13'><canvas id='myChart13'></canvas></div><br></div>
-						<div id = "moistureChart10"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text10'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br></div>										
+						<div style = "display: none" id = "moistureChart1"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text1'>Row 1's Moisture Graph</span></a><div id='graph5'><canvas id='myChart5'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart2"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text2'>Row 2's Moisture Graph</span></a><div id='graph6'><canvas id='myChart6'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart3"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text3'>Row 3's Moisture Graph</span></a><div id='graph7'><canvas id='myChart7'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart4"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text4'>Row 4's Moisture Graph</span></a><div id='graph8'><canvas id='myChart8'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart5"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text5'>Row 5's Moisture Graph</span></a><div id='graph9'><canvas id='myChart9'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart6"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text6'>Row 6's Moisture Graph</span></a><div id='graph10'><canvas id='myChart10'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart7"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text7'>Row 7's Moisture Graph</span></a><div id='graph11'><canvas id='myChart11'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart8"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text8'>Row 8's Moisture Graph</span></a><div id='graph12'><canvas id='myChart12'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart9"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text9'>Row 9's Moisture Graph</span></a><div id='graph13'><canvas id='myChart13'></canvas></div><br></div>
+						<div style = "display: none" id = "moistureChart10"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text10'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br></div>										
 					</div>
 		        </div>
         	</center>
