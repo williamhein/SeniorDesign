@@ -482,7 +482,8 @@ $( ".dropdown" ).change(function() {
   for (var i = 1; i < 11; i++) {
     if ("moistureChart" + i != divArray[selected]) document.getElementById("moistureChart" + i).style.display = "none";
   }
-  document.getElementById("chartContainer").scrollIntoView();
+  location.href = "#";
+  location.href = "#moistureChart" + i;
 });
 
 
