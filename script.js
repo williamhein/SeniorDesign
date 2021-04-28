@@ -515,7 +515,7 @@ function graph5() {
               "rgba(235, 107, 239, 1)"
           ],
           borderWidth: 1,
-          fill = false
+          fill: false
       }]
   },
   options: {
