@@ -483,6 +483,7 @@ $( ".dropdown" ).change(function() {
     document.getElementById("moistureChart" + i).style.display = "none";
   }
   document.getElementById(divArray[selected]).style.display = "block";
+  document.getElementById(divArray[selected]).scrollIntoView();
 });
 
 
@@ -1052,3 +1053,4 @@ function arrayRotate(arr, reverse) {
 var ajaxTimer;
 retrieve(null, null, null, true);
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
+document.getElementById(divArray["r1"]).style.display = "block";
