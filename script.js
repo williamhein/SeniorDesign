@@ -80,13 +80,6 @@ window.onload = function(){
   chartArray["r8"] = myChart12;
   chartArray["r9"] = myChart13;
   chartArray["r10"] = myChart14;
-
-  for (var i = 1; i < 11; i++) {
-    document.getElementById("moistureChart" + i).style.display = "block";
-  }
-  for (var i = 1; i < 11; i++) {
-    document.getElementById("moistureChart" + i).style.display = "none";
-  }
   //updateData();
   
 }
@@ -485,11 +478,11 @@ $( ".dropdown" ).change(function() {
       default:
   }
   */
- 
   document.getElementById(divArray[selected]).style.display = "block";
   for (var i = 1; i < 11; i++) {
     if ("moistureChart" + i != divArray[selected]) document.getElementById("moistureChart" + i).style.display = "none";
   }
+  document.getElementById("chartContainer").scrollIntoView();
 });
 
 
