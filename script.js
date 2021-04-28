@@ -251,8 +251,8 @@ var config1 = {
   data: {
     datasets: [{
       label: 'Top Temperature (F)',
-      backgroundColor: "rgba(255, 99, 132, 0.6)",
-      borderColor: "rgba(255, 99, 132, 0.8)",
+      backgroundColor: "rgba(255, 99, 132, 0.3)",
+      borderColor: "rgba(255, 99, 132, 0.6)",
       fill: true,
       lineTension: 0.1,
       data: [],
@@ -295,8 +295,8 @@ var config2 = {
   data: {
     datasets: [{
       label: 'Bottom Temperature (F)',
-      backgroundColor: "rgba(255, 99, 132, 0.6)",
-      borderColor: "rgba(255, 99, 132, 0.8)",
+      backgroundColor: "rgba(255, 99, 132, 0.3)",
+      borderColor: "rgba(255, 99, 132, 0.6)",
       fill: true,
       lineTension: 0.1,
       data: [],
@@ -338,8 +338,8 @@ var config3 = {
   data: {
     datasets: [{
       label: 'Top Humidity (%)',
-      backgroundColor: "rgba(255, 99, 132, 0.6)",
-      borderColor: "rgba(255, 99, 132, 0.8)",
+      backgroundColor: "rgba(255, 99, 132, 0.3)",
+      borderColor: "rgba(255, 99, 132, 0.6)",
       fill: true,
       lineTension: 0.1,
       data: [],
@@ -381,8 +381,8 @@ var config4 = {
   data: {
     datasets: [{
       label: 'Bottom Humidity (%)',
-      backgroundColor: "rgba(255, 99, 132, 0.6)",
-      borderColor: "rgba(255, 99, 132, 0.8)",
+      backgroundColor: "rgba(255, 99, 132, 0.3)",
+      borderColor: "rgba(255, 99, 132, 0.6)",
       fill: true,
       lineTension: 0.1,
       data: [],
