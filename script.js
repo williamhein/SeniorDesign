@@ -253,7 +253,7 @@ var config1 = {
       label: 'Top Temperature (F)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
-      fill: false,
+      fill: true,
       lineTension: 0.1,
       data: [],
       fontSize: 17
@@ -297,7 +297,7 @@ var config2 = {
       label: 'Bottom Temperature (F)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
-      fill: false,
+      fill: true,
       lineTension: 0.1,
       data: [],
     }]
@@ -340,7 +340,7 @@ var config3 = {
       label: 'Top Humidity (%)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
-      fill: false,
+      fill: true,
       lineTension: 0.1,
       data: [],
     }]
@@ -383,7 +383,7 @@ var config4 = {
       label: 'Bottom Humidity (%)',
       backgroundColor: "rgba(255, 99, 132, 0.6)",
       borderColor: "rgba(255, 99, 132, 0.8)",
-      fill: false,
+      fill: true,
       lineTension: 0.1,
       data: [],
     }]
