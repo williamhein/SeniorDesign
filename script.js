@@ -113,6 +113,19 @@ function updateData()
     }
   });
 
+  moistureArray.sort( function(a,b) {
+    var nameA = a.time.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.time.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) 
+    {
+      return -1;
+    }
+    if (nameA > nameB) 
+    {
+      return 1;
+    }
+  });
+
   //for each type of data, cycle through their array for all data points that have not be shown yet and add them to the respective chart
   for(; shownTempArray < tempArray.length; shownTempArray++)
   {
@@ -898,10 +911,6 @@ function graph14() {
     }
   }
   })
-}
-
-function water() {
-
 }
 
 function toggle() { //toggle for the admin mode
