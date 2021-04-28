@@ -482,8 +482,8 @@ $( ".dropdown" ).change(function() {
   for (var i = 1; i < 11; i++) {
     if ("moistureChart" + i != divArray[selected]) document.getElementById("moistureChart" + i).style.display = "none";
   }
-  location.href = "#";
-  location.href = "#chartContainer";
+  //location.href = "#";
+  //location.href = "#chartContainer";
 });
 
 
@@ -493,7 +493,6 @@ function graph5() {
   myChart5 = new Chart(ctx5, {
   type: 'line',
   data: {
-      labels: [...days],
       datasets: [{
           label: 'Plant Moisture (%)',
           data: [],
