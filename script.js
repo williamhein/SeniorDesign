@@ -478,12 +478,10 @@ $( ".dropdown" ).change(function() {
       default:
   }
   */
-  for (var i = 1; i < 11; i++) {
-    console.log("moistureChart" + i);
-    document.getElementById("moistureChart" + i).style.display = "none";
-  }
   document.getElementById(divArray[selected]).style.display = "block";
-  document.getElementById(divArray[selected]).scrollIntoView();
+  for (var i = 1; i < 11; i++) {
+    if ("moistureChart" + i != select) document.getElementById("moistureChart" + i).style.display = "none";
+  }
 });
 
 
@@ -1053,4 +1051,4 @@ function arrayRotate(arr, reverse) {
 var ajaxTimer;
 retrieve(null, null, null, true);
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
-document.getElementById(divArray["r1"]).style.display = "block";
+document.getElementById("moistureChart1").style.display = "block";
