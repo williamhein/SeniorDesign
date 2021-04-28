@@ -478,6 +478,9 @@ $( ".dropdown" ).change(function() {
       default:
   }
   */
+ for (var i = 1; i < 11; i++) {
+  if ("moistureChart" + i != divArray[selected]) document.getElementById("moistureChart" + i).style.display = "block";
+}
   document.getElementById(divArray[selected]).style.display = "block";
   for (var i = 1; i < 11; i++) {
     if ("moistureChart" + i != divArray[selected]) document.getElementById("moistureChart" + i).style.display = "none";
