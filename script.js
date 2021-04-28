@@ -152,7 +152,6 @@ function updateData()
   {
     var t = moistureArray[shownMoistureArray].time.split(/[- :]/);
     var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-    console.log(chartArray[moistureArray[shownMoistureArray].location]);
     addData(chartArray[moistureArray[shownMoistureArray].location],d.toString(), {x:d,y:moistureArray[shownMoistureArray].data});
   }
 
@@ -535,6 +534,9 @@ function graph5() {
     scales: {
       xAxes: [{
         type: 'time',
+        time: {
+          unit: 'day'
+        },
         display: true,
         ticks: {
           fontSize: 17,
