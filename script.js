@@ -1271,6 +1271,6 @@ function arrayRotate(arr, reverse) {
 
 //handles the 4 second pulls from database
 var ajaxTimer;
-retrieve(null, null, null, true);
+setTimeout(function(){retrieve(null, null, null, true)},200);
 ajaxTimer = this.setInterval(function (){retrieve(null, null, null, true)}, 4000);
 document.getElementById("moistureChart1").style.display = "block";
