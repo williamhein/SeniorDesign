@@ -264,6 +264,9 @@ var config1 = {
     scales: {
       xAxes: [{
         type: 'time',
+        time: {
+          unit: 'day'
+        },
         display: true,
         ticks: {
           fontSize: 17,
@@ -304,6 +307,9 @@ var config2 = {
     scales: {
       xAxes: [{
         type: 'time',
+        time: {
+          unit: 'day'
+        },
         display: true,
         ticks: {
           fontSize: 17,
@@ -344,6 +350,9 @@ var config3 = {
     scales: {
       xAxes: [{
         type: 'time',
+        time: {
+          unit: 'day'
+        },
         display: true,
         ticks: {
           fontSize: 17,
@@ -384,6 +393,9 @@ var config4 = {
     scales: {
       xAxes: [{
         type: 'time',
+        time: {
+          unit: 'day'
+        },
         display: true,
         ticks: {
           fontSize: 17,
@@ -566,20 +578,38 @@ function graph6() {
   myChart6 = new Chart(ctx6, config4 = {
     type: 'line',
     data: {
-      datasets: [{
-        label: 'Plant Moisture (%)',
-        backgroundColor: "rgba(255, 99, 132, 0.6)",
-        borderColor: "rgba(255, 99, 132, 0.8)",
-        fill: false,
-        lineTension: 0.1,
-        data: [],
-      }]
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
+            ],
+            borderWidth: 1
+        }]
     },
     options: {
       responsive: true,
       scales: {
         xAxes: [{
           type: 'time',
+          time: {
+            unit: 'day'
+          },
           display: true,
           ticks: {
             fontSize: 17,
@@ -600,319 +630,495 @@ function graph6() {
         onClick: null
       }
     }
-  })
+    })
 }
 
 function graph7() {
   var ctx7 = document.getElementById('myChart7');
   var temps7 = [65, 50, 62, 73, 52, 50, 71];
   myChart7 = new Chart(ctx7, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function graph8() {
   var ctx8 = document.getElementById('myChart8');
   var temps8 = [65, 50, 62, 73, 52, 50, 71];
   myChart8 = new Chart(ctx8, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function graph9() {
   var ctx9 = document.getElementById('myChart9');
   var temps9 = [65, 50, 62, 73, 52, 50, 71];
   myChart9 = new Chart(ctx9, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function graph10() {
   var ctx10 = document.getElementById('myChart10');
   var temps10 = [65, 50, 62, 73, 52, 50, 71];
   myChart10 = new Chart(ctx10, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function graph11() {
   var ctx11 = document.getElementById('myChart11');
   var temps11 = [65, 50, 62, 73, 52, 50, 71];
   myChart11 = new Chart(ctx11, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function graph12() {
   var ctx12 = document.getElementById('myChart12');
   var temps12 = [65, 50, 62, 73, 52, 50, 71];
   myChart12 = new Chart(ctx12, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function graph13() {
   var ctx13 = document.getElementById('myChart13');
   var temps13 = [65, 50, 62, 73, 52, 50, 71];
   myChart13 = new Chart(ctx13, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function graph14() {
   var ctx14 = document.getElementById('myChart14');
   var temps14 = [65, 50, 62, 73, 52, 50, 71];
   myChart14 = new Chart(ctx14, {
-  type: 'line',
-  data: {
-      labels: [...days],
-      datasets: [{
-          label: 'Plant Moisture (%)',
-          data: [],
-          backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(239, 149, 107, 0.2)",
-              "rgba(235, 107, 239, 0.2)"
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Plant Moisture (%)',
+            data: [],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(239, 149, 107, 0.2)",
+                "rgba(235, 107, 239, 0.2)"
+              ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(239, 149, 107, 1)",
+                "rgba(235, 107, 239, 1)"
             ],
-          borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(239, 149, 107, 1)",
-              "rgba(235, 107, 239, 1)"
-          ],
-          borderWidth: 1
-      }]
-  },
-  options: {
-    legend: {
-      onClick: null
+            borderWidth: 1
+        }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          display: true,
+          ticks: {
+            fontSize: 17,
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000',
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontSize: 17
+          }
+        }]
+      },
+      legend: {
+        onClick: null
+      }
     }
-  }
-  })
+    })
 }
 
 function toggle() { //toggle for the admin mode
