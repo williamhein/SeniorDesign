@@ -534,7 +534,7 @@ function graph5() {
     responsive: true,
     scales: {
       xAxes: [{
-        type: 'time',
+        type: 'date',
         display: true,
         ticks: {
           fontSize: 17,
