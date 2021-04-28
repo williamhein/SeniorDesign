@@ -480,7 +480,7 @@ $( ".dropdown" ).change(function() {
   */
   document.getElementById(divArray[selected]).style.display = "block";
   for (var i = 1; i < 11; i++) {
-    if ("moistureChart" + i != select) document.getElementById("moistureChart" + i).style.display = "none";
+    if ("moistureChart" + i != selected) document.getElementById("moistureChart" + i).style.display = "none";
   }
 });
 
