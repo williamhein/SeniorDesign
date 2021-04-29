@@ -1,4 +1,5 @@
 <?php
+	echo phpinfo(); 
 	if (isset($POST['submit'])) {
 		$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
 		
