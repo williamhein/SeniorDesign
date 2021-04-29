@@ -103,7 +103,7 @@
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
                 <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-					<input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px; width:100px;">
+					<input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
 					<input type="submit" name="submit" id="go" value="Go"/>
 				</form>
             	</center>
@@ -118,7 +118,7 @@
 					$sql = $con->query("SELECT * FROM admin WHERE id = 1;");
 					$data = $sql->fetch_array();
 					if (password_verify($password, $data['pass'])) {
-						header("Location: ../admin.php");
+						header("Location: /admin.php");
 						exit();
 					} else {
 						echo "Invalid login";
