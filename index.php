@@ -1,6 +1,5 @@
 <?php
-	echo phpinfo(); 
-	if (isset($POST['submit'])) {
+	if (isset($_POST['submit'])) {
 		$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
 		
 		$password = $con->real_escape_string($_POST['password']);
