@@ -1,14 +1,3 @@
-<?php
-	if (isset($_POST['submit'])) {
-		$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
-		
-		$password = $con->real_escape_string($_POST['password1']);
-		
-		$hash = password_hash($password, PASSWORD_DEFAULT);
-		$con->query("INSERT INTO admin (pass) VALUES ('$hash')");
-	}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -23,10 +12,6 @@
  </head>
         <header>
             <h1>Medicine Lodge Greenhouse Plant Stats</h1>
-            <form method="post" action="index.php">
-            	<input name="password1" type="password" placeholder="password"><br>
-            	<input name="submit" type="submit" value="Submit">
-            </form>
         </header>   
         <body>
             <center>
@@ -122,6 +107,22 @@
 				</form>
             	</center>
             </div>
+
+			<?php
+				if (isset($_POST['password'])) {
+					$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
+					
+					$password = $con->real_escape_string($_POST['password']);
+					
+					$sql = $con->query("SELECT * FROM admin WHERE id = 1;");
+					$data = $sql->fetch_array();
+					if (password_verify($password, $data['pass'])) {
+						echo "Valid login";
+					} else {
+						echo "Invalid login";
+					}
+				}
+			?>
 
 			<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
         </body>
