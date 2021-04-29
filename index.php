@@ -1,13 +1,9 @@
 <?php
 	if(isset($POST['submit'])) {
 		$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
-		$hash = password_hash('7031', PASSWORD_BCRYPT);
-		$con->query("INSERT INTO admin VALUES ('$hash')");
+		$hash = password_hash('7031', PASSWORD_DEFAULT);
+		$con->query("INSERT INTO admin (pass) VALUES ('$hash')");
 
-		// Check connection
-		if ($con->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		}
 	}
 ?>
 
