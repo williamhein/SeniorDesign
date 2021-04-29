@@ -103,13 +103,23 @@
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
                 <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST" action="admin.php"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-					<input type="password" data-role="keypad" placeholder="Enter pin" data-target="1234" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
+					<input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-target="1234" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
 				</form>
             	</center>
             </div>
 
+        	<?php
+        		$con = new mysql('localhost', 'root', 'Br@mbl3', 'garden_info');
+        		$hash = password_hash('7031', PASSWORD_BCRYPT);
+        		$con->query("INSERT INTO admin VALUES ('$hash')");
 
-	     <?php		 	
+        		// Check connection
+				if ($con->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				}
+        	?>
+
+<!-- 	     <?php		 	
 			$servername = "localhost";
 			$username = "root";
 			$password = "Br@mbl3"; //ignore the fact that this is plain text
@@ -117,12 +127,12 @@
 			// Create connection
 			$conn = new mysqli($servername, $username, $password);
 
+
 			// Check connection
 			if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 			}
-
-        ?>
+        ?> -->
 
 			<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
         </body>
