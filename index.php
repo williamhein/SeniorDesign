@@ -12,6 +12,7 @@
  </head>
         <header>
             <h1>Medicine Lodge Greenhouse Plant Stats</h1>
+            <input name="submit" type="submit" value="Submit">
         </header>   
         <body>
             <center>
@@ -109,13 +110,15 @@
             </div>
 
         	<?php
-        		$con = new mysql('localhost', 'root', 'Br@mbl3', 'garden_info');
-        		$hash = password_hash('7031', PASSWORD_BCRYPT);
-        		$con->query("INSERT INTO admin VALUES ('$hash')");
+        		if(isset($POST['submit'])) {
+	        		$con = new mysql('localhost', 'root', 'Br@mbl3', 'garden_info');
+	        		$hash = password_hash('7031', PASSWORD_BCRYPT);
+	        		$con->query("INSERT INTO admin VALUES ('$hash')");
 
-        		// Check connection
-				if ($con->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
+	        		// Check connection
+					if ($con->connect_error) {
+						die("Connection failed: " . $conn->connect_error);
+					}
 				}
         	?>
 
