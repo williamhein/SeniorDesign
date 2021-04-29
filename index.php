@@ -6,10 +6,6 @@
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 		$con->query("INSERT INTO admin (pass) VALUES ('$hash')");
 		$msg = "Inserted"
-		// Check connection
-		if ($con->connect_error) {
-			echo "Connection failed";
-		}
 	}
 ?>
 
