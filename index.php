@@ -1,3 +1,16 @@
+<?php
+	if(isset($POST['submit'])) {
+		$con = new mysql('localhost', 'root', 'Br@mbl3', 'garden_info');
+		$hash = password_hash('7031', PASSWORD_BCRYPT);
+		$con->query("INSERT INTO admin VALUES ('$hash')");
+
+		// Check connection
+		if ($con->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -110,20 +123,6 @@
 				</form>
             	</center>
             </div>
-
-        	<?php
-        		if(isset($POST['submit'])) {
-	        		$con = new mysql('localhost', 'root', 'Br@mbl3', 'garden_info');
-	        		$hash = password_hash('7031', PASSWORD_BCRYPT);
-	        		$con->query("INSERT INTO admin VALUES ('$hash')");
-
-	        		// Check connection
-					if ($con->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
-					}
-				}
-        	?>
-
 
 			<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
         </body>
