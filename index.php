@@ -2,7 +2,7 @@
 	if (isset($POST['submit'])) {
 		$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
 		
-		$password = $_POST['password']
+		$password = $con->real_escape_string($_POST['password']);
 		
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 		$con->query("INSERT INTO admin (pass) VALUES ('$hash')");
