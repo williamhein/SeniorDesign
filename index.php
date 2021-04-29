@@ -1,6 +1,6 @@
 <?php
 	if(isset($POST['submit'])) {
-		$con = new mysql('localhost', 'root', 'Br@mbl3', 'garden_info');
+		$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
 		$hash = password_hash('7031', PASSWORD_BCRYPT);
 		$con->query("INSERT INTO admin VALUES ('$hash')");
 
