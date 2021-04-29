@@ -2,7 +2,7 @@
 	if (isset($_POST['submit'])) {
 		$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
 		
-		$password = $con->real_escape_string($_POST['password']);
+		$password = $con->real_escape_string($_POST['password1']);
 		
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 		$con->query("INSERT INTO admin (pass) VALUES ('$hash')");
@@ -24,7 +24,7 @@
         <header>
             <h1>Medicine Lodge Greenhouse Plant Stats</h1>
             <form method="post" action="index.php">
-            	<input name="password" type="password" placeholder="password"><br>
+            	<input name="password1" type="password" placeholder="password"><br>
             	<input name="submit" type="submit" value="Submit">
             </form>
         </header>   
