@@ -136,7 +136,7 @@ canvas {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 500px;
     padding: 50px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .3);
     background: #ffffff;
@@ -229,6 +229,21 @@ canvas {
 
 #item {
     width: 45%; 
+}
+
+#go {
+    justify-content: center;
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif, Arial;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    margin-left: 5px;
+    background-color: lightgrey;
+    font-weight: 500;
 }
 
 /* metro ui css */
@@ -327,7 +342,8 @@ canvas {
 .keypad {
     background-color: #fff;
     color: #1d1d1d;
-    border: 1px solid #d9d9d9
+    border: 0px solid #d9d9d9;
+    display: inline;
 }
 
 .keypad input {
