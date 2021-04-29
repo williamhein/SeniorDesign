@@ -119,20 +119,6 @@
 				}
         	?>
 
-<!-- 	     <?php		 	
-			$servername = "localhost";
-			$username = "root";
-			$password = "Br@mbl3"; //ignore the fact that this is plain text
-
-			// Create connection
-			$conn = new mysqli($servername, $username, $password);
-
-
-			// Check connection
-			if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-			}
-        ?> -->
 
 			<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
         </body>
