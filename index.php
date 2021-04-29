@@ -12,7 +12,9 @@
  </head>
         <header>
             <h1>Medicine Lodge Greenhouse Plant Stats</h1>
-            <input name="submit" type="submit" value="Submit">
+            <form method="post" action="index.php">
+            	<input name="submit" type="submit" value="Submit">
+            </form>
         </header>   
         <body>
             <center>
