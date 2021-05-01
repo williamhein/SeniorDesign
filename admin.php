@@ -3,7 +3,7 @@
    <meta charset="UTF-8">
    <title>Smart Garden</title>
    <link rel="stylesheet" href="styles.css">
-   <script src="script.js"></script>
+   <script src="adminscript.js"></script>
    <div class="container" id="blur">
     <div class="content">
     <header>
@@ -15,8 +15,13 @@
             <center><br>Edit Watering Schedule</center>
             <p style="font-size: 22px; color: white;">
                 <span style="font-weight: lighter;">
-                    <input type="number" id="number" value="5" min="1" max="30" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"><span class="validity"></span> minutes every 
-                    <input type="number" id="number" value="5" min="1" max="72" onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"> hours
+                    Start Time:
+                    <input type="time" id="number"  onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"><span class="validity"></span> 
+                    End Time:
+                    <input type="time" id="number"  onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;">
+<!-- value="5" min="1" max="30" -->
+<!-- value="5" min="1" max="72" -->
+
                 </span>
             </p>
             <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
