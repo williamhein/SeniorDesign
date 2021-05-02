@@ -19,18 +19,18 @@
                 <span style="font-weight: lighter;">
                     Start Time:
                     <!--<input type="time" id="number"  onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"><span class="validity"></span> -->
-                    <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-width="30px" data-fgColor"#b2db94">
+                    <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-width="30px" data-fgColor"#b2db94" value="12">
                     :
                     <!--<input type="time" id="number"  onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;">-->
-                    <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-width="30px" data-fgColor"#b2db94">
+                    <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-width="30px" data-fgColor"#b2db94" value="0">
                     <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
                     End Time:
-                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-width="30px" data-fgColor"#b2db94">
+                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-width="30px" data-fgColor"#b2db94" value="12">
                     :
-                    <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-width="30px" data-fgColor"#b2db94">
+                    <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-width="30px" data-fgColor"#b2db94" value="12">
                     <select class="dropdown" id="r1dde" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>

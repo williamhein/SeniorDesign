@@ -8,3 +8,9 @@ function toggle() { //toggle for the admin mode
 $(function() {
     $(".dial").knob();
 });
+
+$(".dial").knob({
+    format : function (value) {
+        return (value == 0) ? "00" : value ;
+    }
+});
