@@ -19,7 +19,7 @@
                 <button onclick="subRow()">-</button>
             </center>
             <!--<p style="font-size: 45px; color: white;">-->
-            <p style="color: white;">
+            <div style="color: white;">
                 <!--<span style="font-weight: lighter; line-height:20px;">-->
                     <div style="text-align: left; width: 70%; color: white;">Start Time:</div>
                     <br>
@@ -46,10 +46,10 @@
                     </span>
                 <!--</span>-->
                 <hr>
-            </p>
+            </div>
 
 
-            <p style="color: white;">
+            <div style="color: white;">
                 <!--<span style="font-weight: lighter; line-height:20px;">-->
                     <div style="text-align: left; width: 70%; color: white;">Start Time:</div>
                     <br>
@@ -76,7 +76,7 @@
                     </span>
                 <!--</span>-->
                 <hr>
-            </p>
+            </div>
 
             <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </div>
