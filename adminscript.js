@@ -107,6 +107,7 @@ $(function() {
 function save() {
     for (var i = 0; i < numOfRows; i++)
     {
+        console.log(i);
         var timeStringS = getMySQLTime(timesArray["r"+ i + "hs"],timesArray["r"+ i + "ms"], document.getElementById("r"+ numOfRows + "dds").value);
         var timeStringE = getMySQLTime(timesArray["r"+ i + "he"],timesArray["r"+ i + "me"], document.getElementById("r"+ numOfRows + "dde").value);
         console.log(timeStringS + " --> " + timeStringE);
