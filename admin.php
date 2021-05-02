@@ -10,7 +10,7 @@
         <div id="popup1">
             <div>
                 <center>
-                <p><?php if (msg != "") echo $msg . "<br><br>"; ?></p>
+                <p style="color: red;" id="popup1Label"></p>
                 <p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
                 <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
                     <input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
@@ -29,13 +29,17 @@
                 $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
                 $data = $sql->fetch_assoc();
                 if (password_verify($password, $data['pass'])) {
-                    echo '<script type="text/javascript">'.
+                    /*echo '<script type="text/javascript">'.
                     'toggle1();'.
-                    '</script>';
+                    '</script>';*/
                     setcookie("pass", $password, time() + (86400 * 1), "/");
                 } else {
-                    $msg = "Invalid login";
+                    echo '<script type="text/javascript">toggle1("Invalid password!");</script>';
                 }
+            }
+            elseif (!isset($_COOKIE['pass']))
+            {
+                echo '<script type="text/javascript">toggle1();</script>';
             }
         ?>   
    </div>

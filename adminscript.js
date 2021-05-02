@@ -13,12 +13,12 @@ function toggle() { //toggle for the admin mode
     popup.classList.toggle('active');
 }
 
-function toggle1() {
+function toggle1(msg = "") {
     var blur1 = document.getElementById('blur1');
     blur1.classList.toggle('active');  //when the gear is clicked, the blur is initiated
     var popup1 = document.getElementById('popup1');
     popup1.classList.toggle('active');
-    
+    if (msg != "") document.getElementById("popup1Label").innerHTML = msg;
 }
 
 function getMySQLTime(h,m,ap) {
