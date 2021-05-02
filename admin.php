@@ -18,7 +18,7 @@
                 <button onclick="addRow()">+</button>
                 <button onclick="subRow()">-</button>
             </center>
-            
+            <!--
             <div id="r1" style="color: white;">
                     <div style="text-align: left; width: 70%; color: white;">Start Time:</div>
                     <br>
@@ -45,7 +45,7 @@
                     </span>
                 <hr>
             </div>
-
+            -->
             <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </div>
         </center>
