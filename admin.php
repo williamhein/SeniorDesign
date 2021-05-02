@@ -105,7 +105,7 @@
                     $eh = $e[0]; 
                     $em = $e[1]; 
 
-                    echo "addRow(" . $sh . "," . $sm . "," . $eh . "," . $em ");";
+                    echo "addRow(" . $sh . "," . $sm . "," . $eh . "," . $em . ");";
                 }
                 echo "</script>";
             } 
