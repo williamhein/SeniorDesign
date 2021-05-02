@@ -11,6 +11,7 @@ function toggle() { //toggle for the admin mode
     blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
+    save();
 
 }
 
@@ -106,6 +107,8 @@ $(function() {
 function save() {
     for (var i = 0; i < numOfRows; i++)
     {
-        var timeString = getMySQLTime(timesArray["r"+ i + "hs"],timesArray["r"+ i + "ms"],
+        var timeStringS = getMySQLTime(timesArray["r"+ i + "hs"],timesArray["r"+ i + "ms"], document.getElementById("r"+ numOfRows + "dds").value);
+        var timeStringE = getMySQLTime(timesArray["r"+ i + "he"],timesArray["r"+ i + "me"], document.getElementById("r"+ numOfRows + "dde").value);
+        console.log(timeStringS + " --> " + timeStringE);
     }
 }
