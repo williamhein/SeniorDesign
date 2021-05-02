@@ -52,6 +52,10 @@ function addRow() {
    document.getElementById("waterSchedule").appendChild(rows[numOfRows]);
    numOfRows++;
 
+   timesArray["r"+ numOfRows + "hs"] = 12;
+   timesArray["r"+ numOfRows + "ms"] = 0;
+   timesArray["r"+ numOfRows + "he"] = 12;
+   timesArray["r"+ numOfRows + "me"] = 15;
 
    $(function() {
     $(".dial").knob({
