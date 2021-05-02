@@ -20,7 +20,7 @@
     if ($type == "save")
     {
         $times = explode(";",$_GET["times"]);
-        $sql = "DELETE * FROM watering_intervals";
+        $sql = "DELETE * FROM `watering_intervals`";
         $result = $conn->query($sql);
 
         foreach ($times as $time) 
