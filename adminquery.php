@@ -36,7 +36,7 @@
     elseif (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] !== $data['pass']))
     {
         setcookie("pass");
-        echo "Incorrect password."
+        echo "Incorrect password.";
     }
     else
     {
