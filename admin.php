@@ -22,7 +22,7 @@
                     <span style="font-weight: lighter; line-height:20px;">
                     <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-height="250px" data-fgColor="#b2db94" value="12">
                     :
-                    <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-height="150px" data-fgColor="#b2db94" value="0">
+                    <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-height="250px" data-fgColor="#b2db94" value="0">
                     <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
@@ -31,13 +31,15 @@
                 <br>
                     End Time:
                     <br>
-                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="150px" data-fgColor="#b2db94" value="12">
+                    <span style="font-weight: lighter; line-height:20px;">
+                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="250px" data-fgColor="#b2db94" value="12">
                     :
-                    <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-height="150px" data-fgColor="#b2db94" value="15">
+                    <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-height="250px" data-fgColor="#b2db94" value="15">
                     <select class="dropdown" id="r1dde" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
+                    </span>
                 <!--</span>-->
                 <hr>
             </p>
