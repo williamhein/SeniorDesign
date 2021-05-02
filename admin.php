@@ -6,7 +6,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="adminscript.js"></script>
    <script src="jquery.knob.js"></script>
-   <div class="container2" id="blur1">
+   <div class="container" id="blur1">
         <div id="popup1">
             <div onload="toggle1()">
                 <center>
