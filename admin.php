@@ -19,6 +19,7 @@
                 <!--<span style="font-weight: lighter; line-height:20px;">-->
                     Start Time:
                     <br>
+                    <span style="font-weight: lighter; line-height:20px;">
                     <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-height="150px" data-fgColor="#b2db94" value="12">
                     :
                     <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-height="150px" data-fgColor="#b2db94" value="0">
@@ -26,6 +27,7 @@
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
+                    </span>
                 <br>
                     End Time:
                     <br>
