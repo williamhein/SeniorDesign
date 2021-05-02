@@ -55,6 +55,7 @@ function subRow() {
     document.getElementById("waterSchedule").removeChild(rows[numOfRows]);
 }
 
+addRow();
 
 $(function() {
     $(".dial").knob({
