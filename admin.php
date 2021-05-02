@@ -119,7 +119,7 @@
 
                     $ea = "true";
 
-                    $e = explode(":",$row["start_time"]);
+                    $e = explode(":",$row["end_time"]);
                     $eh = $e[0]; 
                     $em = $e[1]; 
 
@@ -136,7 +136,7 @@
                         $eh = $eh % 12;
                         $ea = "false";
                     }
-                    echo "addRow(" . $sh . "," . $sm . "," . $eh . "," . $em . "," . $sa . "," . $ea . ");";
+                    echo "addRow(" . $sh . "," . $sm . "," . $eh . "," . $em . "," . $sa . "," . $ea . ");\r\n";
                 }
                 echo "</script>";
             } 
