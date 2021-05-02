@@ -15,6 +15,7 @@
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule
+                <br>
                 <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
                 <br>
                 <button class="adminButton" onclick="addRow()">+</button>
