@@ -90,10 +90,10 @@
         </div>
         </center>
         <form method="POST" action="index.php">
-            <center><input type="submit" id="back" value="Back to the homepage" style="float: left;width: 260px;margin-left: 80px;margin-top: 0px;margin-bottom: 20px;"/></center> <!-- takes user back to main page -->
+            <center><input type="submit" id="back" value="Back to the homepage" style="float: left;width: 260px;margin-left: 200px;margin-top: 0px;margin-bottom: 20px;"/></center> <!-- takes user back to main page -->
         </form>
         <form method="POST" action="change_password.php">
-            <center><input type="submit" id="water" value="Change password" style="background-color: #b2db94;margin-top: 0px;width: 260px;"/></center> <!-- takes user back to main page -->
+            <center><input type="submit" id="water" value="Change password" style="background-color: #b2db94;margin-top: 0px;width: 260px; float: right; margin-right: 200px"/></center> <!-- takes user back to main page -->
         </form>
         <br><br>
         <!-- crediting icon creator -->
