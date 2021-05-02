@@ -15,8 +15,8 @@
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule</center>
-            <p style="font-size: 60px; color: white;">
-                <span style="font-weight: lighter;">
+            <p style="font-size: 45px; color: white;">
+                <span style="font-weight: lighter; line-height:20px;">
                     Start Time:
                     <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-height="150px" data-fgColor="#b2db94" value="12">
                     :
@@ -27,7 +27,7 @@
 					</select>
                 </span>
                 <br>
-                <span style="font-weight: lighter;">
+                <span style="font-weight: lighter; line-height:20px;">
                     End Time:
                     <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="150px" data-fgColor="#b2db94" value="12">
                     :
