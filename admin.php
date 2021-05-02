@@ -15,8 +15,8 @@
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule
-                <button onclick="">+</button>
-                <button onclick="">-</button>
+                <button onclick="addRow()">+</button>
+                <button onclick="subRow()">-</button>
             </center>
             <!--<p style="font-size: 45px; color: white;">-->
             <p style="color: white;">
@@ -47,6 +47,37 @@
                 <!--</span>-->
                 <hr>
             </p>
+
+
+            <p style="color: white;">
+                <!--<span style="font-weight: lighter; line-height:20px;">-->
+                    <div style="text-align: left; width: 70%; color: white;">Start Time:</div>
+                    <br>
+                    <span style="font-weight: lighter; font-size: 140px; color: white;">
+                    <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-height="110px" data-fgColor="#b2db94" value="12">
+                    :
+                    <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#b2db94" value="0">
+                    <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 40px">
+					    <option onclick="" value="0">AM</option>
+					    <option onclick="" value="12">PM</option>
+					</select>
+                    </span>
+                <br>
+                    <div style="text-align: left; width: 70%; color: white;">End Time:</div>
+                    <br>
+                    <span style="font-weight: lighter;font-size: 140px; color: white;">
+                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="110px" data-fgColor="#b2db94" value="12">
+                    :
+                    <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#b2db94" value="15">
+                    <select class="dropdown" id="r1dde" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 40px">
+					    <option onclick="" value="0">AM</option>
+					    <option onclick="" value="12">PM</option>
+					</select>
+                    </span>
+                <!--</span>-->
+                <hr>
+            </p>
+
             <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </div>
         </center>
