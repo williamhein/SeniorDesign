@@ -2,6 +2,10 @@ var timesArray = [];
 var numOfRows = 0;
 var rows = [];
 
+window.onload = function() {
+    this.addRow();
+};
+
 function toggle() { //toggle for the admin mode
     var blur = document.getElementById('blur');
     blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
@@ -54,8 +58,6 @@ function subRow() {
     rows[numOfRows].innerHTML = "";
     document.getElementById("waterSchedule").removeChild(rows[numOfRows]);
 }
-
-addRow();
 
 $(function() {
     $(".dial").knob({
