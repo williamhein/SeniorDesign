@@ -22,12 +22,12 @@
         $times = explode(";",$_GET["times"]);
         $sql = "DELETE * FROM `watering_intervals`";
         $result = $conn->query($sql);
+        echo $result;
 
         foreach ($times as $time) 
         {
             $splitString = explode(",",$time);
             $sql = "INSERT INTO `watering_intervals` (`start_time`, `end_time`) VALUES (TIME('". $splitString[0] . "'), TIME('". $splitString[1] . "'))";
-            echo $sql . '\n';
             $result = $conn->query($sql);
             echo "New watering schedule saved!";
         }
