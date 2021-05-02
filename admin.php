@@ -15,7 +15,7 @@
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule</center>
-            <p style="font-size: 22px; color: white;">
+            <p style="font-size: 50px; color: white;">
                 <span style="font-weight: lighter;">
                     Start Time:
                     <!--<input type="time" id="number"  onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;"><span class="validity"></span> -->
