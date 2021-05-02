@@ -5,7 +5,15 @@ function toggle() { //toggle for the admin mode
     blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
-  }
+}
+
+/*
+function fillTime() {
+    timesArray = [];
+    timesArray[];
+}
+*/
+
 
 $(function() {
     $(".dial").knob({
@@ -13,7 +21,8 @@ $(function() {
             return (value >= 0 && value <= 9) ? "0" + value : value ;
         },
         release : function (value) {
-            console.log(this.$.attr('id'));
+            timesArray[this.$.attr('id')] = value;
+            console.log(timesArray[this.$.attr('id')]);
         }
     });
 });
