@@ -27,6 +27,7 @@
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
+                    <br>
                     End Time:
                     <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-width="30px" data-fgColor="#b2db94" value="12">
                     :
@@ -35,6 +36,9 @@
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
+                    <hr>
+                    fds
+
 <!-- value="5" min="1" max="30" -->
 <!-- value="5" min="1" max="72" -->
 
