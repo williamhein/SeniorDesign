@@ -3,9 +3,9 @@
    <meta charset="UTF-8">
    <title>Smart Garden</title>
    <link rel="stylesheet" href="styles.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="adminscript.js"></script>
    <script src="jquery.knob.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <div class="container" id="blur">
     <div class="content">
     <header>
