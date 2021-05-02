@@ -3,7 +3,7 @@ var numOfRows = 0;
 var rows = [];
 
 window.onload = function() {
-    this.addRow();
+    //this.addRow();
 };
 
 function toggle() { //toggle for the admin mode
@@ -26,7 +26,7 @@ function getMySQLTime(h,m,ap) {
     }
 }
 
-function addRow() {
+function addRow(sh = 12, sm = 0, eh = 12, em = 15) {
     if (rows >= 20) return;
 
     rows[numOfRows] = document.createElement("div");
@@ -35,9 +35,9 @@ function addRow() {
    +'        <div style="text-align: left; width: 70%; color: white;">Start Time:</div>'
    +'        <br>'
    +'        <span style="font-weight: lighter; font-size: 140px; color: white;">'
-   +'            <input id = "r'+ numOfRows + 'hs" type="text" class="dial" data-min="1" data-max="12" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="12">'
+   +'            <input id = "r'+ numOfRows + 'hs" type="text" class="dial" data-min="1" data-max="12" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="'+ sh + '">'
    +'             '
-   +'            <input id = "r'+ numOfRows + 'ms" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="0">'
+   +'            <input id = "r'+ numOfRows + 'ms" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="'+ sm + '">'
    +'            <select class="dropdown" id="r'+ numOfRows + 'dds" style = "font-family: \'Quicksand\', sans-serif, Arial; font-size: 40px">'
    +'                <option onclick="" value="0">AM</option>'
    +'                <option onclick="" value="12">PM</option>'
@@ -47,9 +47,9 @@ function addRow() {
    +'        <div style="text-align: left; width: 70%; color: white;">End Time:</div>'
    +'        <br>'
    +'        <span style="font-weight: lighter;font-size: 140px; color: white;">'
-   +'            <input id = "r'+ numOfRows + 'he" type="text" class="dial" data-min="1" data-max="12" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="12">'
+   +'            <input id = "r'+ numOfRows + 'he" type="text" class="dial" data-min="1" data-max="12" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="'+ eh + '">'
    +'             '
-   +'            <input id = "r'+ numOfRows + 'me" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="15">'
+   +'            <input id = "r'+ numOfRows + 'me" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="'+ em + '">'
    +'            <select class="dropdown" id="r'+ numOfRows + 'dde" style = "font-family: \'Quicksand\', sans-serif, Arial; font-size: 40px">'
    +'                <option onclick="" value="0">AM</option>'
    +'                <option onclick="" value="12">PM</option>'

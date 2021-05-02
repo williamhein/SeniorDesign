@@ -52,6 +52,8 @@
                 <hr>
             </div>
             -->
+
+
         </div>
         </center>
         <form method="POST" action="index.php">
@@ -71,5 +73,42 @@
         <!-- <div id="changeNames">
             <center><br>Edit Row Names</center>
         </div> -->
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "Br@mbl3"; //ignore the fact that this is plain text
+                                    //when we make users, we need to make a read only users for explicity this code
+        
+            // Create connection
+            $conn = new mysqli($servername, $username, $password);
+        
+            // Check connection
+            if ($conn->connect_error) 
+            {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            $conn->query("use garden_info");
+
+            $sql = "SELECT * FROM watering_intervals";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) 
+            {
+                echo "<script>";
+                while($row = $result->fetch_assoc()) 
+                {
+                    $s = explode(":"$row["start_time"]);
+                    $sh = $s[0]; 
+                    $sm = $s[1]; 
+                    
+                    $e = explode(":"$row["start_time"]);
+                    $eh = $e[0]; 
+                    $em = $e[1]; 
+
+                    echo "addRow(" . $sh . "," . $sm . "," . $eh . "," . $em ");";
+                }
+                echo "</script>";
+            } 
+        ?>
     </body>
 </html>
