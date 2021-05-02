@@ -14,14 +14,6 @@ function toggle() { //toggle for the admin mode
 
 }
 
-function toggle1() { //toggle for the admin mode
-    var blur1 = document.getElementById('blur1');
-    blur.classList.toggle1('active');  //when the gear is clicked, the blur is initiated
-    var popup1 = document.getElementById('popup1');
-    popup.classList.toggle1('active');
-
-}
-
 function getMySQLTime(h,m,ap) {
     if (ap == "am")
         return ((h >= 0 && h <= 9) ? "0" + h : ((h == 12)? "0" : h )) + ":" + ((m >= 0 && m <= 9) ? "0" + m : m) + ":00";
