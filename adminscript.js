@@ -15,9 +15,9 @@ function toggle() { //toggle for the admin mode
 }
 
 function toggle1() { //toggle for the admin mode
-    var blur = document.getElementById('blur');
+    var blur1 = document.getElementById('blur1');
     blur.classList.toggle1('active');  //when the gear is clicked, the blur is initiated
-    var popup = document.getElementById('popup');
+    var popup1 = document.getElementById('popup1');
     popup.classList.toggle1('active');
 
 }

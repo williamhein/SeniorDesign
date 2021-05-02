@@ -6,13 +6,8 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="adminscript.js"></script>
    <script src="jquery.knob.js"></script>
-   <div class="container" id="blur">
-    <div class="content">
-    <header>
-        <h1>Medicine Lodge<br>Greenhouse Plant Stats</h1>
-    </header>   
-    <body>
-        <div id="popup" onload="toggle1()">
+   <div class="container2" id="blur1">
+        <div id="popup1" onload="toggle1()">
             <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
             <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
                 <input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
@@ -36,8 +31,14 @@
                     echo "Invalid login";
                 }
             }
-        ?>
-
+        ?>   
+   </div>
+   <div class="container" id="blur">
+    <div class="content">
+    <header>
+        <h1>Medicine Lodge<br>Greenhouse Plant Stats</h1>
+    </header>   
+    <body>
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule

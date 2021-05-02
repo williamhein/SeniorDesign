@@ -10,7 +10,7 @@ header, footer {
     padding: none;
 }
 
-#container {
+#container, #container2 {
 	flex-wrap: wrap;
 	width: 100%;
 	justify-content: space-around;
@@ -125,7 +125,7 @@ canvas {
     right: 10px;
 }
 
-.container#blur.active {
+.container#blur.active, .container2#blur.active {
     filter: blur(20px);
     pointer-events: none;
     user-select: none;
