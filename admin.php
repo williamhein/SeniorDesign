@@ -7,13 +7,17 @@
    <script src="adminscript.js"></script>
    <script src="jquery.knob.js"></script>
    <div class="container2" id="blur1">
-        <div id="popup1" onload="toggle1()">
-            <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
-            <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-                <input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
-                <input type="submit" name="submit" id="go" value="Go"/>
-            </form>
-            </center>
+        <div id="popup1">
+            <div onload="toggle1()">
+                <center>
+                <p><?php if (msg != "") echo $msg . "<br><br>"; ?></p>
+                <p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
+                <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
+                    <input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
+                    <input type="submit" name="submit" id="go" value="Go"/>
+                </form>
+                </center>
+            </div>
         </div>
 
         <?php
@@ -25,10 +29,12 @@
                 $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
                 $data = $sql->fetch_assoc();
                 if (password_verify($password, $data['pass'])) {
-                    echo "Successful login";
+                    '<script type="text/javascript">',
+                     'toggle1();',
+                     '</script>';
                     exit();
                 } else {
-                    echo "Invalid login";
+                    $msg = "Invalid login";
                 }
             }
         ?>   
