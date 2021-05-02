@@ -131,7 +131,7 @@ canvas {
     user-select: none;
 }
 
-#popup, #savePopup {
+#popup, #savePopup, #popup1 {
     position: fixed;
     top: 40%;
     left: 50%;
@@ -145,7 +145,7 @@ canvas {
     transition: 0.5s;
 }
 
-#popup.active {
+#popup.active, #popup1.active {
     top: 50%;
     visibility: visible;
     opacity: 1;

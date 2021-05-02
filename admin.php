@@ -8,7 +8,7 @@
    <script src="jquery.knob.js"></script>
    <div class="container" id="blur1">
         <div id="popup1">
-            <div onload="toggle1()">
+            <div>
                 <center>
                 <p><?php if (msg != "") echo $msg . "<br><br>"; ?></p>
                 <p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
