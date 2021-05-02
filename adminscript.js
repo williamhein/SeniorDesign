@@ -6,11 +6,12 @@ window.onload = function() {
     //this.addRow();
 };
 
-function toggle() { //toggle for the admin mode
+function toggle(msg = "") { //toggle for the admin mode
     var blur = document.getElementById('blur');
     blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
+    document.getElementById("toggleLabel").innerHTML = msg;
 }
 
 function toggle1(msg = "") {
@@ -130,8 +131,7 @@ function send(string) {
     {
       if (this.readyState == 4 && this.status == 200) 
       {
-       document.getElementById("toggleLabel").innerHTML = this.responseText;
-       toggle();
+       toggle(this.responseText);
       }
     };
 

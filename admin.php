@@ -113,6 +113,7 @@
                 $data = $sql->fetch_assoc();
                 if (password_verify($password, $data['pass'])) {
                     setcookie("pass", $password, time() + (86400 * 1), "/");
+                    echo '<script type="text/javascript">toggle("Sign in successful!");</script>';
                 } else {
                     echo '<script type="text/javascript">toggle1("Invalid password!");</script>';
                 }
