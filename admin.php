@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+
+<?php
+    if (isset($_POST['submit'])) {
+        $con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
+        
+        $password = $con->real_escape_string($_POST['password']);
+        
+        $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
+        $data = $sql->fetch_assoc();
+        if (password_verify($password, $data['pass'])) 
+        {
+            setcookie("pass", $password, time() + (86400 * 1), "/");
+        }
+    }
+?>
+
 <html lang="en">
    <meta charset="UTF-8">
    <title>Smart Garden</title>
@@ -19,19 +35,6 @@
                 </center>
             </div>
         </div> -->
-        <?php
-            if (isset($_POST['submit'])) {
-                $con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
-                
-                $password = $con->real_escape_string($_POST['password']);
-                
-                $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
-                $data = $sql->fetch_assoc();
-                if (password_verify($password, $data['pass'])) {
-                    setcookie("pass", $password, time() + (86400 * 1), "/");
-                }
-            }
-        ?>
    <!--</div>-->
    <div class="container" id="blur">
         
