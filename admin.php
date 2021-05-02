@@ -16,7 +16,7 @@
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule</center>
             <!--<p style="font-size: 45px; color: white;">-->
-            <p style="color: white;">
+            <!--<p style="color: white;">-->
                 <!--<span style="font-weight: lighter; line-height:20px;">-->
                     Start Time:
                     <br>
@@ -43,7 +43,7 @@
                     </span>
                 <!--</span>-->
                 <hr>
-            </p>
+            <!--</p>-->
             <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </div>
         </center>
