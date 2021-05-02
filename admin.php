@@ -25,7 +25,8 @@
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
-                    <br>
+                </span>
+                <span style="font-weight: lighter;">
                     End Time:
                     <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="30px" data-fgColor="#b2db94" value="12">
                     :
@@ -34,12 +35,8 @@
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
-                    <hr>
-
-<!-- value="5" min="1" max="30" -->
-<!-- value="5" min="1" max="72" -->
-
                 </span>
+                <hr>
             </p>
             <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </div>
