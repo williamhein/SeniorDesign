@@ -118,6 +118,7 @@
 					$sql = $con->query("SELECT * FROM admin WHERE id = 1;");
 					$data = $sql->fetch_assoc();
 					if (password_verify($password, $data['pass'])) {
+						echo "Good";
 						header("Location: /admin.php");
 						exit();
 					} else {
