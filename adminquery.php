@@ -33,6 +33,11 @@
         }
         echo "New watering schedule saved!";
     }
+    elseif (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] !== $data['pass']))
+    {
+        setcookie("pass");
+        echo "Incorrect password."
+    }
     else
     {
         echo "User not signed in.";
