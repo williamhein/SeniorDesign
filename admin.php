@@ -16,7 +16,7 @@
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule
                 <br>
-                <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
+                <input onclick="save()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
                 <br>
                 <button class="adminButton" onclick="addRow()">+</button>
                 <button class="adminButton" onclick="subRow()">-</button>
@@ -63,7 +63,7 @@
     </div>
         <div id="popup">
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/>
-            <center><p>New watering schedule saved!</p></center>
+            <center><p id="toggleLabel">New watering schedule saved!</p></center>
         </div>
 
             <!-- </form> -->

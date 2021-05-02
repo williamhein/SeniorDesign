@@ -105,11 +105,29 @@ $(function() {
 });
 
 function save() {
+    var saveString = "";
     for (var i = 0; i < numOfRows; i++)
     {
         console.log(i);
         var timeStringS = getMySQLTime(timesArray["r"+ i + "hs"],timesArray["r"+ i + "ms"], (document.getElementById("r"+ i + "dds").selectedIndex == 0)?"am":"pm");
         var timeStringE = getMySQLTime(timesArray["r"+ i + "he"],timesArray["r"+ i + "me"], (document.getElementById("r"+ i + "dde").selectedIndex == 0)?"am":"pm");
         console.log(timeStringS + " --> " + timeStringE);
+        saveString += timeStringS + "," + timeStringE + ((i == numOfRows - 1)?"":";");
     }
+    console.log(saveString);
+    send(saveString);
 }
+
+function send(string) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() 
+    {
+      if (this.readyState == 4 && this.status == 200) 
+      {
+       document.getElementById("toggleLabel").innerHTML = this.responseText;
+      }
+    };
+
+    xhttp.open("GET", "adminquery.php?type=save&times=" + string, true);
+    xhttp.send();
+  }
