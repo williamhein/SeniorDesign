@@ -122,7 +122,7 @@ function save() {
         console.log(timeStringS + " --> " + timeStringE);
         saveString += timeStringS + "," + timeStringE + ((i == numOfRows - 1)?"":";");
 
-        if (timeStringE >= timeStringS)
+        if (timeStringE <= timeStringS)
         {
             toggle("The end time must be after the start time!");
             return;
