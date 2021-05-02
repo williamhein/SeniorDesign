@@ -107,11 +107,11 @@
                     {
                         $sh = 12;
                     }
-                    if ($sh == 12) 
+                    elseif ($sh == 12) 
                     {
                         $sa = "false";
                     }
-                    if ($sh > 12)
+                    elseif ($sh > 12)
                     {
                         $sh = $sh % 12;
                         $sa = "false";
@@ -127,11 +127,11 @@
                     {
                         $eh = 12;
                     }
-                    if ($eh == 12) 
+                    elseif ($eh == 12) 
                     {
                         $ea = "false";
                     }
-                    if ($eh > 12)
+                    elseif ($eh > 12)
                     {
                         $eh = $eh % 12;
                         $ea = "false";
