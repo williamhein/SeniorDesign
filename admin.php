@@ -19,8 +19,19 @@
                 </center>
             </div>
         </div> -->
-
-        
+        <?php
+            if (isset($_POST['submit'])) {
+                $con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
+                
+                $password = $con->real_escape_string($_POST['password']);
+                
+                $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
+                $data = $sql->fetch_assoc();
+                if (password_verify($password, $data['pass'])) {
+                    setcookie("pass", $password, time() + (86400 * 1), "/");
+                }
+            }
+        ?>
    <!--</div>-->
    <div class="container" id="blur">
         
@@ -112,13 +123,12 @@
                 $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
                 $data = $sql->fetch_assoc();
                 if (password_verify($password, $data['pass'])) {
-                    setcookie("pass", $password, time() + (86400 * 1), "/");
                     echo '<script type="text/javascript">alert("password!");</script>';
                 } else {
                     echo '<script type="text/javascript">toggle1("Invalid password!");</script>';
                 }
             }
-            elseif (!isset($_COOKIE['pass']))
+            if (!isset($_COOKIE['pass']))
             {
                 echo '<script type="text/javascript">toggle1();</script>';
             }
@@ -126,7 +136,7 @@
             {
                 echo '<script type="text/javascript">toggle("Sign in successful!");</script>';
             }
-            
+
             $servername = "localhost";
             $username = "root";
             $password = "Br@mbl3"; //ignore the fact that this is plain text
