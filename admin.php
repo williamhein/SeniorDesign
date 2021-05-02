@@ -97,11 +97,11 @@
                 echo "<script>";
                 while($row = $result->fetch_assoc()) 
                 {
-                    $s = explode(":"$row["start_time"]);
+                    $s = explode(":",$row["start_time"]);
                     $sh = $s[0]; 
                     $sm = $s[1]; 
                     
-                    $e = explode(":"$row["start_time"]);
+                    $e = explode(":",$row["start_time"]);
                     $eh = $e[0]; 
                     $em = $e[1]; 
 
