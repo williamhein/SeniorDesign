@@ -18,7 +18,7 @@
 
     $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
     $data = $sql->fetch_assoc();
-    
+
     if ($type == "save" && isset($_COOKIE["pass"]) && password_verify($_COOKIE["pass"], $data['pass']))
     {
         $times = explode(";",$_GET["times"]);
@@ -32,6 +32,10 @@
             $result = $conn->query($sql);
         }
         echo "New watering schedule saved!";
+    }
+    else
+    {
+        echo "User not signed in.";
     }
     
 ?>
