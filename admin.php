@@ -5,6 +5,7 @@
    <link rel="stylesheet" href="styles.css">
    <script src="adminscript.js"></script>
    <script src="jquery.knob.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <div class="container" id="blur">
     <div class="content">
     <header>
@@ -22,7 +23,7 @@
                     :
                     <!--<input type="time" id="number"  onkeydown="return false" style="height: 30px; width: 40px; font-size: 20px;">-->
                     <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59">
-                    <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 20px">
+                    <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
@@ -30,7 +31,7 @@
                     <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12">\
                     :
                     <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59">
-                    <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 20px">
+                    <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
