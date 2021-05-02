@@ -94,37 +94,9 @@
       <div style="bottom: 0; position: fixed; background-color: white; width: 100%; font-family: 'Quicksand', sans-serif, Arial;">Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
       </div>
     </div>
-            <input onclick="toggle()" type="image" id="gear" src="gear.png"/> <!-- when clicked, the popup to enter admin mode pops up -->
+            <input onclick="location.href = '/admin.php';" type="image" id="gear" src="gear.png"/> <!-- when clicked, the popup to enter admin mode pops up -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script> <!-- code for using chart. -->
             <script src="script.js"></script>
-
-  
-            <div id="popup">
-            <input onclick="toggle()" type="image" id="exit" src="cancel.png"/> <!-- when clicked, the popup for admin mode disappears -->
-                <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
-                <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
-					<input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
-					<input type="submit" name="submit" id="go" value="Go"/>
-				</form>
-            	</center>
-            </div>
-
-			<?php
-				if (isset($_POST['submit'])) {
-					$con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
-					
-					$password = $con->real_escape_string($_POST['password']);
-					
-					$sql = $con->query("SELECT * FROM admin WHERE id = 1;");
-					$data = $sql->fetch_assoc();
-					if (password_verify($password, $data['pass'])) {
-						header("Location: admin.php");
-						exit();
-					} else {
-						echo "Invalid login";
-					}
-				}
-			?>
 
 			<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
         </body>

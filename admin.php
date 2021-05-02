@@ -12,6 +12,32 @@
         <h1>Medicine Lodge<br>Greenhouse Plant Stats</h1>
     </header>   
     <body>
+        <div id="popup" onload="toggle()">
+            <center><p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
+            <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
+                <input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
+                <input type="submit" name="submit" id="go" value="Go"/>
+            </form>
+            </center>
+        </div>
+
+        <?php
+            if (isset($_POST['submit'])) {
+                $con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
+                
+                $password = $con->real_escape_string($_POST['password']);
+                
+                $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
+                $data = $sql->fetch_assoc();
+                if (password_verify($password, $data['pass'])) {
+                    echo "Successful login";
+                    exit();
+                } else {
+                    echo "Invalid login";
+                }
+            }
+        ?>
+
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule
