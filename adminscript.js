@@ -10,8 +10,7 @@ function toggle() { //toggle for the admin mode
 $(function() {
     $(".dial").knob({
         format : function (value) {
-            return value + ";";
-            //return (value == 0) ? "00" : value ;
+            return (value == 0) ? "00" : value ;
         }
     });
 });
