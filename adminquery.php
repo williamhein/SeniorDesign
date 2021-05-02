@@ -20,7 +20,7 @@
     if ($type == "save")
     {
         $times = explode(";",$_GET["times"]);
-        $sql = "DELETE * FROM `watering_intervals`";
+        $sql = "TRUNCATE TABLE watering_intervals";
         echo $sql;
         $result = $conn->query($sql);
         echo $result;
