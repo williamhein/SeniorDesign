@@ -50,12 +50,13 @@ function addRow() {
    +'    <hr>'
    +'</div>';
    document.getElementById("waterSchedule").appendChild(rows[numOfRows]);
-   numOfRows++;
 
    timesArray["r"+ numOfRows + "hs"] = 12;
    timesArray["r"+ numOfRows + "ms"] = 0;
    timesArray["r"+ numOfRows + "he"] = 12;
    timesArray["r"+ numOfRows + "me"] = 15;
+
+   numOfRows++;
 
    $(function() {
     $(".dial").knob({
@@ -76,6 +77,10 @@ function subRow() {
     numOfRows--;
     rows[numOfRows].innerHTML = "";
     document.getElementById("waterSchedule").removeChild(rows[numOfRows]);
+    timesArray["r"+ numOfRows + "hs"] = null;
+    timesArray["r"+ numOfRows + "ms"] = null;
+    timesArray["r"+ numOfRows + "he"] = null;
+    timesArray["r"+ numOfRows + "me"] = null;
 }
 
 $(function() {
