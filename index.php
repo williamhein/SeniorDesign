@@ -116,7 +116,7 @@
 					$password = $con->real_escape_string($_POST['password']);
 					
 					$sql = $con->query("SELECT * FROM admin WHERE id = 1;");
-					$data = $sql->fetch_array();
+					$data = $sql->fetch_assoc();
 					if (password_verify($password, $data['pass'])) {
 						header("Location: /admin.php");
 						exit();
