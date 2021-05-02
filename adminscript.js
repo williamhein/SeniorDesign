@@ -61,6 +61,7 @@ function addRow() {
         release : function (value) {
             timesArray[this.$.attr('id')] = value;
             console.log(timesArray[this.$.attr('id')]);
+            console.log(this.$.attr('id'));
         }
     });
 });
