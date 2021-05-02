@@ -29,10 +29,9 @@
                 $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
                 $data = $sql->fetch_assoc();
                 if (password_verify($password, $data['pass'])) {
-                    '<script type="text/javascript">',
-                     'toggle1();',
-                     '</script>';
-                    exit();
+                    echo '<script type="text/javascript">',
+                    'toggle1();',
+                    '</script>';
                 } else {
                     $msg = "Invalid login";
                 }
