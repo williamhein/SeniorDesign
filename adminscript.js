@@ -5,13 +5,13 @@ function toggle() { //toggle for the admin mode
     popup.classList.toggle('active');
   }
 
-$(".dial").knob({
-    format : function (value) {
-        return value + ";";
-        //return (value == 0) ? "00" : value ;
-    }
-});
+
 
 $(function() {
-    $(".dial").knob();
+    $(".dial").knob({
+        format : function (value) {
+            return value + ";";
+            //return (value == 0) ? "00" : value ;
+        }
+    });
 });
