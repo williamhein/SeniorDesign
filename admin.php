@@ -15,8 +15,8 @@
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule
-                <button onclick="addRow()">+</button>
-                <button onclick="subRow()">-</button>
+                <button class="adminButton" onclick="addRow()">+</button>
+                <button class="adminButton" onclick="subRow()">-</button>
             </center>
             <!--
             <div id="r1" style="color: white;">
@@ -46,8 +46,8 @@
                 <hr>
             </div>
             -->
-            <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </div>
+        <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
         </center>
         <form method="POST" action="index.php">
             <center><input type="submit" id="back" value="Back to the homepage"/></center> <!-- takes user back to main page -->

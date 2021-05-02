@@ -197,6 +197,18 @@ canvas {
     margin-bottom: 20px;
 }
 
+.adminButton {
+    width: 70px;
+    justify-content: center;
+    background-color: #b2db94;
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif, Arial;
+    font-weight: bolder;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
 #water:hover, #go:hover, #back:hover {
 	cursor: pointer;
 }
