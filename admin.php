@@ -15,10 +15,11 @@
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule
+                <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
+                <br>
                 <button class="adminButton" onclick="addRow()">+</button>
                 <button class="adminButton" onclick="subRow()">-</button>
             </center>
-            <input onclick="toggle()" type="submit" id="water" value="Save"/> <!-- saves the new watering schedule -->
             <!--
             <div id="r1" style="color: white;">
                     <div style="text-align: left; width: 70%; color: white;">Start Time:</div>
