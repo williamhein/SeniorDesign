@@ -59,10 +59,10 @@ function addRow(sh = 12, sm = 0, eh = 12, em = 15, ams = true, ame = true) {
    +'</div>';
    document.getElementById("waterSchedule").appendChild(rows[numOfRows]);
 
-   timesArray["r"+ numOfRows + "hs"] = 12;
-   timesArray["r"+ numOfRows + "ms"] = 0;
-   timesArray["r"+ numOfRows + "he"] = 12;
-   timesArray["r"+ numOfRows + "me"] = 15;
+   timesArray["r"+ numOfRows + "hs"] = sh;
+   timesArray["r"+ numOfRows + "ms"] = sm;
+   timesArray["r"+ numOfRows + "he"] = eh;
+   timesArray["r"+ numOfRows + "me"] = em;
 
    numOfRows++;
 
