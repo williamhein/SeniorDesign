@@ -29,9 +29,6 @@
                 $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
                 $data = $sql->fetch_assoc();
                 if (password_verify($password, $data['pass'])) {
-                    /*echo '<script type="text/javascript">'.
-                    'toggle1();'.
-                    '</script>';*/
                     setcookie("pass", $password, time() + (86400 * 1), "/");
                 } else {
                     echo '<script type="text/javascript">toggle1("Invalid password!");</script>';

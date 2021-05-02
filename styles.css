@@ -125,7 +125,7 @@ canvas {
     right: 10px;
 }
 
-.container#blur.active, .container2#blur.active {
+.container#blur.active, .container#blur1.active, .container2#blur.active {
     filter: blur(20px);
     pointer-events: none;
     user-select: none;
