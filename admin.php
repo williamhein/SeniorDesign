@@ -126,9 +126,7 @@
             {
                 echo '<script type="text/javascript">toggle("Sign in successful!");</script>';
             }
-        ?>   
-
-        <?php
+            
             $servername = "localhost";
             $username = "root";
             $password = "Br@mbl3"; //ignore the fact that this is plain text
