@@ -18,18 +18,18 @@
             <p style="font-size: 50px; color: white;">
                 <span style="font-weight: lighter;">
                     Start Time:
-                    <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-height="100px" data-fgColor="#b2db94" value="12">
+                    <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-height="30px" data-fgColor="#b2db94" value="12">
                     :
-                    <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-height="100px" data-fgColor="#b2db94" value="0">
+                    <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-height="30px" data-fgColor="#b2db94" value="0">
                     <select class="dropdown" id="r1dds" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
 					</select>
                     <br>
                     End Time:
-                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="100px" data-fgColor="#b2db94" value="12">
+                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="30px" data-fgColor="#b2db94" value="12">
                     :
-                    <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-height="100px" data-fgColor="#b2db94" value="15">
+                    <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-height="30px" data-fgColor="#b2db94" value="15">
                     <select class="dropdown" id="r1dde" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
 					    <option onclick="" value="0">AM</option>
 					    <option onclick="" value="12">PM</option>
