@@ -51,6 +51,19 @@ function addRow() {
    +'</div>';
    document.getElementById("waterSchedule").appendChild(rows[numOfRows]);
    numOfRows++;
+
+
+   $(function() {
+    $(".dial").knob({
+        format : function (value) {
+            return (value >= 0 && value <= 9) ? "0" + value : value ;
+        },
+        release : function (value) {
+            timesArray[this.$.attr('id')] = value;
+            console.log(timesArray[this.$.attr('id')]);
+        }
+    });
+});
 }
 
 function subRow() {
