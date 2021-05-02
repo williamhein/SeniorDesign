@@ -97,15 +97,46 @@
                 echo "<script>";
                 while($row = $result->fetch_assoc()) 
                 {
+                    $sa = "true";
+
                     $s = explode(":",$row["start_time"]);
                     $sh = $s[0]; 
                     $sm = $s[1]; 
                     
+                    if ($sh == 0) 
+                    {
+                        $sh = 12;
+                    }
+                    if ($sh == 12) 
+                    {
+                        $sa = "false";
+                    }
+                    if ($sh > 12)
+                    {
+                        $sh = $sh % 12;
+                        $sa = "false";
+                    }
+
+                    $ea = "true";
+
                     $e = explode(":",$row["start_time"]);
                     $eh = $e[0]; 
                     $em = $e[1]; 
 
-                    echo "addRow(" . $sh . "," . $sm . "," . $eh . "," . $em . ");";
+                    if ($eh == 0) 
+                    {
+                        $eh = 12;
+                    }
+                    if ($eh == 12) 
+                    {
+                        $ea = "false";
+                    }
+                    if ($eh > 12)
+                    {
+                        $eh = $eh % 12;
+                        $ea = "false";
+                    }
+                    echo "addRow(" . $sh . "," . $sm . "," . $eh . "," . $em . "," . $sa . "," . $ea . ");";
                 }
                 echo "</script>";
             } 

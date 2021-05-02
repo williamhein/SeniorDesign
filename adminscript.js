@@ -26,7 +26,7 @@ function getMySQLTime(h,m,ap) {
     }
 }
 
-function addRow(sh = 12, sm = 0, eh = 12, em = 15) {
+function addRow(sh = 12, sm = 0, eh = 12, em = 15, ams = true, ame = true) {
     if (rows >= 20) return;
 
     rows[numOfRows] = document.createElement("div");
@@ -40,7 +40,7 @@ function addRow(sh = 12, sm = 0, eh = 12, em = 15) {
    +'            <input id = "r'+ numOfRows + 'ms" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="'+ sm + '">'
    +'            <select class="dropdown" id="r'+ numOfRows + 'dds" style = "font-family: \'Quicksand\', sans-serif, Arial; font-size: 40px">'
    +'                <option onclick="" value="0">AM</option>'
-   +'                <option onclick="" value="12">PM</option>'
+   +'                <option ' + ((ams)?'':'selected') + '  onclick="" value="12">PM</option>'
    +'            </select>'
    +'        </span>'
    +'    <br>'
@@ -52,7 +52,7 @@ function addRow(sh = 12, sm = 0, eh = 12, em = 15) {
    +'            <input id = "r'+ numOfRows + 'me" type="text" class="dial" data-min="0" data-max="59" data-height="110px" data-fgColor="#000000" data-inputColor="#664411" value="'+ em + '">'
    +'            <select class="dropdown" id="r'+ numOfRows + 'dde" style = "font-family: \'Quicksand\', sans-serif, Arial; font-size: 40px">'
    +'                <option onclick="" value="0">AM</option>'
-   +'                <option onclick="" value="12">PM</option>'
+   +'                <option ' + ((ame)?'':'selected') + ' onclick="" value="12">PM</option>'
    +'            </select>'
    +'        </span>'
    +'    <hr>'
