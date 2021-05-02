@@ -29,8 +29,8 @@
             $splitString = explode(",",$time);
             $sql = "INSERT INTO `watering_intervals` (`start_time`, `end_time`) VALUES (TIME('". $splitString[0] . "'), TIME('". $splitString[1] . "'))";
             $result = $conn->query($sql);
-            echo "New watering schedule saved!";
         }
+        echo "New watering schedule saved!";
         /*
         if ($result->num_rows > 0) 
         {
