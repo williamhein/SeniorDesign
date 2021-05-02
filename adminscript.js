@@ -12,6 +12,7 @@ function toggle(msg = "") { //toggle for the admin mode
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
     document.getElementById("toggleLabel").innerHTML = msg;
+    if (msg == "Incorrect password.") {alert('Incorrect password, sending back to login.');window.location.reload(forceget);}
 }
 
 function toggle1(msg = "") {
