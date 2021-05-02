@@ -8,3 +8,7 @@ function toggle() { //toggle for the admin mode
 $(function() {
     $(".dial").knob();
 });
+
+$(".dial").knob({
+    "height": 30
+});

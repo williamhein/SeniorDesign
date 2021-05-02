@@ -28,7 +28,7 @@
 					    <option onclick="" value="12">PM</option>
 					</select>
                     End Time:
-                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" height="30px">
+                    <input id = "r1he" type="text" class="dial" data-min="1" data-max="12">
                     :
                     <input id = "r1me" type="text" class="dial" data-min="0" data-max="59">
                     <select class="dropdown" id="r1dde" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 18px">
