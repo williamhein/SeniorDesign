@@ -21,6 +21,7 @@
     {
         $times = explode(";",$_GET["times"]);
         $sql = "DELETE * FROM `watering_intervals`";
+        echo $sql;
         $result = $conn->query($sql);
         echo $result;
 
