@@ -11,16 +11,24 @@ function toggle() { //toggle for the admin mode
     blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
+
 }
 
-/*
-function fillTime() {
-    timesArray = [];
-    timesArray[];
+function getMySQLTime(h,m,ap) {
+    if (ap == "am")
+        return ((h >= 0 && h <= 9) ? "0" + h : ((h == 12)? "0" : h )) + ":" + ((m >= 0 && m <= 9) ? "0" + m : m) + ":00";
+    else
+    {
+        if (h == 12)
+            return "12" + ((m >= 0 && m <= 9) ? "0" + m : m) + ":00";
+        else
+            return (h+12) + ":" + ((m >= 0 && m <= 9) ? "0" + m : m) + ":00";
+    }
 }
-*/
 
 function addRow() {
+    if (rows >= 20) return;
+
     rows[numOfRows] = document.createElement("div");
     rows[numOfRows].innerHTML =
    ' <div id="r'+ numOfRows + '" style="color: white;">'
@@ -94,3 +102,10 @@ $(function() {
         }
     });
 });
+
+function save() {
+    for (var i = 0; i < numOfRows; i++)
+    {
+        var timeString = getMySQLTime(timesArray["r"+ i + "hs"],timesArray["r"+ i + "ms"],
+    }
+}
