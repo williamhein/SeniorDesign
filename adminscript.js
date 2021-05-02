@@ -21,7 +21,7 @@ function getMySQLTime(h,m,ap) {
     else
     {
         if (h == 12)
-            return "12" + ((m >= 0 && m <= 9) ? "0" + m : m) + ":00";
+            return "12:" + ((m >= 0 && m <= 9) ? "0" + m : m) + ":00";
         else
             return (h+12) + ":" + ((m >= 0 && m <= 9) ? "0" + m : m) + ":00";
     }
