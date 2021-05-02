@@ -195,6 +195,7 @@ canvas {
     font-weight: bolder;
     border-radius: 8px;
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 .adminButton {
