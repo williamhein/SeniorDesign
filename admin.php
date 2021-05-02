@@ -18,6 +18,7 @@
             <p style="font-size: 45px; color: white;">
                 <!--<span style="font-weight: lighter; line-height:20px;">-->
                     Start Time:
+                    <br>
                     <input id = "r1hs" type="text" class="dial" data-min="1" data-max="12" data-height="150px" data-fgColor="#b2db94" value="12">
                     :
                     <input id = "r1ms" type="text" class="dial" data-min="0" data-max="59" data-height="150px" data-fgColor="#b2db94" value="0">
@@ -27,6 +28,7 @@
 					</select>
                 <br>
                     End Time:
+                    <br>
                     <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="150px" data-fgColor="#b2db94" value="12">
                     :
                     <input id = "r1me" type="text" class="dial" data-min="0" data-max="59" data-height="150px" data-fgColor="#b2db94" value="15">
