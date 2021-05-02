@@ -10,7 +10,8 @@
         $data = $sql->fetch_assoc();
         if (password_verify($password, $data['pass'])) 
         {
-            setcookie("pass", password_hash($password), time() + (86400 * 1), "/");
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            setcookie("pass", $hash, time() + (86400 * 1), "/");
             //setcookie("pass", crypt($password, CRYPT_BLOWFISH), time() + (86400 * 1), "/");
         }
     }
