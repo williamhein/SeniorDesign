@@ -92,6 +92,9 @@
         <form method="POST" action="index.php">
             <center><input type="submit" id="back" value="Back to the homepage"/></center> <!-- takes user back to main page -->
         </form>
+        <form method="POST" action="change_password.php">
+            <center><input type="submit" id="water" value="Change password" style="background-color: #b2db94"/></center> <!-- takes user back to main page -->
+        </form>
         <!-- crediting icon creator -->
         <div style="bottom: 0; position: fixed; background-color: white; width: 100%; font-family: 'Quicksand', sans-serif, Arial;" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
      </div>
