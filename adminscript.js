@@ -11,7 +11,6 @@ function toggle() { //toggle for the admin mode
     blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
-    save();
 
 }
 
