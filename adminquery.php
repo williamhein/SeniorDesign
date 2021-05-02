@@ -21,9 +21,7 @@
     {
         $times = explode(";",$_GET["times"]);
         $sql = "TRUNCATE TABLE watering_intervals";
-        echo $sql;
         $result = $conn->query($sql);
-        echo $result;
 
         foreach ($times as $time) 
         {
