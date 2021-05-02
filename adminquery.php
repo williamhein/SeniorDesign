@@ -19,7 +19,7 @@
     $sql = $conn->query("SELECT * FROM admin WHERE id = 1;");
     $data = $sql->fetch_assoc();
 
-    if ($type == "save" && isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == $data['pass']))
+    if ($type == "save" && isset($_COOKIE["pass"]) && password_verify($_COOKIE["pass"], $data['pass']))
     {
         $times = explode(";",$_GET["times"]);
         $sql = "TRUNCATE TABLE watering_intervals";
@@ -33,10 +33,10 @@
         }
         echo "New watering schedule saved!";
     }
-    elseif (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] !== $data['pass']))
+    elseif (isset($_COOKIE["pass"]) && !password_verify($_COOKIE["pass"], $data['pass']))
     {
         setcookie("pass");
-        echo "Incorrect password. <script></script>";
+        echo "Incorrect password.";
     }
     else
     {
