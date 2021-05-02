@@ -4,3 +4,7 @@ function toggle() { //toggle for the admin mode
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
   }
+
+$(function() {
+    $(".dial").knob();
+});
