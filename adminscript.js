@@ -68,7 +68,7 @@ function addRow() {
 }
 
 function subRow() {
-    if (numOfRows == 0) return;
+    if (numOfRows == 1) return;
     numOfRows--;
     rows[numOfRows].innerHTML = "";
     document.getElementById("waterSchedule").removeChild(rows[numOfRows]);
