@@ -4,6 +4,7 @@
    <title>Smart Garden</title>
    <link rel="stylesheet" href="styles.css">
    <script src="adminscript.js"></script>
+   <script src="jquery.knob.js"></script>
    <div class="container" id="blur">
     <div class="content">
     <header>
