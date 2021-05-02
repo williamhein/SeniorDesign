@@ -11,7 +11,13 @@ function toggle() { //toggle for the admin mode
     blur.classList.toggle('active');  //when the gear is clicked, the blur is initiated
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
+}
 
+function toggle1() {
+    var blur1 = document.getElementById('blur1');
+    blur.classList.toggle1('active');  //when the gear is clicked, the blur is initiated
+    var popup1 = document.getElementById('popup1');
+    popup.classList.toggle1('active');
 }
 
 function getMySQLTime(h,m,ap) {
