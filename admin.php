@@ -126,19 +126,19 @@
                 $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
                 $data = $sql->fetch_assoc();
                 if (password_verify($password, $data['pass'])) {
-                    echo '<script type="text/javascript">alert("password!");</script>';
+                    echo '<script type="text/javascript">toggle("Sign in successful!");</script>';;
                 } else {
                     echo '<script type="text/javascript">toggle1("Invalid password!");</script>';
                 }
             }
-            if (!isset($_COOKIE['pass']))
+            elseif (!isset($_COOKIE['pass']))
             {
                 echo '<script type="text/javascript">toggle1();</script>';
             }
-            elseif (isset($_COOKIE['pass']))
+            /*elseif (isset($_COOKIE['pass']))
             {
                 echo '<script type="text/javascript">toggle("Sign in successful!");</script>';
-            }
+            }*/
 
             $servername = "localhost";
             $username = "root";
