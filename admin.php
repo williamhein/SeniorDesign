@@ -26,6 +26,7 @@
 					    <option onclick="" value="12">PM</option>
 					</select>
                 </span>
+                <br>
                 <span style="font-weight: lighter;">
                     End Time:
                     <input id = "r1he" type="text" class="dial" data-min="1" data-max="12" data-height="30px" data-fgColor="#b2db94" value="12">
