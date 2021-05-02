@@ -77,10 +77,10 @@ function subRow() {
     numOfRows--;
     rows[numOfRows].innerHTML = "";
     document.getElementById("waterSchedule").removeChild(rows[numOfRows]);
-    timesArray["r"+ numOfRows + "hs"] = null;
-    timesArray["r"+ numOfRows + "ms"] = null;
-    timesArray["r"+ numOfRows + "he"] = null;
-    timesArray["r"+ numOfRows + "me"] = null;
+    timesArray["r"+ numOfRows + "hs"] = undefined;
+    timesArray["r"+ numOfRows + "ms"] = undefined;
+    timesArray["r"+ numOfRows + "he"] = undefined;
+    timesArray["r"+ numOfRows + "me"] = undefined;
 }
 
 $(function() {
