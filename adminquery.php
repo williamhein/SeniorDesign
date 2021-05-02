@@ -16,7 +16,7 @@
 
     $type = $_GET["type"];
 
-    $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
+    $sql = $conn->query("SELECT * FROM admin WHERE id = 1;");
     $data = $sql->fetch_assoc();
 
     if ($type == "save" && isset($_COOKIE["pass"]) && password_verify($_COOKIE["pass"], $data['pass']))
