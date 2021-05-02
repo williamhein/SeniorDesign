@@ -14,6 +14,8 @@
     <body>
         <center>
         <div id="waterSchedule" style="color: black;">
+            <button onclick="">+</button>
+            <button onclick="">-</button>
             <center><br>Edit Watering Schedule</center>
             <!--<p style="font-size: 45px; color: white;">-->
             <p style="color: white;">
