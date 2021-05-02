@@ -6,19 +6,19 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="adminscript.js"></script>
    <script src="jquery.knob.js"></script>
-   <div class="container" id="blur1">
+   <!-- <div class="container" id="blur1">
         <div id="popup1">
             <div>
                 <center>
                 <p style="color: red;" id="popup1Label"></p>
                 <p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
-                <form method="POST"> <!-- when the correct password is entered, the page is rerouted to admin.php -->
+                <form method="POST">
                     <input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
                     <input type="submit" name="submit" id="go" value="Go"/>
                 </form>
                 </center>
             </div>
-        </div>
+        </div> -->
 
         <?php
             if (isset($_POST['submit'])) {
@@ -39,8 +39,9 @@
                 echo '<script type="text/javascript">toggle1();</script>';
             }
         ?>   
-   </div>
+   <!--</div>-->
    <div class="container" id="blur">
+        
     <div class="content">
     <header>
         <h1>Medicine Lodge<br>Greenhouse Plant Stats</h1>
@@ -97,6 +98,18 @@
         <div style="bottom: 0; position: fixed; background-color: white; width: 100%; font-family: 'Quicksand', sans-serif, Arial;" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
      </div>
     </div>
+    <div id="popup1">
+        <div>
+            <center>
+            <p style="color: red;" id="popup1Label"></p>
+            <p>You are requesting to enter <strong>admin mode</strong>.<br>Please enter the password:</p>
+            <form method="POST">
+                <input type="password" name="password" data-role="keypad" placeholder="Enter pin" data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;">
+                <input type="submit" name="submit" id="go" value="Go"/>
+            </form>
+            </center>
+        </div>
+
         <div id="popup">
             <input onclick="toggle()" type="image" id="exit" src="cancel.png"/>
             <center><p id="toggleLabel">New watering schedule saved!</p></center>
