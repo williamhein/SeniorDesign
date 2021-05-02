@@ -21,6 +21,9 @@
                 <button class="adminButton" onclick="subRow()">-</button>
             </center>
             <!--
+
+            Changes are made to addRows() in adminscript.js
+
             <div id="r1" style="color: white;">
                     <div style="text-align: left; width: 70%; color: white;">Start Time:</div>
                     <br>
