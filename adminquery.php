@@ -16,7 +16,10 @@
 
     $type = $_GET["type"];
 
-    if ($type == "save")
+    $sql = $con->query("SELECT * FROM admin WHERE id = 1;");
+    $data = $sql->fetch_assoc();
+    
+    if ($type == "save" && isset($_COOKIE["pass"]) && password_verify($_COOKIE["pass"], $data['pass']))
     {
         $times = explode(";",$_GET["times"]);
         $sql = "TRUNCATE TABLE watering_intervals";
