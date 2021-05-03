@@ -62,16 +62,16 @@
 			        <br>
 					<select class="dropdown" id="dd" style = "font-family: 'Quicksand', sans-serif, Arial; font-size: 20px">
 					    <option value="" selected="selected">Select Row Number</option>
-					    <option onclick="changeRowGraph(1)" value="r1">Row 1</option>
-					    <option onclick="changeRowGraph(2)" value="r2">Row 2</option>
-					    <option onclick="changeRowGraph(3)" value="r3">Row 3</option>
-					    <option onclick="changeRowGraph(4)" value="r4">Row 4</option>
-					    <option onclick="changeRowGraph(5)" value="r5">Row 5</option>
-					    <option onclick="changeRowGraph(6)" value="r6">Row 6</option>
-					    <option onclick="changeRowGraph(7)" value="r7">Row 7</option>
-					    <option onclick="changeRowGraph(8)" value="r8">Row 8</option>
-					    <option onclick="changeRowGraph(9)" value="r9">Row 9</option>
-					    <option onclick="changeRowGraph(10)" value="r10">Row 10</option>
+					    <option onclick="changeRowGraph(1)" value="r1" title="Row 1 Moisture Graph">Row 1</option>
+					    <option onclick="changeRowGraph(2)" value="r2" title="Row 2 Moisture Graph">Row 2</option>
+					    <option onclick="changeRowGraph(3)" value="r3" title="Row 3 Moisture Graph">Row 3</option>
+					    <option onclick="changeRowGraph(4)" value="r4" title="Row 4 Moisture Graph">Row 4</option>
+					    <option onclick="changeRowGraph(5)" value="r5" title="Row 5 Moisture Graph">Row 5</option>
+					    <option onclick="changeRowGraph(6)" value="r6" title="Row 6 Moisture Graph">Row 6</option>
+					    <option onclick="changeRowGraph(7)" value="r7" title="Row 7 Moisture Graph">Row 7</option>
+					    <option onclick="changeRowGraph(8)" value="r8" title="Row 8 Moisture Graph">Row 8</option>
+					    <option onclick="changeRowGraph(9)" value="r9" title="Row 9 Moisture Graph">Row 9</option>
+					    <option onclick="changeRowGraph(10)" value="r10" title="Row 10 Moisture Graph">Row 10</option>
 					</select>
 					<div id="chartContainer">
 						<div style = "display: none" id = "moistureChart1"><a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text1'>Row 1's Moisture Graph</span></a><div id='graph5'><canvas id='myChart5'></canvas></div><br></div>
@@ -94,7 +94,7 @@
       <div style="bottom: 0; position: fixed; background-color: white; width: 100%; font-family: 'Quicksand', sans-serif, Arial;">Icons made by <a style="color: rgb(255, 178, 106);" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
       </div>
     </div>
-            <input onclick="location.href = '/admin.php';" type="image" id="gear" src="gear.png"/> <!-- when clicked, the popup to enter admin mode pops up -->
+            <input onclick="location.href = '/admin.php';" alt="photo of gear that when clicked on gives access to admin mode" type="image" id="gear" src="gear.png"/> <!-- when clicked, the popup to enter admin mode pops up -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script> <!-- code for using chart. -->
             <script src="script.js"></script>
 

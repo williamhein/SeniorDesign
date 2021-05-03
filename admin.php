@@ -113,7 +113,7 @@
         </div>
 
         <div id="popup">
-            <input onclick="toggle()" type="image" id="exit" src="cancel.png"/>
+            <input onclick="toggle()" type="image" id="exit" src="cancel.png" alt="photo of an X when clicked, the popup closes"/>
             <center><p id="toggleLabel">New watering schedule saved!</p></center>
         </div>
 
