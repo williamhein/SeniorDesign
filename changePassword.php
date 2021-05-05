@@ -17,7 +17,6 @@
 
     <?php
         $msg = "";
-
         if (isset($_POST['submit'])) {
             $con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
             
@@ -65,7 +64,6 @@
         <div style="bottom: 0; position: fixed; background-color: white; width: 100%; font-family: 'Quicksand', sans-serif, Arial;" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a style="color:rgb(255, 178, 106);" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
      </div>
     </div>
-
 
     </body>
 </html>
