@@ -24,6 +24,8 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="adminscript.js"></script>
    <script src="jquery.knob.js"></script>
+   <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
    <!-- <div class="container" id="blur1">
         <div id="popup1">
             <div>
