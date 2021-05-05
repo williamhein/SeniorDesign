@@ -46,7 +46,7 @@
     <header>
         <h1>Medicine Lodge<br>Greenhouse Plant Stats</h1>
     </header>   
-    <body>
+    <body style="padding-bottom: 100px;">
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Edit Watering Schedule
