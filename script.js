@@ -1158,7 +1158,7 @@ function retrieve(table,starttime,endtime,auto = false) {
           var tinfo = info[1].split(";");
           var minfo = info[2].split(";");
 
-          for (var i = 0; i < hinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          for (var i = 0; i < hinfo.length - 1; i++) 
           {
             var rec = hinfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
@@ -1166,7 +1166,7 @@ function retrieve(table,starttime,endtime,auto = false) {
               humidityArray.push(d);
           }
           
-          for (var i = 0; i < tinfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          for (var i = 0; i < tinfo.length - 1; i++) 
           {
             var rec = tinfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
@@ -1175,7 +1175,7 @@ function retrieve(table,starttime,endtime,auto = false) {
               tempArray.push(d);
           }
 
-          for (var i = 0; i < minfo.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          for (var i = 0; i < minfo.length - 1; i++) 
           {
             var rec = minfo[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
@@ -1187,7 +1187,7 @@ function retrieve(table,starttime,endtime,auto = false) {
         else if (table == "records_humidity")
         {
           var info = this.responseText.split(";");
-          for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          for (var i = 0; i < info.length - 1; i++) 
           {
             var rec = info[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
@@ -1199,7 +1199,7 @@ function retrieve(table,starttime,endtime,auto = false) {
         else if (table == "records_temp")
         {
           var info = this.responseText.split(";");
-          for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          for (var i = 0; i < info.length - 1; i++) 
           {
             var rec = info[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);
@@ -1211,7 +1211,7 @@ function retrieve(table,starttime,endtime,auto = false) {
         else if (table == "records_moisture")
         {
           var info = this.responseText.split(";");
-          for (var i = 0; i < info.length - 1; i++) //I do the minus 1 because an extra ";" is output by retrieve.php and I am too lazy to figure out a smarter way to send the data
+          for (var i = 0; i < info.length - 1; i++) 
           {
             var rec = info[i].split("!");
             var d = new DataPoint(rec[0],rec[1],rec[2]);

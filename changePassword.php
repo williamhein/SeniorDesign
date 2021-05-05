@@ -24,12 +24,18 @@
             $password = $con->real_escape_string($_POST['password']});
             $cpassword = $con->real_escape_string($_POST['cpassword']});
 
+            $sql = $con->query("SELECT * FROM admin WHERE id = 1;"); //1
+            $data = $sql->fetch_assoc(); //2
+
             if ($password != $cpassword)
                 $msg = "Passwords don't match!";
+            elseif (password_verify($_COOKIE['pass'], $data['pass'])) { //3
+                $msg = "User not signed in!"; //4
+            } //5
             else {
                 $hash = password_hash($password, PASSWORD_DEFAULT);
                 $con->query("UPDATE pass FROM admin WHERE id = 1;");
-                $msg = "Password has been updated!"
+                $msg = "Password has been updated!";
             }
         }
     ?> 
