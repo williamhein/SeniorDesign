@@ -5,7 +5,6 @@
    <link rel="stylesheet" href="styles.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="script.js"></script>
-   <script src="jquery.knob.js"></script>
    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
    <div class="container" id="blur">      
@@ -20,8 +19,8 @@
         if (isset($_POST['submit'])) {
             $con = new mysqli('localhost', 'root', 'Br@mbl3', 'garden_info');
             
-            $password = $con->real_escape_string($_POST['password']});
-            $cpassword = $con->real_escape_string($_POST['cpassword']});
+            $password = $con->real_escape_string($_POST['password']);
+            $cpassword = $con->real_escape_string($_POST['cpassword']);
 
             $sql = $con->query("SELECT * FROM admin WHERE id = 1;"); //1
             $data = $sql->fetch_assoc(); //2
