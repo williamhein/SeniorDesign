@@ -25,15 +25,14 @@
             $sql = $con->query("SELECT * FROM admin WHERE id = 1;"); //1
             $data = $sql->fetch_assoc(); //2
 
-            if ($password != $cpassword)
+            if ($password != $cpassword) {
                 $msg = "Passwords don't match!";
-            elseif (password_verify($_COOKIE['pass'], $data['pass'])) { //3
-                $msg = "User not signed in!"; //4
-            } //5
-            else {
-                $hash = password_hash($password, PASSWORD_DEFAULT);
-                $con->query("UPDATE pass FROM admin WHERE id = 1;");
-                $msg = "Password has been updated!";
+            } elseif (password_verify($_COOKIE['pass'], $data['pass'])) { //3
+                $msg = "User not signed in!\n"; //4
+            } else { //5
+                $hash = password_hash($password, PASSWORD_BCRYPT);
+                $con->query("UPDATE admin SET pass = '$hash' WHERE id = 1;");
+                echo '<script type="text/javascript">toggle("New password saved!");</script>';
             }
         }
     ?> 
@@ -41,18 +40,18 @@
         <center>
         <div id="waterSchedule" style="color: black;">
             <center><br>Change Password<br>
-                <?php if ($msg != "") echo $msg . ""; ?>
                 <br>
+                <p style="color:red; font-size=25px"><?php if ($msg != "") echo $msg . ""; ?></p>
                 <form method="post">
                     <input name="password" type="password" placeholder="New Password" data-role="keypad"  data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;"><br><br>
                     <input name="cpassword" type="password" placeholder="Confirm New Password" data-role="keypad"  data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;"><br><br>
                     <input name="submit" type="submit" value="Change Password" id="water" style="width:200px" onclick="toggle()"><br>  
                 </form>
 
-                <div id="popup">
+<!--                 <div id="popup">
                     <input onclick="toggle()" type="image" id="exit" src="cancel.png"/>
                     <center><p id="toggleLabel">New password saved!</p></center>
-                </div>         
+                </div>      -->    
             </center>
         </div>
         </center>
