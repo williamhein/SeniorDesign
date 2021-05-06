@@ -45,7 +45,7 @@
                 <form method="post">
                     <input name="password" type="password" placeholder="New Password" data-role="keypad"  data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;"><br><br>
                     <input name="cpassword" type="password" placeholder="Confirm New Password" data-role="keypad"  data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;"><br><br>
-                    <input name="submit" type="submit" value="Change Password" id="water" style="width:200px" onclick="toggle()"><br>  
+                    <input name="submit" type="submit" value="Change Password" id="water" style="width:200px"><br>  
                 </form>
 
 <!--                 <div id="popup">
