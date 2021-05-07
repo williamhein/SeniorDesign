@@ -458,51 +458,7 @@ $( ".dropdown" ).change(function() {
   divArray["r8"] = "moistureChart8";
   divArray["r9"] = "moistureChart9";
   divArray["r10"] = "moistureChart10";
-  /*
-  switch(selected){ 
-      case 'r1':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 1's Moisture Graph</span></a><div id='graph5'><canvas id='myChart5'></canvas></div><br>";
-        //graph5();
-        break;
-      case 'r2':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 2's Moisture Graph</span></a><div id='graph6'><canvas id='myChart6'></canvas></div><br>";
-        //graph6();
-        break;
-      case 'r3':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 3's Moisture Graph</span></a><div id='graph7'><canvas id='myChart7'></canvas></div><br>";
-        //graph7();
-        break;
-      case 'r4':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 4's Moisture Graph</span></a><div id='graph8'><canvas id='myChart8'></canvas></div><br>";
-        //graph8();
-        break;
-      case 'r5':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 5's Moisture Graph</span></a><div id='graph9'><canvas id='myChart9'></canvas></div><br>";
-        //graph9();
-        break;
-      case 'r6':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 6's Moisture Graph</span></a><div id='graph10'><canvas id='myChart10'></canvas></div><br>";
-        //graph10();
-        break;
-      case 'r7':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 7's Moisture Graph</span></a><div id='graph11'><canvas id='myChart11'></canvas></div><br>";
-        //graph11();
-        break;
-      case 'r8':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 8's Moisture Graph</span></a><div id='graph12'><canvas id='myChart12'></canvas></div><br>";
-        //graph12();
-        break;
-      case 'r9':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 9's Moisture Graph</span></a><div id='graph13'><canvas id='myChart13'></canvas></div><br>";
-        //graph13();
-        break;
-      case 'r10':
-        //element.innerHTML += "<a id='plants'><img alt='plant graphic' src='plant.png'/><span id = 'plants_text'>Row 10's Moisture Graph</span></a><div id='graph14'><canvas id='myChart14'></canvas></div><br>";
-        //graph14();
-        break;
-      default:
-  }
-  */
+  
   document.getElementById(divArray[selected]).style.display = "block";
   for (var i = 1; i < 11; i++) {
     if ("moistureChart" + i != divArray[selected]) document.getElementById("moistureChart" + i).style.display = "none";
