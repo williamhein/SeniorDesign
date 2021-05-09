@@ -25,6 +25,9 @@
             $sql = $con->query("SELECT * FROM admin WHERE id = 1;"); //1
             $data = $sql->fetch_assoc(); //2
 
+            echo $_COOKIE['pass'];
+            echo $data['pass'];
+
             if ($password != $cpassword) {
                 $msg = "Passwords don't match!";
             } elseif (password_verify($_COOKIE['pass'], $data['pass'])) { //3
@@ -41,7 +44,7 @@
         <div id="waterSchedule" style="color: black;">
             <center><br>Change Password<br>
                 <br>
-                <p style="color:red; font-size=25px"><?php if ($msg != "") echo $msg . ""; ?></p>
+                <p style="color:red; font-size=25px; margin-top:0"><?php if ($msg != "") echo $msg . ""; ?></p>
                 <form method="post">
                     <input name="password" type="password" placeholder="New Password" data-role="keypad"  data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;"><br><br>
                     <input name="cpassword" type="password" placeholder="Confirm New Password" data-role="keypad"  data-key-length="4" data-position="bottom" style="font-family: 'Quicksand', sans-serif, Arial; font-size: 20px;"><br><br>
