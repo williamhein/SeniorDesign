@@ -32,7 +32,7 @@
             } else { //5
                 $hash = password_hash($password, PASSWORD_BCRYPT);
                 $con->query("UPDATE admin SET pass = '$hash' WHERE id = 1;");
-                echo '<script type="text/javascript">toggle("New password saved!");</script>';
+                echo '<p style="color:green; font-size=25px; margin-top:0">New Password Saved!</p>';
             }
         }
     ?> 
