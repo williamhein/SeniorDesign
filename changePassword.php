@@ -25,13 +25,9 @@
             $sql = $con->query("SELECT * FROM admin WHERE id = 1;"); //1
             $data = $sql->fetch_assoc(); //2
 
-            echo $_COOKIE['pass'];
-            echo '<br>';
-            echo $data['pass'];
-
             if ($password != $cpassword) {
                 $msg = "Passwords don't match!";
-            } elseif (password_verify($_COOKIE['pass'], $data['pass'])) { //3
+            } elseif (!password_verify($_COOKIE['pass'], $data['pass'])) { //3
                 $msg = "User not signed in!\n"; //4
             } else { //5
                 $hash = password_hash($password, PASSWORD_BCRYPT);
