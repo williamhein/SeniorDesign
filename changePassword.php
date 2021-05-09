@@ -26,6 +26,7 @@
             $data = $sql->fetch_assoc(); //2
 
             echo $_COOKIE['pass'];
+            echo '<br>';
             echo $data['pass'];
 
             if ($password != $cpassword) {
